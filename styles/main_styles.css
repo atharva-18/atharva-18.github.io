@@ -17,6 +17,9 @@
 10. Newsletter
 11. Footer
 
+html {
+  scroll-behavior: smooth;
+}
 
 ******************************/
 
