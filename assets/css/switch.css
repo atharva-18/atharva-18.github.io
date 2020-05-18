@@ -25,6 +25,6 @@ html.transition,
 html.transition *,
 html.transition *:before,
 html.transition *:after {
-  transition: ease-in-out 200ms !important;
+  transition: ease-in-out 100ms !important;
   transition-delay: 0 !important;
 }
