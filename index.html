@@ -928,7 +928,7 @@
     <script src="assets/js/custom-scripts.js"></script>
 
     <div class="fab" id="fab-tool" style="font-size: 3rem;">
-        <i class="fas fa-moon fa-xs" id="toggle" style="vertical-align: -15%"></i>
+        <i class="fas fa-sun fa-xs" id="toggle" style="vertical-align: -15%"></i>
     </div>
     <script>
         var checkbox = document.querySelector('#toggle');
@@ -938,13 +938,13 @@
                 trans();
                 document.getElementById("mainBody").setAttribute('class', 'dark-vertion black-bg');
                 document.getElementById("fab-tool").setAttribute('style', 'background-color:#1e1e24;');
-                document.getElementById("toggle").setAttribute('class', 'fas fa-moon fa-xs');
+                document.getElementById("toggle").setAttribute('class', 'fas fa-sun fa-xs');
                 dark = true;
             } else {
                 trans();
                 document.getElementById("mainBody").setAttribute('class', 'white-vertion black-bg');
                 document.getElementById("fab-tool").setAttribute('style', 'background-color:#FFFFFF;');
-                document.getElementById("toggle").setAttribute('class', 'fas fa-sun fa-xs');
+                document.getElementById("toggle").setAttribute('class', 'fas fa-moon fa-xs');
                 dark = false;
             }
         });
