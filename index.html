@@ -676,9 +676,84 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                            <div class="mh-map">
-                                <div id="mh-map" class="shadow-1"></div>
+                            <div class="col-sm-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                                <form id="contactForm" class="single-form quate-form wow fadeInUp" data-toggle="validator" action="https://formspree.io/mgenozqv"
+                                method="POST">
+                                    <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <input name="name" class="contact-name form-control" id="name" type="text" placeholder="Your Name" required>
+                                        </div>
+            
+                                        <div class="col-sm-12">
+                                            <input name="_replyto" class="contact-subject form-control" id="email" type="email" placeholder="Your Email" required>
+                                        </div>
+            
+                                        <div class="col-sm-12">
+                                            <textarea class="contact-message" name="message" id="message" rows="6" placeholder="Your Message" required></textarea>
+                                        </div>
+                                        
+                                        <!-- Subject Button -->
+                                        <div class="btn-form col-sm-12">
+                                            <button type="submit" class="btn btn-fill btn-block" id="form-submit">Send Message</button>
+                                        </div>
+                                    </div>
+                                    <p id="my-form-status"></p>
+                                </form>
+                            </div>
+                            <script src="assets/plugins/js/sweetalert2.min.js"></script>
+                            <script>
+                                window.addEventListener("DOMContentLoaded", function() {
+
+                                    // get the form elements defined in your form HTML above
+                                    
+                                    var form = document.getElementById("contactForm");
+                                    var button = document.getElementById("form-submit");
+                                    var status = document.getElementById("my-form-status");
+
+                                    // Success and Error functions for after the form is submitted
+                                    
+                                    function success() {
+                                    form.reset();
+                                    //   button.style = "display: none ";
+                                    Swal.fire('Message sent!');
+                                    }
+
+                                    function error() {
+                                    //   status.innerHTML = "Oops! There was a problem.";
+                                    Swal.fire("Couldn't send message.");
+                                    }
+
+                                    // handle the form submission event
+
+                                    form.addEventListener("submit", function(ev) {
+                                    ev.preventDefault();
+                                    var data = new FormData(form);
+                                    ajax(form.method, form.action, data, success, error);
+                                    });
+                                });
+                            
+                                // helper function for sending an AJAX request
+
+                                function ajax(method, url, data, success, error) {
+                                    var xhr = new XMLHttpRequest();
+                                    xhr.open(method, url);
+                                    xhr.setRequestHeader("Accept", "application/json");
+                                    xhr.onreadystatechange = function() {
+                                    if (xhr.readyState !== XMLHttpRequest.DONE) return;
+                                    if (xhr.status === 200) {
+                                        success(xhr.response, xhr.responseType);
+                                    } else {
+                                        error(xhr.status, xhr.response, xhr.responseType);
+                                    }
+                                    };
+                                    xhr.send(data);
+                                }
+                            </script>
+                            <div class="col-sm-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                                <div class="mh-map">
+                                    <div id="mh-map" class="shadow-1"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -735,13 +810,11 @@
         var dark = false;
         checkbox.addEventListener('click', function() {
             if(!dark) {
-                // trans();
                 document.getElementById("mainBody").setAttribute('class', 'dark-vertion black-bg');
                 document.getElementById("fab-tool").setAttribute('style', 'background-color:#1e1e24;');
                 document.getElementById("toggle").setAttribute('class', 'fas fa-sun fa-xs');
                 dark = true;
             } else {
-                // trans();
                 document.getElementById("mainBody").setAttribute('class', 'white-vertion black-bg');
                 document.getElementById("fab-tool").setAttribute('style', 'background-color:#FFFFFF;');
                 document.getElementById("toggle").setAttribute('class', 'fas fa-moon fa-xs');
@@ -749,12 +822,7 @@
             }
         });
     
-        let trans = () => {
-            document.documentElement.classList.add('transition');
-                window.setTimeout(() => {
-                document.documentElement.classList.remove('transition');
-            }, 100)
-        }
+        
     
         </script>
 </body>
