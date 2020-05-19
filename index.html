@@ -805,7 +805,14 @@
         <i class="fas fa-moon fa-xs" id="toggle"></i>
     </div>
     <script>
-        document.getElementById("fab-tool").setAttribute('style', 'background-color:#FFFFFF;');
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            // dark mode
+            document.getElementById("mainBody").setAttribute('class', 'dark-vertion black-bg');
+            document.getElementById("fab-tool").setAttribute('style', 'background-color:#1e1e24;');
+            document.getElementById("toggle").setAttribute('class', 'fas fa-sun fa-xs');
+        }else {
+            document.getElementById("fab-tool").setAttribute('style', 'background-color:#FFFFFF;');
+        }
         var checkbox = document.querySelector('#toggle');
         var dark = false;
         checkbox.addEventListener('click', function() {
@@ -822,7 +829,20 @@
             }
         });
     
-        
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            const newColorScheme = e.matches ? "dark" : "light";
+            if(newColorScheme=="dark") {
+                document.getElementById("mainBody").setAttribute('class', 'dark-vertion black-bg');
+                document.getElementById("fab-tool").setAttribute('style', 'background-color:#1e1e24;');
+                document.getElementById("toggle").setAttribute('class', 'fas fa-sun fa-xs');
+                dark = true;
+            }else {
+                document.getElementById("mainBody").setAttribute('class', 'white-vertion black-bg');
+                document.getElementById("fab-tool").setAttribute('style', 'background-color:#FFFFFF;');
+                document.getElementById("toggle").setAttribute('class', 'fas fa-moon fa-xs');
+                dark = false;
+            }
+        });
     
         </script>
 </body>
