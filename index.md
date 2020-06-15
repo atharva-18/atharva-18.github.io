@@ -1,0 +1,812 @@
+<head>
+        <title>Atharva Pusalkar</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Portfolio" />
+        <meta name="keywords" content="Atharva Pusalkar robotics machine learning ukf driverless car autonomous djsracing djsr electronics" />
+        <meta name="developer" content="Atharva Pusalkar">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- FAV AND ICONS   -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+        <!-- <link rel="shortcut icon" href="assets/images/apple-icon.png">
+        <link rel="shortcut icon" sizes="72x72" href="assets/images/apple-icon-72x72.png">
+        <link rel="shortcut icon" sizes="114x114" href="assets/images/apple-icon-114x114.png"> -->
+        <!-- Google Font-->
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="assets/icons/font-awesome-4.7.0/css/font-awesome.min.css">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="assets/plugins/css/bootstrap.min.css">
+        <!-- Animate CSS-->
+        <link rel="stylesheet" href="assets/plugins/css/animate.css">
+        <!-- Owl Carousel CSS-->
+        <link rel="stylesheet" href="assets/plugins/css/owl.css">
+        <!-- Fancybox-->
+        <link rel="stylesheet" href="assets/plugins/css/jquery.fancybox.min.css">
+        <!-- Dark mode switch CSS -->
+        <link rel="stylesheet" href="assets/css/switch.css">
+        <!-- Custom CSS-->
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="assets/css/responsive.css">
+        <!-- Colors -->
+        <link rel="alternate stylesheet" href="assets/css/colors/blue.css" title="blue">
+        <link rel="stylesheet" href="assets/css/colors/defauld.css" title="defauld">
+        <link rel="alternate stylesheet" href="assets/css/colors/green.css" title="green">
+        <link rel="alternate stylesheet" href="assets/css/colors/blue-munsell.css" title="blue-munsell">
+        <link rel="alternate stylesheet" href="assets/css/colors/orange.css" title="orange">
+        <link rel="alternate stylesheet" href="assets/css/colors/purple.css" title="purple">
+        <link rel="alternate stylesheet" href="assets/css/colors/slate.css" title="slate">
+        <link rel="alternate stylesheet" href="assets/css/colors/yellow.css" title="yellow">
+    </head>
+    <body class="white-vertion black-bg" id="mainBody">
+        <!-- Start Loader -->
+        <div class="section-loader">
+            <div class="loader">
+                <div></div>
+                <div></div> 
+            </div>
+        </div>
+        <!-- End Loader -->
+        <!--
+        ===================
+           NAVIGATION
+        ===================
+        -->
+        <header class="black-bg mh-header mh-fixed-nav nav-scroll mh-xs-mobile-nav wow fadeInUp" id="mh-header">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <nav class="navbar navbar-expand-lg mh-nav nav-btn">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto ml-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#mh-home">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#mh-about">About</a>
+                                </li>
+                                <li class="nav-item">
+                                   <a class="nav-link" href="#mh-skills">Skills</a>
+                                </li>                              
+                                <li class="nav-item">
+                                   <a class="nav-link" href="#mh-experience">Experiences</a>
+                                </li>                          
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#mh-portfolio">Projects</a>
+                                </li>                          
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#mh-blog">Blogs</a>
+                                </li>
+                                <li class="nav-item">
+                                   <a class="nav-link" href="#mh-contact">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!--
+        ===================
+            HOME 
+        ===================
+        -->
+        <section class="mh-home" id="mh-home">
+            <div class="home-ovimg">
+                <div class="container">
+                    <div class="row xs-column-reverse section-separator vertical-middle-content home-padding">
+                        <div class="col-sm-6">
+                            <div class="mh-header-info">
+                                <div class="mh-promo wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">
+                                    <span>Hello I'm</span>
+                                </div>
+                                <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">Atharva Pusalkar</h2>
+                                <h4 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">Electronics Engineering Student</h4>
+                                <ul>
+                                    <li class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s"><i class="fa fa-envelope"></i><a href="mailto:">atharvapusalkar18@email.com</a></li>
+                                    <li class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s"><i class="fa fa-phone"></i><a href="callto:">+91 9167683808</a></li>
+                                    <li class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s"><i class="fa fa-map-marker"></i><address>Mumbai, India</address></li>
+                                </ul>
+                                <ul class="social-icon wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
+                                    <li><a href="https://github.com/atharva-18" target="_blank"><i class="fa fa-github"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/atharva-pusalkar/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="hero-img wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
+                                <div class="img-border">
+                                    <img src="assets/images/atharva.jpeg" alt=""  class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>   
+        <!--
+        ==================
+            ABOUT
+        =================
+        -->
+        <section class="mh-about" id="mh-about">
+            <div class="container">
+                <div class="row section-separator">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="mh-about-img shadow-2 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
+                            <img src="assets/images/ab-img.png" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="mh-about-inner">
+                            <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">About Me</h2>
+                            <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">Hello, I’m a Atharva, undergraduate student pursuing Electronics Engineering. 
+                            I like to build robots and I'm currently working on the first self-driving car of India. I have rich experience in ROS, Computer Vision and Machine Learning. In my free time you'll usually find me painting or playing lawn tennis ;).</p>
+                            <div class="mh-about-tag wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                                <ul>
+                                    <li><span>ROS</span></li>
+                                    <li><span>C++</span></li>
+                                    <li><span>Python</span></li>
+                                    <li><span>Machine Learning</span></li>
+                                    <li><span>Computer Vision</span></li>
+                                    <li><span>Controller Designing</span></li>
+                                    <li><span>Filter Designing</span></li>
+                                </ul>
+                            </div>
+                            <a href="assets/files/CV.pdf" class="btn btn-fill wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s" target="_blank">Download CV <i class="fa fa-download"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--
+        ===================
+           SERVICE
+        ===================
+        -->
+        <section class="mh-service">
+            <div class="container">
+                <div class="row section-separator">
+                    <div class="col-sm-12 text-center section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                        <h2>What I do</h2>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <div class="mh-service-item shadow-1 dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                            <i class="fa fa-robot purple-color"></i>
+                            <h3>Robotics</h3>
+                            <p>
+                                Robots have always fascinated me. This was the main motive for me to pursue EE. I've designed Model Predictive Controls, Behavior Planning Pipelines, CAN interfaces, actuators, etc. I'm currently drafting a scientific paper for Behavior Planning.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <div class="mh-service-item shadow-1 dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                            <i class="fa fa-chart-line iron-color"></i>
+                            <h3>Filter and Controller Design</h3>
+                            <p>
+                                My experience with Kalman Filters include designing an UKF for 15 dimensional state estimation with IMU and GPS data. 
+                                The filter was used for pose and velocity estimation in a driverless car.
+                            </p>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <div class="mh-service-item shadow-1 dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
+                            <i class="fa fa-eye sky-color"></i>
+                            <h3>Computer Vision</h3>
+                            <p>
+                                I've worked on applications such as 3D traffic cone detection, visual odometry, pose estimation, etc.
+                                I use tools such as CUDA, OpenCV, Darknet, Point Cloud Library and so on. I largely work with ZED 2 stereo camera for 3D vision.
+                            </p>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>       
+        <!--
+        ===================
+           SKILLS
+        ===================
+        -->
+        <section class="mh-skills" id="mh-skills">
+            <div class="container">
+                <div class="row section-separator">
+                    <div class="section-title text-center col-sm-12">
+                        <!--<h2>Skills</h2>-->
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="mh-skills-inner">
+                            <div class="mh-professional-skill wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                                <h3>Technical Skills</h3>
+                                <div class="each-skills">
+                                    <div class="candidatos">
+                                        <div class="parcial">
+                                            <div class="info">
+                                                <div class="nome">Python</div>
+                                                <div class="percentagem-num">90%</div>
+                                            </div>
+                                            <div class="progressBar">
+                                                <div class="percentagem" style="width: 90%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="candidatos">
+                                        <div class="parcial">
+                                            <div class="info">
+                                                <div class="nome">C++</div>
+                                                <div class="percentagem-num">85%</div>
+                                            </div>
+                                            <div class="progressBar">
+                                                <div class="percentagem" style="width: 85%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="candidatos">
+                                        <div class="parcial">
+                                            <div class="info">
+                                                <div class="nome">Robot Operating System</div>
+                                                <div class="percentagem-num">75%</div>
+                                            </div>
+                                            <div class="progressBar">
+                                                <div class="percentagem" style="width: 75%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="candidatos">
+                                        <div class="parcial">
+                                            <div class="info">
+                                                <div class="nome">Controller Design</div>
+                                                <div class="percentagem-num">70%</div>
+                                            </div>
+                                            <div class="progressBar">
+                                                <div class="percentagem" style="width: 70%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>                                    
+                                    <div class="candidatos">
+                                        <div class="parcial">
+                                            <div class="info">
+                                                <div class="nome">Filter Design</div>
+                                                <div class="percentagem-num">65%</div>
+                                            </div>
+                                            <div class="progressBar">
+                                                <div class="percentagem" style="width: 65%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="mh-professional-skills wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                            <h3>Professional Skills</h3>
+                            <ul class="mh-professional-progress" >
+                                <li>
+                                    <div class="mh-progress mh-progress-circle" data-progress="90"></div>
+                                    <div class="pr-skill-name">Team Work</div>
+                                </li>
+                                <li>
+                                    <div class="mh-progress mh-progress-circle" data-progress="85"></div> 
+                                    <div class="pr-skill-name">Communication</div>
+                                </li>
+                                <li>
+                                    <div class="mh-progress mh-progress-circle" data-progress="85"></div>
+                                    <div class="pr-skill-name">Creativity</div>
+                                </li> 
+                                <li>
+                                    <div class="mh-progress mh-progress-circle" data-progress="75"></div>
+                                    <div class="pr-skill-name">Project Management</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--
+        ===================
+           EXPERIENCES
+        ===================
+        -->
+        <section class="mh-experince" id="mh-experience">
+            <div class="bolor-overlay">
+                <div class="container">
+                    <div class="row section-separator">
+                        <div class="col-sm-12 col-md-6">
+                            <div class="mh-education">
+                                 <h3 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">Education</h3>
+                                <div class="mh-education-deatils">
+                                    <!-- Education Institutes-->
+                                    <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                                        <h4>Bachelor of Engineering <a href="#">Mumbai University</a></h4>
+                                        <p>Electronics Engineering</p>
+                                        <div class="mh-eduyear">2018 - 2022</div>
+                                        <p>Grade Point Average: 8.3 CGPA</p>
+                                    </div>                                
+                                    <!-- Education Institutes-->
+                                    <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                                        <h4>High School <a href="#">Sathaye College</a></h4>
+                                        <div class="mh-eduyear">2016 - 2018</div>
+                                        <p>Grade: 86.46%</p>
+                                    </div>                                
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div class="mh-work">
+                                 <h3>Work Experience</h3>
+                                <div class="mh-experience-deatils">
+                                    <!-- Education Institutes-->
+                                    <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
+                                        <h4>Autonomous Driving Engineer <a href="#">DJS Racing</a></h4>
+                                        <div class="mh-eduyear">2019 - Present</div>
+                                        <span>Work :</span>
+                                        <ul class="work-responsibility">
+                                            <li><i class="fa fa-circle"></i>Designed software architecture for the driverless car</li>
+                                            <li><i class="fa fa-circle"></i>Developed UKF and 2D slam</li>
+                                            <li><i class="fa fa-circle"></i>Developed Model Predictive Control for trajectory planning</li>
+                                            <li><i class="fa fa-circle"></i>Designed power delivery and telemetry circuits for the computing system</li>
+                                        </ul>
+                                    </div>                                
+                                    <!-- Education Institutes-->
+                                    <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
+                                        <h4>Social Work Volunteer <a href="#">National Service Scheme</a></h4>
+                                        <div class="mh-eduyear">2018 - 2020</div>
+                                        <span>Work :</span>
+                                        <ul class="work-responsibility">
+                                            <li><i class="fa fa-circle"></i>Organized charity drives for orphanages</li>
+                                            <li><i class="fa fa-circle"></i>Organized solar panel installation projects</li>
+                                        </ul>
+                                    </div>                                
+                                    <!-- Education Institutes-->
+                                    <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
+                                        <h4>Info-tech Head <a href="#">IEEE Student Chapter</a></h4>
+                                        <div class="mh-eduyear">2019-2021</div>
+                                        <span>Work :</span>
+                                        <ul class="work-responsibility">
+                                            <li><i class="fa fa-circle"></i>Conducted technical events in the campus</li>
+                                            <li><i class="fa fa-circle"></i>Handled resource management for the team</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--
+        ===================
+           PORTFOLIO
+        ===================
+        -->
+        <!-- <section class="mh-portfolio" id="mh-portfolio">
+            <div class="container">
+                <div class="row section-separator">
+                    <div class="section-title col-sm-12 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">
+                        <h3>Featured Projects</h3>
+                    </div>
+                    <div class="part col-sm-12">
+                        <div class="portfolio-nav col-sm-12" id="filter-button">
+                            <ul>
+                                <li data-filter="*" class="current wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s"> <span>All Categories</span></li>
+                                <li data-filter=".user-interface" class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s"><span>Robotics</span></li>
+                                <li data-filter=".branding" class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s"><span>Machine Learning</span></li>
+                                <li data-filter=".mockup" class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s"><span>Art</span></li>
+                                <li data-filter=".ui" class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s"><span>Engineering</span></li>
+                            </ul>
+                        </div>
+                        <div class="mh-project-gallery col-sm-12 wow fadeInUp" id="project-gallery" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                            <div class="portfolioContainer row">
+                                <div class="grid-item col-md-4 col-sm-6 col-xs-12 user-interface">
+                                    <figure>
+                                        <img src="assets/images/portfolio/g1.jpg" alt="img04">
+                                        <figcaption class="fig-caption">
+                                            <i class="fa fa-search"></i>
+                                            <h5 class="title">Creative Design</h5>
+                                            <span class="sub-title">Photograpy</span>
+                                            <a data-fancybox data-src="#mh"></a>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="grid-item col-md-4 col-sm-6 col-xs-12 ui mockup">
+                                    <figure>
+                                        <img src="assets/images/portfolio/g2.png" alt="img04">
+                                        <figcaption class="fig-caption">
+                                            <i class="fa fa-search"></i>
+                                            <h5 class="title">Creative Design</h5>
+                                            <span class="sub-title">Photograpy</span>
+                                            <a href="assets/images/portfolio/g2.png" data-fancybox data-src="#mh"></a>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="grid-item col-md-4 col-sm-6 col-xs-12 user-interface">
+                                    <figure>
+                                        <img src="assets/images/portfolio/g3.png" alt="img04">
+                                        <figcaption class="fig-caption">
+                                            <i class="fa fa-search"></i>
+                                            <h5 class="title">Creative Design</h5>
+                                            <span class="sub-title">Photograpy</span>
+                                            <a href="assets/images/portfolio/g3.png" data-fancybox data-src="#mh"></a>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="grid-item col-md-4 col-sm-6 col-xs-12 branding">
+                                    <figure>
+                                        <img src="assets/images/portfolio/g5.png" alt="img04">
+                                        <figcaption class="fig-caption">
+                                            <i class="fa fa-search"></i>
+                                            <h5 class="title">Creative Design</h5>
+                                            <span class="sub-title">Photograpy</span>
+                                            <a href="assets/images/portfolio/g5.png" data-fancybox data-src="#mh"></a>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="grid-item col-md-4 col-sm-6 col-xs-12 user-interface">
+                                    <figure>
+                                        <img src="assets/images/portfolio/g4.png" alt="img04">
+                                        <figcaption class="fig-caption">
+                                            <i class="fa fa-search"></i>
+                                            <h5 class="title">Creative Design</h5>
+                                            <span class="sub-title">Photograpy</span>
+                                            <a href="assets/images/portfolio/g4.png" data-fancybox data-src="#mh"></a>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="grid-item col-md-4 col-sm-6 col-xs-12 branding">
+                                    <figure>
+                                        <img src="assets/images/portfolio/g6.png" alt="img04">
+                                        <figcaption class="fig-caption">
+                                            <i class="fa fa-search"></i>
+                                            <h5 class="title">Creative Design</h5>
+                                            <span class="sub-title">Photograpy</span>
+                                            <a href="assets/images/portfolio/g6.png" data-fancybox data-src="#mh"></a>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="grid-item col-md-4 col-sm-6 col-xs-12 branding">
+                                    <figure>
+                                        <img src="assets/images/portfolio/g8.png" alt="img04">
+                                        <figcaption class="fig-caption">
+                                            <i class="fa fa-search"></i>
+                                            <h5 class="title">Creative Design</h5>
+                                            <span class="sub-title">Photograpy</span>
+                                            <a href="assets/images/portfolio/g8.png" data-fancybox data-src="#mh"></a>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="grid-item col-md-4 col-sm-6 col-xs-12 ui">
+                                    <figure>
+                                        <img src="assets/images/portfolio/g9.png" alt="img04">
+                                        <figcaption class="fig-caption">
+                                            <i class="fa fa-search"></i>
+                                            <h5 class="title">Creative Design</h5>
+                                            <span class="sub-title">Photograpy</span>
+                                            <a href="assets/images/portfolio/g9.png" data-fancybox data-src="#mh"></a>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="grid-item col-md-4 col-sm-6 col-xs-12 branding">
+                                    <figure>
+                                        <img src="assets/images/portfolio/g7.jpg" alt="img04">
+                                        <figcaption class="fig-caption">
+                                            <i class="fa fa-search"></i>
+                                            <h5 class="title">Creative Design</h5>
+                                            <span class="sub-title">Photograpy</span>
+                                            <a href="assets/images/portfolio/g7.jpg" data-fancybox="gallery"></a>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div> <!-- End: .grid .project-gallery -->
+                        </div> <!-- End: .grid .project-gallery -->
+                    </div> <!-- End: .part -->
+                </div> <!-- End: .row -->
+            </div>
+            <div class="mh-portfolio-modal" id="mh">
+                <div class="container">
+                    <div class="row mh-portfolio-modal-inner">
+                        <div class="col-sm-5">
+                            <h2>Wrap - A campanion plugin</h2>
+                            <p>Wrap is a clean and elegant Multipurpose Landing Page Template. 
+                            It will fit perfectly for Startup, Web App or any type of Web Services.
+                            It has 4 background styles with 6 homepage styles. 6 pre-defined color scheme. 
+                            All variations are organized separately so you can use / customize the template very easily.</p>       
+                            <p>It is a clean and elegant Multipurpose Landing Page Template. 
+                            It will fit perfectly for Startup, Web App or any type of Web Services.
+                            It has 4 background styles with 6 homepage styles. 6 pre-defined color scheme. 
+                            All variations are organized separately so you can use / customize the template very easily.</p>      
+                            <div class="mh-about-tag">
+                                <ul>
+                                    <li><span>php</span></li>
+                                    <li><span>html</span></li>
+                                    <li><span>css</span></li>
+                                    <li><span>php</span></li>
+                                    <li><span>wordpress</span></li>
+                                    <li><span>React</span></li>
+                                    <li><span>Javascript</span></li>
+                                </ul>
+                            </div>
+                            <a href="#" class="btn btn-fill">Live Demo</a>
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="mh-portfolio-modal-img">
+                                <img src="assets/images/pr-0.jif" alt="" class="img-fluid">
+                                <p>All variations are organized separately so you can use / customize the template very easily.</p>    
+                                <img src="assets/images/pr-1.jif" alt="" class="img-fluid">
+                                <p>All variations are organized separately so you can use / customize the template very easily.</p>     
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!--
+        ===================
+           BLOG
+        ===================
+        -->
+        <section class="mh-blog" id="mh-blog">
+            <div class="container">
+                <div class="row section-separator">
+                    <div class="col-sm-12 section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                        <h3>Featured Blogs (Coming Soon!)</h3>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                         <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                            <img src="assets/images/b-3.png" alt="" class="img-fluid">
+                            <div class="blog-inner">
+                                <h2><a href="blog-single.html">Get 3D point cloud data with the ZED 2 camera</a></h2>
+                                <div class="mh-blog-post-info">
+                                    <ul>
+                                        <li><strong>Post On</strong><a href="#">24.11.19</a></li>
+                                        <li><strong>By</strong><a href="#">Atharva Pusalkar</a></li>
+                                    </ul>
+                                </div>
+                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</p>
+                                <a href="blog-single.html">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                            <img src="assets/images/b-2.png" alt="" class="img-fluid">
+                            <div class="blog-inner">
+                                <h2><a href="blog-single.html">Use of Computer Vision and State Estimation for Behavior Planning using Automata Theory</a></h2>
+                                <div class="mh-blog-post-info">
+                                    <ul>
+                                        <li><strong>Post On</strong><a href="#">24.11.19</a></li>
+                                        <li><strong>By</strong><a href="#">Atharva Pusalkar</a></li>
+                                    </ul>
+                                </div>
+                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</p>
+                                <a href="blog-single.html">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
+                            <img src="assets/images/b-1.png" alt="" class="img-fluid">
+                            <div class="blog-inner">
+                                <h2><a href="blog-single.html">Implementing Model Predictive Control for an FSAE car the right way</a></h2>
+                                <div class="mh-blog-post-info">
+                                    <ul>
+                                        <li><strong>Post On</strong><a href="#">24.11.19</a></li>
+                                        <li><strong>By</strong><a href="#">Atharva Pusalkar</a></li>
+                                    </ul>
+                                </div>
+                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</p>
+                                <a href="blog-single.html">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--
+        ===================
+           FOOTER 1
+        ===================
+        -->
+        <footer class="mh-footer" id="mh-contact">
+            <div class="map-image image-bg">
+                <div class="container">
+                    <div class="row section-separator">
+                        <div class="col-sm-12 section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                            <h3>Contact Me</h3>
+                        </div>
+                        <div class="col-sm-12 mh-footer-address">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="mh-address-footer-item dark-bg shadow-1 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                                        <div class="each-icon">
+                                            <i class="fa fa-linkedin"></i>
+                                        </div>
+                                        <div class="each-info">
+                                            <h4>LinkedIn</h4>
+                                            <a href="https://www.linkedin.com/in/atharva-pusalkar/" target="_blank">Atharva Pusalkar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="mh-address-footer-item dark-bg shadow-1 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                                        <div class="each-icon">
+                                            <i class="fa fa-envelope-o"></i>
+                                        </div>
+                                        <div class="each-info">
+                                            <h4>Email</h4>
+                                            <a href="mailto:atharvapusalkar18@gmail.com">atharvapusalkar18@gmail.com</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="mh-address-footer-item dark-bg shadow-1 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
+                                        <div class="each-icon">
+                                            <i class="fa fa-github"></i>
+                                        </div>
+                                        <div class="each-info">
+                                            <h4>GitHub</h4>
+                                            <a href="https://github.com/atharva-18" target="_blank">atharva-18</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="col-sm-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                                <form id="contactForm" class="single-form quate-form wow fadeInUp" data-toggle="validator" action="https://formspree.io/mgenozqv"
+                                method="POST">
+                                    <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <input name="name" class="contact-name form-control" id="name" type="text" placeholder="Your Name" required>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <input name="_replyto" class="contact-subject form-control" id="email" type="email" placeholder="Your Email" required>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <textarea class="contact-message" name="message" id="message" rows="6" placeholder="Your Message" required></textarea>
+                                        </div>      
+                                        <!-- Subject Button -->
+                                        <div class="btn-form col-sm-12">
+                                            <button type="submit" class="btn btn-fill btn-block" id="form-submit">Send Message</button>
+                                        </div>
+                                    </div>
+                                    <p id="my-form-status"></p>
+                                </form>
+                            </div>
+                            <script src="assets/plugins/js/sweetalert2.min.js"></script>
+                            <script>
+                                window.addEventListener("DOMContentLoaded", function() {
+                                    // get the form elements defined in your form HTML above    
+                                    var form = document.getElementById("contactForm");
+                                    var button = document.getElementById("form-submit");
+                                    var status = document.getElementById("my-form-status");
+                                    // Success and Error functions for after the form is submitted   
+                                    function success() {
+                                    form.reset();
+                                    //   button.style = "display: none ";
+                                    Swal.fire('Message sent!');
+                                    }
+                                    function error() {
+                                    //   status.innerHTML = "Oops! There was a problem.";
+                                    Swal.fire("Couldn't send message.");
+                                    }
+                                    // handle the form submission event
+                                    form.addEventListener("submit", function(ev) {
+                                    ev.preventDefault();
+                                    var data = new FormData(form);
+                                    ajax(form.method, form.action, data, success, error);
+                                    });
+                                });
+                                // helper function for sending an AJAX request
+                                function ajax(method, url, data, success, error) {
+                                    var xhr = new XMLHttpRequest();
+                                    xhr.open(method, url);
+                                    xhr.setRequestHeader("Accept", "application/json");
+                                    xhr.onreadystatechange = function() {
+                                    if (xhr.readyState !== XMLHttpRequest.DONE) return;
+                                    if (xhr.status === 200) {
+                                        success(xhr.response, xhr.responseType);
+                                    } else {
+                                        error(xhr.status, xhr.response, xhr.responseType);
+                                    }
+                                    };
+                                    xhr.send(data);
+                                }
+                            </script>
+                            <div class="col-sm-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                                <div class="mh-map">
+                                    <div id="mh-map" class="shadow-1"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>     
+    <!--
+    ==============
+    * JS Files *
+    ==============
+    -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- jQuery -->
+    <script src="assets/plugins/js/jquery.min.js"></script>
+    <!-- popper -->
+    <script src="assets/plugins/js/popper.min.js"></script>
+    <!-- bootstrap -->
+    <script src="assets/plugins/js/bootstrap.min.js"></script>
+    <!-- owl carousel -->
+    <script src="assets/plugins/js/owl.carousel.js"></script>
+    <!-- validator -->
+    <script src="assets/plugins/js/validator.min.js"></script>
+    <!-- wow -->
+    <script src="assets/plugins/js/wow.min.js"></script>
+    <!-- mixin js-->
+    <script src="assets/plugins/js/jquery.mixitup.min.js"></script>
+    <!-- circle progress-->
+    <script src="assets/plugins/js/circle-progress.js"></script>
+    <!-- jquery nav -->
+    <script src="assets/plugins/js/jquery.nav.js"></script>
+    <!-- Fancybox js-->
+    <script src="assets/plugins/js/jquery.fancybox.min.js"></script>
+    <!-- isotope js-->
+    <script src="assets/plugins/js/isotope.pkgd.js"></script>
+    <script src="assets/plugins/js/packery-mode.pkgd.js"></script>
+    <!-- Map api -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;key=AIzaSyCRP2E3BhaVKYs7BvNytBNumU0MBmjhhxc"></script>
+    <!-- Custom Scripts-->
+    <script src="assets/js/map-init.js"></script>
+    <script src="https://kit.fontawesome.com/265ad05e7e.js" crossorigin="anonymous"></script>
+    <script src="assets/js/custom-scripts.js"></script>
+    <script src="demo/styleswitcher.js"></script>
+    <div class="fab" id="fab-tool" style="font-size: 3rem;vertical-align: -5%;">
+        <i class="fas fa-moon fa-xs" id="toggle"></i>
+    </div>
+    <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            // dark mode
+            document.getElementById("mainBody").setAttribute('class', 'dark-vertion black-bg');
+            document.getElementById("fab-tool").setAttribute('style', 'background-color:#1e1e24;');
+            document.getElementById("toggle").setAttribute('class', 'fas fa-sun fa-xs');
+        }else {
+            document.getElementById("fab-tool").setAttribute('style', 'background-color:#FFFFFF;');
+        }
+        var checkbox = document.querySelector('#toggle');
+        var dark = false;
+        checkbox.addEventListener('click', function() {
+            if(!dark) {
+                document.getElementById("mainBody").setAttribute('class', 'dark-vertion black-bg');
+                document.getElementById("fab-tool").setAttribute('style', 'background-color:#1e1e24;');
+                document.getElementById("toggle").setAttribute('class', 'fas fa-sun fa-xs');
+                dark = true;
+            } else {
+                document.getElementById("mainBody").setAttribute('class', 'white-vertion black-bg');
+                document.getElementById("fab-tool").setAttribute('style', 'background-color:#FFFFFF;');
+                document.getElementById("toggle").setAttribute('class', 'fas fa-moon fa-xs');
+                dark = false;
+            }
+        });
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            const newColorScheme = e.matches ? "dark" : "light";
+            if(newColorScheme=="dark") {
+                document.getElementById("mainBody").setAttribute('class', 'dark-vertion black-bg');
+                document.getElementById("fab-tool").setAttribute('style', 'background-color:#1e1e24;');
+                document.getElementById("toggle").setAttribute('class', 'fas fa-sun fa-xs');
+                dark = true;
+            }else {
+                document.getElementById("mainBody").setAttribute('class', 'white-vertion black-bg');
+                document.getElementById("fab-tool").setAttribute('style', 'background-color:#FFFFFF;');
+                document.getElementById("toggle").setAttribute('class', 'fas fa-moon fa-xs');
+                dark = false;
+            }
+        });
+        </script>
+</body>
+
+</html>
