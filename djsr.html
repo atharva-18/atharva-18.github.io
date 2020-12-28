@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+
+<html>
+	
+<!-- Mirrored from www.shreyasgokhaleresu.me/APP-RAS.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 15 Dec 2020 17:47:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+		<title>DJS Racing Driverless</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="https://atharva-18.github.io" class="title">Home</a>
+				<nav>
+					<ul>
+						<li><a href="#">Robotics</a></li>
+						<li><a href="#">Automotive</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">DJS Racing Driverless</h1>
+							<p align="center">
+								<img width="75%" height="75%" src="images/djsre03.jpg">
+							</p>
+							<!-- <span class="image fit"><img src="images/pic04.jpg" alt="" /></span> -->
+							<p>At DJS Racing, the Formula Student Team of Dwarkadas J. Sanghvi College of Engineering, we are building one of the first driverless Formula Student race-car of India.</p>
+							<h2>About Formula Student Driverless</h2>
+							<!-- <span class="image fit"><img src="images/pic04.jpg" alt="" /></span> -->
+							<p> Formula
+								Student Driverless(FSD) is an international engineering competition, in which multidisciplinary student teams compete
+								with a self-developed driverless racecar every year.</p>
+							<h2>Software Architecture</h2>
+							<!-- <span class="image fit"><img src="images/pic04.jpg" alt="" /></span> -->
+							<p> We chose the Robot Operating System as our primary framework for software development.</p>
+							<p align="center">
+								<img width="75%" height="75%" src="images/sw_arch.jpg">
+							</p>
+							<h2>3D Perception</h2>
+							<p align="center">
+								3D Traffic Cone Detection and Color Estimation using Ouster OS-1 LiDAR
+							</p>
+							<p align="center">
+								<video width="50%" height="50%" controls>
+									<source src="videos\lidar.mp4" type="video/mp4">
+									Your browser does not support the video tag.
+								</video>
+							</p>
+							<h4>CNN Architecture for Color Estimation using LiDAR Intensity Patterns</h4>
+							<p align="center">
+								<img width="75%" height="75%" src="images/lidar_cnn.jpg">
+							</p>
+							<h4>Stereo 3D Object Dectection</h4>
+							<p align="center">
+								<video width="75%" height="75%" controls>
+									<source src="videos\stereo.mp4" type="video/mp4">
+									Your browser does not support the video tag.
+								</video>
+							</p>
+							<p>
+								Stereo feature matching is then performed using the Semi-Global Block Matching (SGBM) algorithm to obtain the disparity map and 3D coordinates of the traffic cones.
+							</p>
+							<h2>Model Predictive Control</h2>
+							<p>
+								<h4 align="center">Dynamic Bicycle Model</h4>
+							</p>
+							<p align="center">
+								<img width="50%" height="50%" src="images/dynamic_model.jpg">
+							</p>
+							<p>
+								<h4 align="center">Vehicle Dynamics</h4>
+							</p>
+							<p align="center">
+								<img width="50%" height="50%" src="images/vehicle_dynamics.jpg">
+							</p>
+							<p>
+								<h4 align="center">Tire Model</h4>
+							</p>
+							<p align="center">
+								<img width="50%" height="50%" src="images/tire_model.jpg">
+							</p>
+							<p>
+								<h4 align="center">State Input</h4>
+							</p>
+							<p align="center">
+								<img width="50%" height="50%" src="images/state_input.jpg">
+							</p>
+							<p>
+								<h4>The lateral and cross-track errors are defined as</h4>
+							</p>
+							<p>
+								<code>
+									cte` = cte - v * sin(epsi) * dt
+								</code>
+								<br>
+								<code>
+									epsi` = epsi +  v / Lf * (-delta) * dt
+								</code>
+							</p>
+							<p>
+								<h4>And hence, the cost function is defined as</h4>
+								<code>
+									J = Q_cte * cte^2 + Q_epsi * epsi^2 + Q_v * (v - vmax)^2 + Q_delta * delta^2
+								</code>
+								<br>
+								<code>
+									+ Q_a * a^2 + F * (a` - a)^2 +  Q_ddelta * (delta` - delta)^2
+								</code>
+							</p>
+							<p>
+								The optimization is problem is then solved directly using the IPOPT non-linear optimization library for 15 steps for a horizon of 1.5 secs.
+								<br>
+							    However, an improvement is required here as IPOPT is not designed for real-time systems and considerably slows down with an increase in sequence size. Hence, we need to use a convex optimization library such as HPIPM. 
+							</p>
+							<h2>Simulation and CI/CD Infrastructure</h2>
+							<p>
+								<h4 align="center">Custom Simulator Desgined with Gazebo and Ignition Libraries</h4>
+							</p>
+							<p align="center">
+								<img width="75%" height="75%" src="images/simulation.jpg">
+							</p>
+						</div>
+					</section>
+			</div>
+
+			<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Atharva Pusalkar. All rights reserved.</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
