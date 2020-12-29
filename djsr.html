@@ -39,15 +39,18 @@
 							<h2>About Formula Student Driverless</h2>
 							<!-- <span class="image fit"><img src="images/pic04.jpg" alt="" /></span> -->
 							<p> Formula
-								Student Driverless(FSD) is an international engineering competition, in which multidisciplinary student teams compete
-								with a self-developed driverless racecar every year. In this competition, each team has to race their autonomous car across 5 disciplines - Acceleration, Skidpad, Autocross, and Trackdrive. In the main event, called as Trackdrive, a car has to complete 10 laps autonomously against the clock. The track is defined by a set of traffic cones, blue cones on the left and yellow cones on the right hand side.</p>
-							<p>In this blog, I am going to introduce to you the overall implementation of a Formula Student Driverless race-car by DJS Racing, India.</p>
-							<h2>Software Architecture</h2>
+								Student Driverless(FSD) is an international engineering competition held annualy in Hockenheim, Germany, in which multidisciplinary student teams compete
+								with a self-developed driverless racecars every year. 
+								In this competition, each team has to race their autonomous car across 5 disciplines - Acceleration, Skidpad, Autocross, and Trackdrive. 
+								In the main event, called as Trackdrive, a car has to complete 10 laps autonomously against the clock. 
+								The track is defined by a set of traffic cones, blue cones on the left and yellow cones on the right hand side.</p>
+							<p>In this blog, I am going to introduce to you the overall implementation of a Formula Student Driverless race-car by DJS Racing, India. The race-car can drive autonomously on unknown tracks and switch to Model Predictive Control after track exploration, mapping and loop-closure detection in the first lap.</p>
+							<h2>Software Architecture.</h2>
 							<!-- <span class="image fit"><img src="images/pic04.jpg" alt="" /></span> -->
 							<p> We chose the Robot Operating System as our primary framework for software development.</p>
 							<h4 align="center">System Overview</h4>
 							<p align="center">
-								<img width="75%" height="75%" src="images/sw_arch.jpg">
+								<img width="75%" height="75%" src="images/Autonomous System.png">
 							</p>
 							<h4 align="center">High Level Architecture</h4>
 							<p align="center">
@@ -77,8 +80,16 @@
 							<p>
 								Stereo feature matching is then performed using the Semi-Global Block Matching (SGBM) algorithm to obtain the disparity map and 3D coordinates of the traffic cones.
 							</p>
+							<p align="center">
+								3D pointcloud obtained after occlusion reduction in the disparity map
+							</p>
+							<p align="center">
+								<img width="75%" height="75%" src="images/stereo_depth.jpg">
+							</p>
 							<h4>Monocular 3D Object Detection</h4>
-							<p>Monocular 3D Object Detection is performed using the Perspective 3-Point transformation with the PnP RANSAC algorithm. This is considering the fact that we know the exact physical dimensions of each cone.</p>
+							<p>Monocular 3D Object Detection is performed using the Perspective 3-Point transformation with the PnP RANSAC algorithm. This is considering the fact that we know the exact physical dimensions of each cone.
+								Keypoints for each cone image patch are obtained using the RektNet CNN architecture by MIT Driverless (Accurate, Low-Latency Visual Perception for Autonomous Racing:Challenges, Mechanisms, and Practical Solutions. Kieran Strobel et al., 2020).
+							</p>
 							<p align="center">
 								<img width="35%" height="35%" src="images/keypoint_input.png">
 								<img width="35%" height="35%" src="images/keypoint_output.png">
@@ -87,7 +98,7 @@
 							<h2>
 								Simultaneous Localization and Mapping
 							</h2>
-							<p>The landmark-based FastSLAM algorithm was chosen for its robustness due to multiple-hypothesis and proposal sampling.</p>
+							<p>The landmark-based FastSLAM algorithm was chosen for its robustness because of multiple-hypothesis and proposal sampling.</p>
 							<p align="center">
 								
 							</p>
