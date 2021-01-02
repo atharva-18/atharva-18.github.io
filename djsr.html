@@ -2,7 +2,6 @@
 
 <html>
 	
-<!-- Mirrored from www.shreyasgokhaleresu.me/APP-RAS.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 15 Dec 2020 17:47:20 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
 		<title>DJS Racing Driverless</title>
@@ -40,15 +39,19 @@
 							<h2>About Formula Student Driverless</h2>
 							<!-- <span class="image fit"><img src="images/pic04.jpg" alt="" /></span> -->
 							<p> Formula
-								Student Driverless(FSD) is an international engineering competition held annualy in Hockenheim, Germany, in which multidisciplinary student teams compete
+								Student Driverless(FSD) is the world's largest autonomous racing competition, held annualy in Hockenheim, Germany, in which multidisciplinary student teams compete
 								with a self-developed driverless racecars every year. 
 								In this competition, each team has to race their autonomous car across 5 disciplines - Acceleration, Skidpad, Autocross, and Trackdrive. 
-								In the main event, called as Trackdrive, a car has to complete 10 laps autonomously against the clock. 
+								In the main event, called Trackdrive, a car has to complete 10 laps on an unknown track autonomously as fast as possible against the clock. 
 								The track is defined by a set of traffic cones, blue cones on the left and yellow cones on the right hand side.</p>
-							<p>In this blog, I am going to introduce to you the overall implementation of a Formula Student Driverless race-car by DJS Racing, India. The race-car can drive autonomously on unknown tracks and switch to Model Predictive Control after track exploration, mapping and loop-closure detection in the first lap.</p>
-							<h2>Software Architecture.</h2>
+								<h4 align="center">Track Layout</h4>
+								<p align="center">
+									<img width="75%" height="75%" src="images/track_layout.jpg">
+								</p>
+								<p>In this blog, I am going to introduce to you the overall implementation of a Formula Student Driverless race-car by DJS Racing, India. The race-car can drive autonomously on unknown tracks and switch to Model Predictive Control after track exploration, mapping and loop-closure detection in the first lap.</p>
+							<h2>Software Architecture</h2>
 							<!-- <span class="image fit"><img src="images/pic04.jpg" alt="" /></span> -->
-							<p> We chose the Robot Operating System as our primary framework for software development.</p>
+							<p> We chose the Robot Operating System as our primary framework for software development. In order to run the MPC algorithm at its full potential, the track must be known at least 2s in advanced for a speed of 85 kmph. With the current perception setup, it is not possible to achieve accurate mapping of environment with a 40m (at 85 kmph) of look-ahead. Hence, we need to drive the first lap, exploring the track using a geometric controller such as the Pure Pursuit Controller at a lower speed. After successful mapping and exploration of the track, the car switches to the more performant Model Predicitve Control(MPC) for the subsequent laps to race as fast as possible. From this we can define two modes of our system operation, SLAM mode and localization mode. To count the number of laps and to detect loop closure, high level mission planning is done using a finite state machine. This state machine guides to system to switch between SLAM and localization mode and signals whether the race has finished. Interfacing between the onboard Jetson AGX Xavier and the STM32 is done using the ros-serial package. The STM32 runs FreeRTOS to achieve real-time control of actuators.</p>
 							<h4 align="center">System Overview</h4>
 							<p align="center">
 								<img width="75%" height="75%" src="images/Autonomous System.png">
@@ -58,6 +61,10 @@
 								<img width="75%" height="75%" src="images/rosgraph.png">
 							</p>
 							<h2>3D Perception</h2>
+							<p>The goal of the perception system is to detection traffic cones in the vincinity of the car and determine their color and 3D coordinates in real-time. These cone detections will be then fed as landmarks to the SLAM node to build a map of the track. The perception system takes input from multiple sensors - a mono camera, stereo camera and a 3D LiDAR. The Basler Ace 2 industrial camera was chosen for our self-developed mono and stereo camera setups. The Ouster OS1-32 LiDAR was chosen as our main LiDAR.</p>
+							<p>Multiple sources of visual information are chosen so as to increase the redundancy in the system and to perceive the environment reliably as only one chance is given for the trackdrive race.</p>
+
+							<h4>LiDAR 3D Object Dectection</h4>
 							<p align="center">
 								3D Traffic Cone Detection and Color Estimation using Ouster OS-1 LiDAR
 							</p>
@@ -67,11 +74,21 @@
 									Your browser does not support the video tag.
 								</video>
 							</p>
+							<p>The point cloud obtained from the LiDAR is first segmented and the ground and out-of-track planes are removed. Afterward Euclidean clustering is run on the point cloud to cluster cone patches. The centroid of these cone patches are used to determine the 3D coordinates for each cone. They are futher projected on to a 2D plane from the LiDAR frame so as to obtain an image. A state-of-the-art CNN is then run on these image patches to estimate the color for each cone.</p>
+							<p>These cluster are also passed through a rule-based outlier filter to remove false cones in the map.</p>
 							<h4>CNN Architecture for Color Estimation using LiDAR Intensity Patterns</h4>
 							<p align="center">
 								<img width="75%" height="75%" src="images/lidar_cnn.jpg">
 							</p>
 							<h4>Stereo 3D Object Dectection</h4>
+							<p>In order to ensure redundancy in the system, an additional camera-based object detection pipeline is added to the system.</p>
+							<p>We have chosen an off-the-shelf object detector, YOLOv3 for object detection for real-time performance.</p>
+							<p align="center">
+								Stereo Object Detection Pipeline
+							</p>
+							<p align="center">
+								<img width="75%" height="75%" src="images/stereo_pipeline.png">
+							</p>
 							<p align="center">
 								<video width="75%" height="75%" controls>
 									<source src="videos\stereo.mp4" type="video/mp4">
@@ -92,17 +109,43 @@
 								Keypoints for each cone image patch are obtained using the RektNet CNN architecture by MIT Driverless (Accurate, Low-Latency Visual Perception for Autonomous Racing:Challenges, Mechanisms, and Practical Solutions. Kieran Strobel et al., 2020).
 							</p>
 							<p align="center">
+								Stereo Object Detection Pipeline
+							</p>
+							<p align="center">
+								<img width="75%" height="75%" src="images/mono_pipeline.png">
+							</p>
+							<p align="center">
 								<img width="35%" height="35%" src="images/keypoint_input.png">
 								<img width="35%" height="35%" src="images/keypoint_output.png">
 							</p>
 							<p>Occlusion of background cones is handled by outlier filtering.</p>
 							<h2>
-								Simultaneous Localization and Mapping
+								Velocity Estimation and Simultaneous Localization and Mapping
 							</h2>
-							<p>The landmark-based FastSLAM algorithm was chosen for its robustness because of multiple-hypothesis and proposal sampling.</p>
 							<p align="center">
-								
+								Velocity Estimation Pipeline
 							</p>
+							<p align="center">
+								<img width="75%" height="75%" src="images/velocity_estimation.png">
+							</p>
+							<p>The state vector is taken as</p>
+							<p align="center">
+								<img width="45%" height="45%" src="images/state_vector.jpg">
+							</p>
+							<p>Where <code>p, θ, v</code> are the position (along x and y), angular velocity and the linear velocity (along x and y in car frame) of the car respectively.</p>
+							<p>The process model is taken as</p>
+							<p align="center">
+								<img width="45%" height="45%" src="images/process_model.jpg">
+							</p>
+							<p>Where <code>a</code> is the linear acceleration measured by the IMU and <code>R(θ)</code> is the rotation matrix between the sensor frame and the vehicle frame.</p>
+							<p>The sensor model is</p>
+							<p align="center">
+								<img width="45%" height="45%" src="images/sensor_model.jpg">
+							</p>
+							<p>Where <code>θs</code> is the sensor heading in body frame and n{.} are additive Gaussian white noises that corrupt the measurements.</p>
+							<p>Design of an Autonomous Racecar: Perception, State Estimation and
+								System Integration (Valls et al., 2018)</p>
+								<p>The landmark-based FastSLAM algorithm was chosen for its robustness because of multiple-hypothesis and proposal sampling.</p>								
 							<h2>
 								Path Planning
 							</h2>
@@ -111,13 +154,17 @@
 									RRT + Delaunay Triangulation for Waypoints Generation
 								</h4>
 							</p>
+							<p>We chose the Randomly Exploring Random Trees(LaValle et al., 1998) as our path planning algorithms. Formula Student poses a unique challenge to path planning as there is no definite goal, and we just have to drive straight. Hence, in order to determine the best path, we have proposed a cost function that is assigned to each node. The tree branch with the lowest cost is then chosen as our desired path.</p>
+							<p>However, this is not the appropriate approach to path planning in FSD, as we need to have a continous and smooth trajectory in order to ensure that we are driving close to the limits of handling. Hence, we have an additional step of running Delaunay traingulation on nearby cone positions. The intersection points of the best tree branch and the traingulation segments are then takes as the waypoints for the control algorithm.</p>
 							<p align="center">
 								<video width="75%" height="75%" controls>
 									<source src="videos\rrt_delaunay.mp4" type="video/mp4">
 									Your browser does not support the video tag.
 								</video>
 							</p>
+							<p>The waypoints that are generated are depicted as blue dots along the track center-line.</p>
 							<h2>Model Predictive Control</h2>
+							<p>After finishing the first lap using the PID and Pure Pursuit Controller, loop closure is detected and the SLAM algorithm switches to localization mode. This is all handled by the mission planning node. After track exploration and mapping, we switch to Model Predicitve Control as our control method to finish the race as fast as possible.</p>
 							<p>
 								<h4 align="center">Dynamic Bicycle Model</h4>
 							</p>
@@ -164,6 +211,7 @@
 									+ Q_a * a^2 + F * (a` - a)^2 +  Q_ddelta * (delta` - delta)^2
 								</code>
 							</p>
+							<p>The objective of this optimization problem is to drive the vehicle as close as possible to the track center line, with heading along the track direction. Rapid changes in the state inputs as well as linear and angular velocities are penalized.</p>
 							<p align="center">
 								<img src="videos\mpc.gif" width="75%" height="75%" alt="this slowpoke moves"/>
 							</p>
@@ -174,11 +222,12 @@
 							</p>
 							<h2>Simulation and CI/CD Infrastructure</h2>
 							<p>
-								<h4 align="center">Custom Simulator Desgined with Gazebo and Ignition Libraries</h4>
+								<h4 align="center">Simulation Environment Designed with Gazebo and Ignition Libraries</h4>
 							</p>
 							<p align="center">
 								<img width="75%" height="75%" src="images/simulation.jpg">
 							</p>
+							<p>To ensure software reliability, each pull request is first compiled using GitHub Actions and run on our CI server hosted on AWS. Only after all checks have passed and the simulation runs without any issues, a pull request can be merged.</p>
 						</div>
 					</section>
 			</div>
