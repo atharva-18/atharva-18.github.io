@@ -150,10 +150,22 @@
 							<p align="center">
 								<img src="https://www.gstatic.com/education/formulas2/-1/en/chi_squared_test.svg" />
 							</p>
-							<p>If the value of Chi falls below a certain threshold, the Measurement is ignored.</p>
+							<p>If the value of Chi falls below a certain threshold, the measurement is ignored.</p>
 							<p>Design of an Autonomous Racecar: Perception, State Estimation and
-								System Integration (Valls et al., 2018)</p>
-								<p>The landmark-based FastSLAM algorithm was chosen for its robustness because of multiple-hypothesis and proposal sampling.</p>								
+								System Integration (Valls et al., 2018)
+							</p>
+							<p>
+								The landmark-based FastSLAM algorithm was chosen for its robustness because of multiple-hypothesis and proposal sampling.
+								FastSLAM is computationally much more efficient with N.log(N) time complexity as compared to EKF SLAM with a quadratic complexity.
+								FastSLAM is also much more tunable owing to the fact that it uses Rao-Backwellized particle filter to express pose estimates. We can simply tune the number of particles to adjust the runtime performance.
+								Data association is done by comparing the mahalanobid distance between an observation and each landmark on the map.
+							</p>
+							<p align="center">
+								<img width="75%" height="75%" src="images/slam_pipeline.jpg" />
+							</p>		
+							<p>
+								Our SLAM pipeline runs at 15 Hz to accomodate for the perception pipeline operation rate. The pose estimates from the SLAM node are then taken by the velocity estimation node to provide fast pose updates at 200 Hz for the control algorithm. This ensures that the MPC node always recieves the latest pose estimates. 
+							</p>						
 							<h2>
 								Path Planning
 							</h2>
