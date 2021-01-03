@@ -122,12 +122,15 @@
 							<h2>
 								Velocity Estimation and Simultaneous Localization and Mapping
 							</h2>
+							<p>The extended Kalman Filter was chosen as an estimator for mildly non-linear systems with white Gaussian noise. Our main task here is to fuse data from an Inertial Measurement Unit (SBG Ellipse N), 4 wheel encoders, steering angle sensor and a dual GPS system in a moving baseline configuration. EKF is also computationally more efficient than the Unscented Kalman Filter and allows us to estimate the state at 200 Hz.</p>
 							<p align="center">
 								Velocity Estimation Pipeline
 							</p>
 							<p align="center">
 								<img width="75%" height="75%" src="images/velocity_estimation.png">
 							</p>
+							<p>We assume that our system model is a Contant Turn Rate and Acceleration model (CTRA), the jerk is assumed to be zero in this case and acceleration is used as an input to the system.</p>
+							<p>The wheel encoders along with the steering angle potentiometer are used to estimate the slip ratios of the vehicle.</p>
 							<p>The state vector is taken as</p>
 							<p align="center">
 								<img width="45%" height="45%" src="images/state_vector.jpg">
@@ -143,6 +146,11 @@
 								<img width="45%" height="45%" src="images/sensor_model.jpg">
 							</p>
 							<p>Where <code>θs</code> is the sensor heading in body frame and n{.} are additive Gaussian white noises that corrupt the measurements.</p>
+							<p>Different sensors work at different rates and the accuracy also varies between the sensors. Hence, we use multiple update functions for each sensor and we update our beliefs asynchronously. Here, the acceleration is taken from the IMU, angular velocity from the Gyroscope, and velocities from GPS and wheel encoders. Sensor drift and failure is detected with the help of Chi-Squared test.</p>
+							<p align="center">
+								<img src="https://www.gstatic.com/education/formulas2/-1/en/chi_squared_test.svg" />
+							</p>
+							<p>If the value of Chi falls below a certain threshold, the Measurement is ignored.</p>
 							<p>Design of an Autonomous Racecar: Perception, State Estimation and
 								System Integration (Valls et al., 2018)</p>
 								<p>The landmark-based FastSLAM algorithm was chosen for its robustness because of multiple-hypothesis and proposal sampling.</p>								
