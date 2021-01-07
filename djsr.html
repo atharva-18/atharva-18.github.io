@@ -61,12 +61,14 @@
 								<img width="75%" height="75%" src="images/rosgraph.png">
 							</p>
 							<h2>3D Perception</h2>
-							<p>The goal of the perception system is to detection traffic cones in the vincinity of the car and determine their color and 3D coordinates in real-time. These cone detections will be then fed as landmarks to the SLAM node to build a map of the track. The perception system takes input from multiple sensors - a mono camera, stereo camera and a 3D LiDAR. The Basler Ace 2 industrial camera was chosen for our self-developed mono and stereo camera setups. The Ouster OS1-32 LiDAR was chosen as our main LiDAR.</p>
+							<p>The goal of the perception system is to detection traffic cones in the vincinity of the car and determine their color and 3D coordinates in real-time. These cone detections will be then fed as landmarks to the SLAM node to build a map of the track. The perception system takes input from multiple sensors - a mono camera, stereo camera and a 3D LiDAR. The Basler Ace 2 industrial camera was chosen for our self-developed mono and stereo camera setups. </p>
+							<!-- The Ouster OS1-32 LiDAR was chosen as our main LiDAR. -->
 							<p>Multiple sources of visual information are chosen so as to increase the redundancy in the system and to perceive the environment reliably as only one chance is given for the trackdrive race.</p>
 
 							<h4>LiDAR 3D Object Dectection</h4>
+							<!-- Ouster OS-1 -->
 							<p align="center">
-								3D Traffic Cone Detection and Color Estimation using Ouster OS-1 LiDAR
+								3D Traffic Cone Detection and Color Estimation using LiDAR Data
 							</p>
 							<p align="center">
 								<video width="50%" height="50%" controls>
