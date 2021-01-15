@@ -71,7 +71,7 @@
 								3D Traffic Cone Detection and Color Estimation using LiDAR Data
 							</p>
 							<p align="center">
-								<video width="50%" height="50%" controls>
+								<video width="50%" height="50%" controls loop>
 									<source src="videos\lidar.mp4" type="video/mp4">
 									Your browser does not support the video tag.
 								</video>
@@ -92,7 +92,7 @@
 								<img width="75%" height="75%" src="images/stereo_pipeline.png">
 							</p>
 							<p align="center">
-								<video width="75%" height="75%" controls>
+								<video width="75%" height="75%" controls loop>
 									<source src="videos\stereo.mp4" type="video/mp4">
 									Your browser does not support the video tag.
 								</video>
@@ -191,7 +191,7 @@
 							<p>The cost is then normalized between 0 and 1 to determine the best path.</p>
 							<p>However, this is not the appropriate approach to path planning in FSD, as we need to have a continous and smooth trajectory in order to ensure that we are driving close to the limits of handling. Hence, we have an additional step of running Delaunay traingulation on nearby cone positions. The intersection points of the best tree branch and the traingulation segments are then takes as the waypoints for the control algorithm.</p>
 							<p align="center">
-								<video width="75%" height="75%" controls>
+								<video width="75%" height="75%" controls loop>
 									<source src="videos\rrt_delaunay.mp4" type="video/mp4">
 									Your browser does not support the video tag.
 								</video>
