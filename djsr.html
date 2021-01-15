@@ -160,7 +160,7 @@
 								The landmark-based FastSLAM algorithm was chosen for its robustness because of multiple-hypothesis and proposal sampling.
 								FastSLAM is computationally much more efficient with N.log(N) time complexity as compared to EKF SLAM with a quadratic complexity.
 								FastSLAM is also much more tunable owing to the fact that it uses Rao-Backwellized particle filter to express pose estimates. We can simply tune the number of particles to adjust the runtime performance.
-								Data association is done by comparing the mahalanobid distance between an observation and each landmark on the map.
+								Data association is done by comparing the mahalanobis distance between an observation and each landmark on the map.
 							</p>
 							<p align="center">
 								<img width="75%" height="75%" src="images/slam_pipeline.jpg" />
@@ -198,10 +198,11 @@
 							</p>
 							<p>The waypoints that are generated are depicted as blue dots along the track center-line.</p>
 							<h2>Model Predictive Control</h2>
-							<p>After finishing the first lap using the PID and Pure Pursuit Controller, loop closure is detected and the SLAM algorithm switches to localization mode. This is all handled by the mission planning node. After track exploration and mapping, we switch to Model Predicitve Control as our control method to finish the race as fast as possible.</p>
+							<p>After finishing the first lap using the PID and Pure Pursuit Controller, loop closure is detected and the SLAM algorithm switches to localization mode. This is all handled by the mission planning node. After track exploration and mapping, we switch to Model Predicitve Control as our control method to finish the race as fast as possible at the limits of handling.</p>
 							<p>
 								<h4 align="center">Dynamic Bicycle Model</h4>
 							</p>
+							<p align="center">We consider the dynamic bicycle model for vehicle dynamics with non-linear magic tire formula models</p>
 							<p align="center">
 								<img width="50%" height="50%" src="images/dynamic_model.jpg">
 							</p>
@@ -261,7 +262,13 @@
 							<p align="center">
 								<img width="75%" height="75%" src="images/simulation.jpg">
 							</p>
-							<p>To ensure software reliability, each pull request is first compiled using GitHub Actions and run on our CI server hosted on AWS. Only after all checks have passed and the simulation runs without any issues, a pull request can be merged.</p>
+							<p>
+								<h4 align="center">ROS Bags from GitHub Pull Requests and actual car races can be visualized in the app</h4>
+							</p>
+							<p align="center">
+								<img width="75%" height="75%" src="images/image3.jpg">
+							</p>
+							<p>The FSSIM simulation framework by AMZ Driverless has been used for the codebase. The FSSIM simulator employs a Gazebo plugin that uses a basic vehicle model which is discretized with Euler Forward discretization to achieve 99% of real world performance.The simulation framework, on every pull request, runs the codebase and important ROS topics are recorded into ROS Bags and uploaded to the server. Each ROS Bag is played on the remote server and the run is recorded using VirtualGL, the videos are then stored in a NoSQL database for backup and querying. The client app can establish remote database connection to visualize the ROS Bags. The server automatically replays the bag file and stores the recorded videos.To ensure software reliability, each pull request is first compiled using GitHub Actions and run on our CI server hosted on AWS. Only after all checks have passed and the simulation runs without any issues, a pull request can be merged.</p>
 							<h4>References</h4>
 							<ol>
 								<li>Kieran Strobel and Sibo Zhu and Raphael Chang and Skanda Koppula. Accurate, Low-Latency Visual Perception for Autonomous Racing:Challenges, Mechanisms, and Practical Solutions. 2020. arXiv:2007.13971</li>
