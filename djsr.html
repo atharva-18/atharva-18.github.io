@@ -198,7 +198,8 @@
 							</p>
 							<p>The waypoints that are generated are depicted as blue dots along the track center-line.</p>
 							<h2>Model Predictive Control</h2>
-							<p>After finishing the first lap using the PID and Pure Pursuit Controller, loop closure is detected and the SLAM algorithm switches to localization mode. This is all handled by the mission planning node. After track exploration and mapping, we switch to Model Predicitve Control as our control method to finish the race as fast as possible at the limits of handling.</p>
+							<p>After finishing the first lap using the PID and Pure Pursuit Controller, loop closure is detected and the SLAM algorithm switches to localization mode. This is all handled by the mission planning node. After track exploration and mapping, we switch to Model Predicitve Control as our control method to finish the race as fast as possible at the limits of handling in real-time.</p>
+							<p>The goal of the optimization problem is to drive the car along the reference path, following imposed contraints and targeting desired velocity. The state dynamics follows a bicycle model with actuator and drivetrain models along with tire forces.</p>
 							<p>
 								<h4 align="center">Dynamic Bicycle Model</h4>
 							</p>
@@ -212,12 +213,14 @@
 							<p align="center">
 								<img width="50%" height="50%" src="images/vehicle_dynamics.jpg">
 							</p>
+							<p>Where <i>X, Y</i> is the position and <i></i> is the orientation of the car in the world frame. <i>V<sub>x</sub>, V<sub>y</sub></i> and <i>ω</i> are the linear and angular velocities of the car in the body fram respectively. <i>L<sub>f</sub></i> and <i>L<sub>r</sub></i> are the length from the front and rear axles to the center-of-gravity respectively and <i>I<sub>z</sub></i> is the inertia moment.</i></p>
 							<p>
 								<h4 align="center">Tire Model</h4>
 							</p>
 							<p align="center">
 								<img width="50%" height="50%" src="images/tire_model.jpg">
 							</p>
+							<p>Here <i>D, C, B</i> are coefficients obtained from the Pacejka tire model. <i>d</i> is the driving command (acceleration), <i>C<sub>r</sub></i> is the rolling resistance, <i>α<sub>f, r</sub></i> are tire slip angles, and <i>C<sub>d</sub></i> is the drag coefficient.</i></p>
 							<p>
 								<h4 align="center">State Input</h4>
 							</p>
@@ -251,7 +254,7 @@
 								<img src="videos\mpc.gif" width="75%" height="75%" alt="this slowpoke moves"/>
 							</p>
 							<p>
-								The optimization is problem is then solved directly using the IPOPT non-linear optimization library over 15 steps for a horizon of 1.5 secs.
+								The optimization is problem is then solved directly using the IPOPT non-linear optimization library in a receding horizon fashion for over 15 steps for a horizon of 1.5 secs. There is an approximately 100 ms delay between computed command and actuation, hence we choose an actuator vector in the future (about 100 ms in the future) to compensate for mechanical delays.
 								<br>
 							    However, an improvement is required here as IPOPT is not designed for real-time systems and considerably slows down with an increase in sequence size. Hence, we need to use a convex optimization library such as HPIPM. 
 							</p>
