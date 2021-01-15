@@ -76,7 +76,7 @@
 									Your browser does not support the video tag.
 								</video>
 							</p>
-							<p>The point cloud obtained from the LiDAR is first segmented and the ground and out-of-track planes are removed. Afterward Euclidean clustering is run on the point cloud to cluster cone patches. The centroid of these cone patches are used to determine the 3D coordinates for each cone. They are futher projected on to a 2D plane from the LiDAR frame so as to obtain an image. A state-of-the-art CNN is then run on these image patches to estimate the color for each cone.</p>
+							<p>The point cloud obtained from the LiDAR is first segmented and the ground and out-of-track planes are removed. Afterward Euclidean clustering is run on the point cloud to cluster cone patches. The centroid of these cone patches are used to determine the 3D coordinates for each cone. They are futher projected on to a 2D plane from the LiDAR frame so as to obtain a 32x32 image. A state-of-the-art CNN is then run on these image patches to estimate the color for each cone.</p>
 							<p>These cluster are also passed through a rule-based outlier filter to remove false cones in the map.</p>
 							<h4>CNN Architecture for Color Estimation using LiDAR Intensity Patterns</h4>
 							<p align="center">
@@ -177,6 +177,18 @@
 								</h4>
 							</p>
 							<p>We chose the Randomly Exploring Random Trees(LaValle et al., 1998) as our path planning algorithms. Formula Student poses a unique challenge to path planning as there is no definite goal, and we just have to drive straight. Hence, in order to determine the best path, we have proposed a cost function that is assigned to each node. The tree branch with the lowest cost is then chosen as our desired path.</p>
+							<code>
+								J = Q_delta * delta^2 + Q_theta * theta^2 + Q_cte * cte^2 - Q_cone * cone_count^2
+							</code>
+							<br>
+							Where,
+							<ul>
+								<li>delta: Angular deviation between two nodes. Avoids sharp turns.</li>
+								<li>theta: Discounted heading. Tree pointing backwards to the car are penalized.</li>
+								<li>cte: Distance between the path and track boundary. Penalizes branches too close to the boundaries.</li>
+								<li>cone_count: Count of cones on both sides of the path. Penalizes shorter paths.</li>
+							</ul>
+							<p>The cost is then normalized between 0 and 1 to determine the best path.</p>
 							<p>However, this is not the appropriate approach to path planning in FSD, as we need to have a continous and smooth trajectory in order to ensure that we are driving close to the limits of handling. Hence, we have an additional step of running Delaunay traingulation on nearby cone positions. The intersection points of the best tree branch and the traingulation segments are then takes as the waypoints for the control algorithm.</p>
 							<p align="center">
 								<video width="75%" height="75%" controls>
@@ -250,6 +262,127 @@
 								<img width="75%" height="75%" src="images/simulation.jpg">
 							</p>
 							<p>To ensure software reliability, each pull request is first compiled using GitHub Actions and run on our CI server hosted on AWS. Only after all checks have passed and the simulation runs without any issues, a pull request can be merged.</p>
+							<h4>References</h4>
+							<ol>
+								<li>Kieran Strobel and Sibo Zhu and Raphael Chang and Skanda Koppula. Accurate, Low-Latency Visual Perception for Autonomous Racing:Challenges, Mechanisms, and Practical Solutions. 2020. arXiv:2007.13971</li>
+								<li>de la Iglesia Valls, M., Hendrikx, H. F. C., Reijgwart, V. J. F., Meier, F. V., Sa, I., Dub´e, R., Gawel, A.,
+									B¨urki, M., and Siegwart, R. (2018). Design of an autonomous racecar: Perception, state estimation and
+									system integration. 2018 IEEE International Conference on Robotics and Automation (ICRA).</li>
+								<li>Dellaert, F., Fox, D., Burgard, W., and Thrun, S. (1999). Monte carlo localization for mobile robots. In
+									IEEE International Conference on Robotics and Automation (ICRA99).</li>
+								<li>Juraj Kabzan and Miguel de la Iglesia Valls and Victor Reijgwart and Hubertus Franciscus Cornelis Hendrikx and Claas Ehmke and Manish Prajapat and Andreas Bühler and Nikhil Gosala and Mehak Gupta and Ramya Sivanesan and Ankit Dhall and Eugenio Chisari and Napat Karnchanachari and Sonja Brits and Manuel Dangel and Inkyu Sa and Renaud Dubé and Abel Gawel and Mark Pfeiffer and Alexander Liniger and John Lygeros and Roland Siegwart.
+									AMZ Driverless: The Full Autonomous Racing System. 2019. arXiv:1905.05150.
+								</li>
+								<li>Dhall, A., Dai, D., and Van Gool, L. (2019). Real-time 3D Traffic Cone Detection for Autonomous Driving.
+									arXiv e-prints, page arXiv:1902.02394.
+								</li>
+								<li>
+									Wächter, A., Biegler, L. On the implementation of an interior-point filter line-search algorithm for large-scale nonlinear programming. Math. Program. 106, 25–57 (2006). https://doi.org/10.1007/s10107-004-0559-y.
+								</li>
+								<li>
+									B. D. Brumback and M. Srinath, “A chi-square test for fault-detection
+									in kalman filters,” Automatic Control, IEEE Transactions on, vol. 32,
+									pp. 552 – 554, 07 1987.
+								</li>
+								<li>
+									M. Montemerlo, S. Thrun, D. Koller, B. Wegbreit, et al., “Fastslam:
+									A factored solution to the simultaneous localization and mapping
+									problem,” in Aaai/iaai, pp. 593–598, 2002.
+								</li>
+								<li>
+									Kong, Jason, et al. "Kinematic and dynamic vehicle models for
+									autonomous driving control design." 2015 IEEE Intelligent Vehicles
+									Symposium (IV). IEEE, 2015.
+								</li>
+								<li>
+									Yoon, Jong-Hwa, and Huei Peng. "A cost-effective sideslip
+									estimation method using velocity measurements from two GPS
+									receivers." IEEE Transactions on Vehicular Technology 63.6
+									(2013): 2589-2599.
+								</li>
+								<li>
+									Klomp, M., Olsson, K., and Sandberg, C. (2014). Non-linear steering control for limit handling conditions
+									using preview path curvature. International Journal of Vehicle Autonomous Systems, 12(3):266–283.
+								</li>
+								<li>
+									Koenig, N. and Howard, A. (2004). Design and use paradigms for gazebo, an open-source multi-robot simulator. In Intelligent Robots and Systems, 2004.(IROS 2004). Proceedings. 2004 IEEE/RSJ International
+									Conference on, volume 3, pages 2149–2154. IEEE.
+								</li>
+								<li>
+									Lee and Schachter (1980). Two algorithms for constructing a delaunay triangulation. International Journal
+									of Computer and Information Sciences.
+								</li>
+								<li>
+									Milliken, W., Milliken, D., and of Automotive Engineers, S. (1995). Race Car Vehicle Dynamics. Premiere
+									Series. SAE International.
+								</li>
+								<li>
+									Montemerlo, M., Thrun, S., Koller, D., and Wegbreit, B. (2003). FastSLAM 2.0 : An Improved Particle
+									Filtering Algorithm for Simultaneous Localization and Mapping that Provably Converges. In Proceedings
+									of the 18th international joint conference on Artificial intelligence, pages 1151–1156.
+								</li>
+								<li>
+									Pacejka, H. B. and Bakker, E. (1992). The magic formula tyre model. Vehicle system dynamics, 21(S1):1–18.
+								</li>
+								<li>
+									Redmon, J., Divvala, S., Girshick, R., and Farhadi, A. (2016). You only look once: Unified, real-time object
+									detection. In 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages
+									779–788.
+								</li>
+								<li>
+									Rosolia, U., Carvalho, A., and Borrelli, F. (2017). Autonomous racing using learning model predictive
+									control. In American Control Conference (ACC), pages 5115–5120. IEEE.
+								</li>
+								<li>
+									Thrun, S., Burgard, W., and Fox, D. (2005). Probabilistic Robotics (Intelligent Robotics and Autonomous
+									Agents). The MIT Press.
+								</li>
+								<li>
+									Xue, Z. and Schwartz, H. (2013). A comparison of several nonlinear filters for mobile robot pose estimation.
+									In 2013 IEEE International Conference on Mechatronics and Automation.
+								</li>
+								<li>
+									Tulsiani, S. and Malik, J. (2015). Viewpoints and keypoints. In 2015 IEEE Conference on Computer Vision
+									and Pattern Recognition (CVPR).
+								</li>
+								<li>
+									Gosala, N. B., B¨uhler, A., Prajapat, M., Ehmke, C., Gupta, M., Sivanesan, R., Gawel, A., Pfeiffer, M.,
+									B¨urki, M., Sa, I., Dub´e, R., and Siegwart, R. (2018). Redundant Perception and State Estimation for
+									Reliable Autonomous Racing. ArXiv e-prints.
+								</li>
+								<li>
+									Coulter, R. C. (1992). Implementation of the pure pursuit path tracking algorithm. Technical report,
+									Carnegie-Mellon UNIV Pittsburgh PA Robotics INST.
+								</li>
+								<li>
+									LaValle, Steven M. (October 1998). "Rapidly-exploring random trees: A new tool for path planning" (PDF). Technical Report. Computer Science Department, Iowa State University (TR 98–11).
+								</li>
+								<li>
+									Howie Choset, James Kuffner. "Robotic Motion Planning: RRT’s". Robotic Motion Planning, 16-735. The Robotics Institute, Carnegie Mellon University.
+								</li>
+								<li>
+									K. Hausman, S. Weiss, R. Brockers, L. Matthies, and G. S. Sukhatme,
+“Self-calibrating multi-sensor fusion with probabilistic measurement
+validation for seamless sensor switching on a uav,” in 2016 IEEE International Conference on Robotics and Automation (ICRA), pp. 4289–
+4296, May 2016.
+								</li>
+								<li>
+									Formula Student Rules 2020 v1.0. https://www.formulastudent.de/fileadmin/user_upload/all/2020/rules/FS-Rules_2020_V1.0.pdf
+								</li>
+								<li>
+									J. Ni and J. Hu, "Path following control for autonomous formula racecar: Autonomous formula student competition," 2017 IEEE Intelligent Vehicles Symposium (IV), Los Angeles, CA, 2017, pp. 1835-1840, doi: 10.1109/IVS.2017.7995972.
+								</li>
+								<li>
+									G. Frison, M. Diehl. HPIPM: a high-performance quadratic programming framework for model predictive control. 2020. arXiv preprint, arXiv:2003.02547
+								</li>
+								<li>
+									G. Frison, D. K. M. Kufoalor, L. Imsland and J. B. Jørgensen, "Efficient implementation of solvers for linear model predictive control on embedded devices," 2014 IEEE Conference on Control Applications (CCA), Juan Les Antibes, 2014, pp. 1954-1959, doi: 10.1109/CCA.2014.6981589.
+								</li>
+								<li>
+									J. D. Hol, T. B. Schon, and F. Gustafsson, “On resampling algorithms
+for particle filters,” in Nonlinear Statistical Signal Processing Workshop, 2006 IEEE, pp. 79–82, IEEE, 2006.
+								</li>
+							</ol>
 						</div>
 					</section>
 			</div>
