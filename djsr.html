@@ -145,7 +145,7 @@
 							<p align="center">
 								<img width="75%" height="75%" src="images/velocity_estimation.png">
 							</p>
-							<p>We assume that our system model is a Contant Turn Rate and Acceleration model (CTRA)<sup id="2_return"><a href="#2">[2]</a></sup>, the jerk is assumed to be zero in this case and acceleration is used as an input to the system.</p>
+							<p>We assume that our system model is a constant velocity model (CTRV)<sup id="2_return"><a href="#2">[2]</a></sup>, the jerk is assumed to be zero in this case and acceleration is used as a pseudo input to the system.</p>
 							<p>The wheel encoders along with the steering angle potentiometer are used to estimate the slip ratios of the vehicle.</p>
 							<p>The state vector is taken as</p>
 							<p align="center">
@@ -288,7 +288,7 @@
 							<p>The FSSIM <sup id="4_return"><a href="#4">[4]</a></sup> simulation framework by AMZ Driverless has been used for the codebase. The FSSIM simulator employs a Gazebo plugin that uses a basic vehicle model which is discretized with Euler Forward discretization to achieve 99% of real world performance.The simulation framework, on every pull request, runs the codebase and important ROS topics are recorded into ROS Bags and uploaded to the server. Each ROS Bag is played on the remote server and the run is recorded using VirtualGL, the videos are then stored in a NoSQL database for backup and querying. The client app can establish remote database connection to visualize the ROS Bags. The server automatically replays the bag file and stores the recorded videos.To ensure software reliability, each pull request is first compiled using GitHub Actions and run on our CI server hosted on AWS. Only after all checks have passed and the simulation runs without any issues, a pull request can be merged.</p>
 							<h4>References</h4>
 							<ol>
-								<li id="1">Kieran Strobel and Sibo Zhu and Raphael Chang and Skanda Koppula. Accurate, Low-Latency Visual Perception for Autonomous Racing:Challenges, Mechanisms, and Practical Solutions. 2020. arXiv:2007.13971</li>
+								<li id="1">Kieran Strobel and Sibo Zhu and Raphael Chang and Skanda Koppula. Accurate, Low-Latency Visual Perception for Autonomous Racing:Challenges, Mechanisms, and Practical Solutions. 2020. arXiv:2007.13971<sup></sup></li>
 								<li id="2">de la Iglesia Valls, M., Hendrikx, H. F. C., Reijgwart, V. J. F., Meier, F. V., Sa, I., Dub´e, R., Gawel, A.,
 									B¨urki, M., and Siegwart, R. (2018). Design of an autonomous racecar: Perception, state estimation and
 									system integration. 2018 IEEE International Conference on Robotics and Automation (ICRA).</li>
