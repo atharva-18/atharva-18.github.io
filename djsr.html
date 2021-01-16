@@ -61,7 +61,7 @@
 								<img width="75%" height="75%" src="images/rosgraph.png">
 							</p>
 							<h2>3D Perception</h2>
-							<p>The goal of the perception system is to detection traffic cones in the vincinity of the car and determine their color and 3D coordinates in real-time. These cone detections will be then fed as landmarks to the SLAM node to build a map of the track. The perception system takes input from multiple sensors - a mono camera, stereo camera and a 3D LiDAR. The Basler Ace 2 industrial camera was chosen for our self-developed mono and stereo camera setups. </p>
+							<p>The goal of the perception system is to detection traffic cones in the vincinity of the car and determine their color and 3D coordinates in real-time. These cone detections will be then fed as landmarks to the SLAM node to build a map of the track. The perception system taken input from multiple sensors - a mono camera, stereo camera and a 3D LiDAR. The Basler Ace 2 industrial camera was chosen for our self-developed mono and stereo camera setups. </p>
 							<!-- The Ouster OS1-32 LiDAR was chosen as our main LiDAR. -->
 							<p>Multiple sources of visual information are chosen so as to increase the redundancy in the system and to perceive the environment reliably as only one chance is given for the trackdrive race.</p>
 
@@ -213,14 +213,14 @@
 							<p align="center">
 								<img width="50%" height="50%" src="images/vehicle_dynamics.jpg">
 							</p>
-							<p>Where <i>X, Y</i> is the position and <i></i> is the orientation of the car in the world frame. <i>V<sub>x</sub>, V<sub>y</sub></i> and <i>ω</i> are the linear and angular velocities of the car in the body fram respectively. <i>L<sub>f</sub></i> and <i>L<sub>r</sub></i> are the length from the front and rear axles to the center-of-gravity respectively and <i>I<sub>z</sub></i> is the inertia moment.</i></p>
+							<p>Where <i>X, Y</i> is the position and <i></i> is the orientation of the car in the world frame. <i>V<sub>x</sub>, V<sub>y</sub></i> and <i>ω</i> are the linear and angular velocities of the car in the body fram respectively. <i>𝛿</i> is the steering angle, <i>L<sub>f</sub></i> and <i>L<sub>r</sub></i> are the length from the front and rear axles to the center-of-gravity respectively and <i>I<sub>z</sub></i> is the inertia moment.</i></p>
 							<p>
 								<h4 align="center">Tire Model</h4>
 							</p>
 							<p align="center">
 								<img width="50%" height="50%" src="images/tire_model.jpg">
 							</p>
-							<p>Here <i>D, C, B</i> are coefficients obtained from the Pacejka tire model. <i>d</i> is the driving command (acceleration), <i>C<sub>r</sub></i> is the rolling resistance, <i>α<sub>f, r</sub></i> are tire slip angles, and <i>C<sub>d</sub></i> is the drag coefficient.</i></p>
+							<p>Here <i>D, C, B</i> are coefficients obtained from the Pacejka tire model. <i>d</i> is the driving command (acceleration), <i>C<sub>r</sub></i> is the rolling resistance, <i>α<sub>f, r</sub></i> are tire slip angles, and <i>C<sub>d</sub></i> is the drag coefficient. <i>C<sub>m1, m2</sub></i> are experimentally determined constants to calculate the driving force.</p>
 							<p>
 								<h4 align="center">State Input</h4>
 							</p>
