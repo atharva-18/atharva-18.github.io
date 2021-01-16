@@ -1,8 +1,6 @@
 <!DOCTYPE HTML>
 
 <html>
-	
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
 	    <!-- Global site tag (gtag.js) - Google Analytics G-12QWBEST7R -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-12QWBEST7R"></script>
@@ -56,7 +54,7 @@
 								with a self-developed driverless racecars every year. 
 								In this competition, each team has to race their autonomous car across 5 disciplines - Acceleration, Skidpad, Autocross, and Trackdrive. 
 								In the main event, called Trackdrive, a car has to complete 10 laps on an unknown track autonomously as fast as possible against the clock. 
-								The track is defined by a set of traffic cones, blue cones on the left and yellow cones on the right hand side.</p>
+								The track is defined by a set of traffic cones, blue cones on the left and yellow cones on the right hand side<sup id="27_return"><a href="#27">[27]</a></sup>.</p>
 								<h4 align="center">Track Layout</h4>
 								<p align="center">
 									<img width="75%" height="75%" src="images/track_layout.jpg">
@@ -64,7 +62,7 @@
 								<p>In this blog, I am going to introduce to you the overall implementation of a Formula Student Driverless race-car by DJS Racing, India. The race-car can drive autonomously on unknown tracks and switch to Model Predictive Control after track exploration, mapping and loop-closure detection in the first lap.</p>
 							<h2>Software Architecture</h2>
 							<!-- <span class="image fit"><img src="images/pic04.jpg" alt="" /></span> -->
-							<p> We chose the Robot Operating System as our primary framework for software development. In order to run the MPC algorithm at its full potential, the track must be known at least 2s in advanced for a speed of 85 kmph. With the current perception setup, it is not possible to achieve accurate mapping of environment with a 40m (at 85 kmph) of look-ahead. Hence, we need to drive the first lap, exploring the track using a geometric controller such as the Pure Pursuit Controller at a lower speed. After successful mapping and exploration of the track, the car switches to the more performant Model Predicitve Control(MPC) for the subsequent laps to race as fast as possible. From this we can define two modes of our system operation, SLAM mode and localization mode. To count the number of laps and to detect loop closure, high level mission planning is done using a finite state machine. This state machine guides to system to switch between SLAM and localization mode and signals whether the race has finished. Interfacing between the onboard Jetson AGX Xavier and the STM32 is done using the ros-serial package. The STM32 runs FreeRTOS to achieve real-time control of actuators.</p>
+							<p> We chose the Robot Operating System as our primary framework for software development. In order to run the MPC algorithm at its full potential, the track must be known at least 2s in advanced for a speed of 85 kmph. With the current perception setup, it is not possible to achieve accurate mapping of environment with a 40m (at 85 kmph) of look-ahead. Hence, we need to drive the first lap, exploring the track using a geometric controller such as the Pure Pursuit Controller<sup id="23_return"><a href="#23">[23]</a></sup><sup id="28_return"><a href="#28">[28]</a></sup> at a lower speed. After successful mapping and exploration of the track, the car switches to the more performant Model Predicitve Control(MPC) for the subsequent laps to race as fast as possible. From this we can define two modes of our system operation, SLAM mode and localization mode. To count the number of laps and to detect loop closure, high level mission planning is done using a finite state machine. This state machine guides to system to switch between SLAM and localization mode and signals whether the race has finished. Interfacing between the onboard Jetson AGX Xavier and the STM32 is done using the ros-serial package. The STM32 runs FreeRTOS to achieve real-time control of actuators.</p>
 							<h4 align="center">System Overview</h4>
 							<p align="center">
 								<img width="75%" height="75%" src="images/Autonomous System.png">
@@ -76,7 +74,7 @@
 							<h2>3D Perception</h2>
 							<p>The goal of the perception system is to detection traffic cones in the vincinity of the car and determine their color and 3D coordinates in real-time. These cone detections will be then fed as landmarks to the SLAM node to build a map of the track. The perception system taken input from multiple sensors - a mono camera, stereo camera and a 3D LiDAR. The Basler Ace 2 industrial camera was chosen for our self-developed mono and stereo camera setups. </p>
 							<!-- The Ouster OS1-32 LiDAR was chosen as our main LiDAR. -->
-							<p>Multiple sources of visual information are chosen so as to increase the redundancy in the system and to perceive the environment reliably as only one chance is given for the trackdrive race.</p>
+							<p>Multiple sources of visual information are chosen so as to increase the redundancy<sup id="22_return"><a href="#22">[22]</a></sup> in the system and to perceive the environment reliably as only one chance is given for the trackdrive race.</p>
 
 							<h4>LiDAR 3D Object Dectection</h4>
 							<!-- Ouster OS-1 -->
@@ -89,7 +87,7 @@
 									Your browser does not support the video tag.
 								</video>
 							</p>
-							<p>The point cloud obtained from the LiDAR is first segmented and the ground and out-of-track planes are removed. Afterward Euclidean clustering is run on the point cloud to cluster cone patches. The centroid of these cone patches are used to determine the 3D coordinates for each cone. They are futher projected on to a 2D plane from the LiDAR frame so as to obtain a 32x32 image. A state-of-the-art CNN is then run on these image patches to estimate the color for each cone.</p>
+							<p>The point cloud obtained from the LiDAR is first segmented and the ground and out-of-track planes are removed. Afterward Euclidean clustering is run on the point cloud to cluster cone patches. The centroid of these cone patches are used to determine the 3D coordinates for each cone. They are futher projected on to a 2D plane from the LiDAR frame so as to obtain a 32x32 image. A state-of-the-art CNN<sup id="4_return"><a href="#4">[4]</a></sup> is then run on these image patches to estimate the color for each cone.</p>
 							<p>These cluster are also passed through a rule-based outlier filter to remove false cones in the map.</p>
 							<h4>CNN Architecture for Color Estimation using LiDAR Intensity Patterns</h4>
 							<p align="center">
@@ -97,7 +95,7 @@
 							</p>
 							<h4>Stereo 3D Object Dectection</h4>
 							<p>In order to ensure redundancy in the system, an additional camera-based object detection pipeline is added to the system.</p>
-							<p>We have chosen an off-the-shelf object detector, YOLOv3 for object detection for real-time performance.</p>
+							<p>We have chosen an off-the-shelf object detector, YOLOv3<sup id="17_return"><a href="#17">[17]</a></sup> for object detection for real-time performance.</p>
 							<p align="center">
 								Stereo Object Detection Pipeline
 							</p>
@@ -114,7 +112,7 @@
 								</video>
 							</p>
 							<p>
-								Stereo feature matching is then performed using the Semi-Global Block Matching (SGBM) algorithm to obtain the disparity map and 3D coordinates of the traffic cones.
+								Stereo feature matching is then performed using the Semi-Global Block Matching<sup id="32_return"><a href="#32">[32]</a></sup> (SGBM) algorithm to obtain the disparity map and 3D coordinates of the traffic cones.
 							</p>
 							<p align="center">
 								3D pointcloud obtained after occlusion reduction in the disparity map
@@ -123,7 +121,7 @@
 								<img width="75%" height="75%" src="images/stereo_depth.jpg">
 							</p>
 							<h4>Monocular 3D Object Detection</h4>
-							<p>Monocular 3D Object Detection is performed using the Perspective 7-Point transformation with the PnP RANSAC algorithm. This is considering the fact that we know the exact physical dimensions of each cone. The keypoints are then used to transform 2D image coordinates to 3D world coordinates.
+							<p>Monocular 3D Object Detection is performed using the Perspective 7-Point transformation with the PnP RANSAC algorithm<sup id="1_return"><a href="#1">[1]</a></sup>. This is considering the fact that we know the exact physical dimensions of each cone. The keypoints<sup id="21_return"><a href="#21">[21]</a></sup> are then used to transform 2D image coordinates to 3D world coordinates.
 								Keypoints for each cone image patch are obtained using the RektNet CNN architecture by MIT Driverless (Accurate, Low-Latency Visual Perception for Autonomous Racing:Challenges, Mechanisms, and Practical Solutions. Kieran Strobel et al., 2020).
 							</p>
 							<p align="center">
@@ -140,14 +138,14 @@
 							<h2>
 								Velocity Estimation and Simultaneous Localization and Mapping
 							</h2>
-							<p>The extended Kalman Filter was chosen as an estimator for mildly non-linear systems with white Gaussian noise. Our main task here is to fuse data from an Inertial Measurement Unit (SBG Ellipse N), 4 wheel encoders, steering angle sensor and a dual GPS system in a moving baseline configuration. EKF is also computationally more efficient than the Unscented Kalman Filter and allows us to estimate the state at 200 Hz.</p>
+							<p>The extended Kalman Filter was chosen as an estimator for mildly non-linear systems with white Gaussian noise. Our main task here is to fuse data from an Inertial Measurement Unit (SBG Ellipse N), 4 wheel encoders, steering angle sensor and a dual GPS system in a moving baseline configuration. EKF is also computationally more efficient than the Unscented Kalman Filter<sup id="20_return"><a href="#20">[20]</a></sup> and allows us to estimate the state at 200 Hz.</p>
 							<p align="center">
 								Velocity Estimation Pipeline
 							</p>
 							<p align="center">
 								<img width="75%" height="75%" src="images/velocity_estimation.png">
 							</p>
-							<p>We assume that our system model is a Contant Turn Rate and Acceleration model (CTRA), the jerk is assumed to be zero in this case and acceleration is used as an input to the system.</p>
+							<p>We assume that our system model is a Contant Turn Rate and Acceleration model (CTRA)<sup id="2_return"><a href="#2">[2]</a></sup>, the jerk is assumed to be zero in this case and acceleration is used as an input to the system.</p>
 							<p>The wheel encoders along with the steering angle potentiometer are used to estimate the slip ratios of the vehicle.</p>
 							<p>The state vector is taken as</p>
 							<p align="center">
@@ -164,7 +162,7 @@
 								<img width="45%" height="45%" src="images/sensor_model.jpg">
 							</p>
 							<p>Where <code>θs</code> is the sensor heading in body frame and n{.} are additive Gaussian white noises that corrupt the measurements.</p>
-							<p>Different sensors work at different rates and the accuracy also varies between the sensors. Hence, we use multiple update functions for each sensor and we update our beliefs asynchronously. Here, the acceleration is taken from the IMU, angular velocity from the Gyroscope, and velocities from GPS and wheel encoders. Sensor drift and failure is detected with the help of Chi-Squared test.</p>
+							<p>Different sensors work at different rates and the accuracy also varies between the sensors. Hence, we use multiple update functions for each sensor and we update our beliefs asynchronously<sup id="26_return"><a href="#26">[26]</a></sup>. Here, the acceleration is taken from the IMU, angular velocity from the Gyroscope, and velocities from GPS and wheel encoders. Sensor drift and failure is detected with the help of Chi-Squared test<sup id="7_return"><a href="#7">[7]</a></sup>.</p>
 							<p align="center">
 								<img src="https://www.gstatic.com/education/formulas2/-1/en/chi_squared_test.svg" />
 							</p>
@@ -173,8 +171,8 @@
 								System Integration (Valls et al., 2018)
 							</p>
 							<p>
-								The landmark-based FastSLAM algorithm was chosen for its robustness because of multiple-hypothesis and proposal sampling.
-								FastSLAM is computationally much more efficient with N.log(N) time complexity as compared to EKF SLAM with a quadratic complexity.
+								The landmark-based FastSLAM<sup id="8_return"><a href="#8">[8]</a></sup><sup id="15_return"><a href="#15">[15]</a></sup> algorithm was chosen for its robustness because of multiple-hypothesis and proposal sampling<sup id="3_return"><a href="#3">[3]</a></sup><sup id="31_return"><a href="#31">[31]</a></sup>.
+								FastSLAM is computationally much more efficient with N.log(N) time complexity as compared to EKF SLAM with a quadratic complexity <sup id="19_return"><a href="#19">[19]</a></sup>.
 								FastSLAM is also much more tunable owing to the fact that it uses Rao-Backwellized particle filter to express pose estimates. We can simply tune the number of particles to adjust the runtime performance.
 								Data association is done by comparing the mahalanobis distance between an observation and each landmark on the map.
 							</p>
@@ -192,7 +190,7 @@
 									RRT + Delaunay Triangulation for Waypoints Generation
 								</h4>
 							</p>
-							<p>We chose the Randomly Exploring Random Trees(LaValle et al., 1998) as our path planning algorithms. Formula Student poses a unique challenge to path planning as there is no definite goal, and we just have to drive straight. Hence, in order to determine the best path, we have proposed a cost function that is assigned to each node. The tree branch with the lowest cost is then chosen as our desired path.</p>
+							<p>We chose the Randomly Exploring Random Trees<sup id="24_return"><a href="#24">[24]</a></sup><sup id="25_return"><a href="#25">[25]</a></sup> as our path planning algorithms. Formula Student poses a unique challenge to path planning as there is no definite goal, and we just have to drive straight. Hence, in order to determine the best path, we have proposed a cost function that is assigned to each node. The tree branch with the lowest cost is then chosen as our desired path.</p>
 							<code>
 								J = Q_delta * delta^2 + Q_theta * theta^2 + Q_cte * cte^2 - Q_cone * cone_count^2
 							</code>
@@ -205,7 +203,7 @@
 								<li>cone_count: Count of cones on both sides of the path. Penalizes shorter paths.</li>
 							</ul>
 							<p>The cost is then normalized between 0 and 1 to determine the best path.</p>
-							<p>However, this is not the appropriate approach to path planning in FSD, as we need to have a continous and smooth trajectory in order to ensure that we are driving close to the limits of handling. Hence, we have an additional step of running Delaunay traingulation on nearby cone positions. The intersection points of the best tree branch and the traingulation segments are then takes as the waypoints for the control algorithm.</p>
+							<p>However, this is not the appropriate approach to path planning in FSD, as we need to have a continous and smooth trajectory in order to ensure that we are driving close to the limits of handling. Hence, we have an additional step of running Delaunay traingulation<sup id="13_return"><a href="#13">[13]</a></sup> on nearby cone positions. The intersection points of the best tree branch and the traingulation segments are then takes as the waypoints for the control algorithm.</p>
 							<p align="center">
 								<video width="75%" height="75%" controls loop>
 									<source src="videos\rrt_delaunay.mp4" type="video/mp4">
@@ -214,12 +212,12 @@
 							</p>
 							<p>The waypoints that are generated are depicted as blue dots along the track center-line.</p>
 							<h2>Model Predictive Control</h2>
-							<p>After finishing the first lap using the PID and Pure Pursuit Controller, loop closure is detected and the SLAM algorithm switches to localization mode. This is all handled by the mission planning node. After track exploration and mapping, we switch to Model Predicitve Control as our control method to finish the race as fast as possible at the limits of handling in real-time.</p>
+							<p>After finishing the first lap using the PID and Pure Pursuit Controller, loop closure is detected and the SLAM algorithm switches to localization mode. This is all handled by the mission planning node. After track exploration and mapping, we switch to Model Predicitve Control<sup id="18_return"><a href="#18">[18]</a></sup> as our control method to finish the race as fast as possible at the limits of handling in real-time.</p>
 							<p>The goal of the optimization problem is to drive the car along the reference path, following imposed contraints and targeting desired velocity. The state dynamics follows a bicycle model with actuator and drivetrain models along with tire forces.</p>
 							<p>
 								<h4 align="center">Dynamic Bicycle Model</h4>
 							</p>
-							<p align="center">We consider the dynamic bicycle model for vehicle dynamics with non-linear magic tire formula models</p>
+							<p align="center">We consider the dynamic bicycle model for vehicle dynamics<sup id="9_return"><a href="#9">[9]</a></sup><sup id="14_return"><a href="#14">[14]</a></sup> with non-linear magic tire formula models<sup id="16_return"><a href="#16">[16]</a></sup>.</p>
 							<p align="center">
 								<img width="50%" height="50%" src="images/dynamic_model.jpg">
 							</p>
@@ -270,13 +268,13 @@
 								<img src="videos\mpc.gif" width="75%" height="75%" alt="this slowpoke moves"/>
 							</p>
 							<p>
-								The optimization is problem is then solved directly using the IPOPT non-linear optimization library in a receding horizon fashion for over 15 steps for a horizon of 1.5 secs. There is an approximately 100 ms delay between computed command and actuation, hence we choose an actuator vector in the future (about 100 ms in the future) to compensate for mechanical delays.
+								The optimization is problem is then solved directly using the IPOPT non-linear optimization library<sup id="6_return"><a href="#6">[6]</a></sup> in a receding horizon fashion for over 15 steps for a horizon of 1.5 secs. There is an approximately 100 ms delay between computed command and actuation, hence we choose an actuator vector in the future (about 100 ms in the future) to compensate for mechanical delays.
 								<br>
-							    However, an improvement is required here as IPOPT is not designed for real-time systems and considerably slows down with an increase in sequence size. Hence, we need to use a convex optimization library such as HPIPM. 
+							    However, an improvement is required here as IPOPT is not designed for real-time systems and considerably slows down with an increase in sequence size<sup id="30_return"><a href="#30">[30]</a></sup>. Hence, we need to use a convex optimization library such as HPIPM<sup id="29_return"><a href="#29">[29]</a></sup>. 
 							</p>
 							<h2>Simulation and CI/CD Infrastructure</h2>
 							<p>
-								<h4 align="center">Simulation Environment Designed with Gazebo and Ignition Libraries</h4>
+								<h4 align="center">Simulation Environment Designed with Gazebo<sup id="12_return"><a href="#12">[12]</a></sup> and Ignition Libraries</h4>
 							</p>
 							<p align="center">
 								<img width="75%" height="75%" src="images/simulation.jpg">
@@ -287,126 +285,129 @@
 							<p align="center">
 								<img width="75%" height="75%" src="images/image3.jpg">
 							</p>
-							<p>The FSSIM simulation framework by AMZ Driverless has been used for the codebase. The FSSIM simulator employs a Gazebo plugin that uses a basic vehicle model which is discretized with Euler Forward discretization to achieve 99% of real world performance.The simulation framework, on every pull request, runs the codebase and important ROS topics are recorded into ROS Bags and uploaded to the server. Each ROS Bag is played on the remote server and the run is recorded using VirtualGL, the videos are then stored in a NoSQL database for backup and querying. The client app can establish remote database connection to visualize the ROS Bags. The server automatically replays the bag file and stores the recorded videos.To ensure software reliability, each pull request is first compiled using GitHub Actions and run on our CI server hosted on AWS. Only after all checks have passed and the simulation runs without any issues, a pull request can be merged.</p>
+							<p>The FSSIM <sup id="4_return"><a href="#4">[4]</a></sup> simulation framework by AMZ Driverless has been used for the codebase. The FSSIM simulator employs a Gazebo plugin that uses a basic vehicle model which is discretized with Euler Forward discretization to achieve 99% of real world performance.The simulation framework, on every pull request, runs the codebase and important ROS topics are recorded into ROS Bags and uploaded to the server. Each ROS Bag is played on the remote server and the run is recorded using VirtualGL, the videos are then stored in a NoSQL database for backup and querying. The client app can establish remote database connection to visualize the ROS Bags. The server automatically replays the bag file and stores the recorded videos.To ensure software reliability, each pull request is first compiled using GitHub Actions and run on our CI server hosted on AWS. Only after all checks have passed and the simulation runs without any issues, a pull request can be merged.</p>
 							<h4>References</h4>
 							<ol>
-								<li>Kieran Strobel and Sibo Zhu and Raphael Chang and Skanda Koppula. Accurate, Low-Latency Visual Perception for Autonomous Racing:Challenges, Mechanisms, and Practical Solutions. 2020. arXiv:2007.13971</li>
-								<li>de la Iglesia Valls, M., Hendrikx, H. F. C., Reijgwart, V. J. F., Meier, F. V., Sa, I., Dub´e, R., Gawel, A.,
+								<li id="1">Kieran Strobel and Sibo Zhu and Raphael Chang and Skanda Koppula. Accurate, Low-Latency Visual Perception for Autonomous Racing:Challenges, Mechanisms, and Practical Solutions. 2020. arXiv:2007.13971</li>
+								<li id="2">de la Iglesia Valls, M., Hendrikx, H. F. C., Reijgwart, V. J. F., Meier, F. V., Sa, I., Dub´e, R., Gawel, A.,
 									B¨urki, M., and Siegwart, R. (2018). Design of an autonomous racecar: Perception, state estimation and
 									system integration. 2018 IEEE International Conference on Robotics and Automation (ICRA).</li>
-								<li>Dellaert, F., Fox, D., Burgard, W., and Thrun, S. (1999). Monte carlo localization for mobile robots. In
+								<li id="3">Dellaert, F., Fox, D., Burgard, W., and Thrun, S. (1999). Monte carlo localization for mobile robots. In
 									IEEE International Conference on Robotics and Automation (ICRA99).</li>
-								<li>Juraj Kabzan and Miguel de la Iglesia Valls and Victor Reijgwart and Hubertus Franciscus Cornelis Hendrikx and Claas Ehmke and Manish Prajapat and Andreas Bühler and Nikhil Gosala and Mehak Gupta and Ramya Sivanesan and Ankit Dhall and Eugenio Chisari and Napat Karnchanachari and Sonja Brits and Manuel Dangel and Inkyu Sa and Renaud Dubé and Abel Gawel and Mark Pfeiffer and Alexander Liniger and John Lygeros and Roland Siegwart.
+								<li id="4">Juraj Kabzan and Miguel de la Iglesia Valls and Victor Reijgwart and Hubertus Franciscus Cornelis Hendrikx and Claas Ehmke and Manish Prajapat and Andreas Bühler and Nikhil Gosala and Mehak Gupta and Ramya Sivanesan and Ankit Dhall and Eugenio Chisari and Napat Karnchanachari and Sonja Brits and Manuel Dangel and Inkyu Sa and Renaud Dubé and Abel Gawel and Mark Pfeiffer and Alexander Liniger and John Lygeros and Roland Siegwart.
 									AMZ Driverless: The Full Autonomous Racing System. 2019. arXiv:1905.05150.
 								</li>
-								<li>Dhall, A., Dai, D., and Van Gool, L. (2019). Real-time 3D Traffic Cone Detection for Autonomous Driving.
+								<li id="5">Dhall, A., Dai, D., and Van Gool, L. (2019). Real-time 3D Traffic Cone Detection for Autonomous Driving.
 									arXiv e-prints, page arXiv:1902.02394.
 								</li>
-								<li>
+								<li id="6">
 									Wächter, A., Biegler, L. On the implementation of an interior-point filter line-search algorithm for large-scale nonlinear programming. Math. Program. 106, 25–57 (2006). https://doi.org/10.1007/s10107-004-0559-y.
 								</li>
-								<li>
+								<li id="7">
 									B. D. Brumback and M. Srinath, “A chi-square test for fault-detection
 									in kalman filters,” Automatic Control, IEEE Transactions on, vol. 32,
 									pp. 552 – 554, 07 1987.
 								</li>
-								<li>
+								<li id="8">
 									M. Montemerlo, S. Thrun, D. Koller, B. Wegbreit, et al., “Fastslam:
 									A factored solution to the simultaneous localization and mapping
 									problem,” in Aaai/iaai, pp. 593–598, 2002.
 								</li>
-								<li>
+								<li id="9">
 									Kong, Jason, et al. "Kinematic and dynamic vehicle models for
 									autonomous driving control design." 2015 IEEE Intelligent Vehicles
 									Symposium (IV). IEEE, 2015.
 								</li>
-								<li>
+								<li id="10">
 									Yoon, Jong-Hwa, and Huei Peng. "A cost-effective sideslip
 									estimation method using velocity measurements from two GPS
 									receivers." IEEE Transactions on Vehicular Technology 63.6
 									(2013): 2589-2599.
 								</li>
-								<li>
+								<li id="11">
 									Klomp, M., Olsson, K., and Sandberg, C. (2014). Non-linear steering control for limit handling conditions
 									using preview path curvature. International Journal of Vehicle Autonomous Systems, 12(3):266–283.
 								</li>
-								<li>
+								<li id="12">
 									Koenig, N. and Howard, A. (2004). Design and use paradigms for gazebo, an open-source multi-robot simulator. In Intelligent Robots and Systems, 2004.(IROS 2004). Proceedings. 2004 IEEE/RSJ International
 									Conference on, volume 3, pages 2149–2154. IEEE.
 								</li>
-								<li>
+								<li id="13">
 									Lee and Schachter (1980). Two algorithms for constructing a delaunay triangulation. International Journal
 									of Computer and Information Sciences.
 								</li>
-								<li>
+								<li id="14">
 									Milliken, W., Milliken, D., and of Automotive Engineers, S. (1995). Race Car Vehicle Dynamics. Premiere
 									Series. SAE International.
 								</li>
-								<li>
+								<li id="15">
 									Montemerlo, M., Thrun, S., Koller, D., and Wegbreit, B. (2003). FastSLAM 2.0 : An Improved Particle
 									Filtering Algorithm for Simultaneous Localization and Mapping that Provably Converges. In Proceedings
 									of the 18th international joint conference on Artificial intelligence, pages 1151–1156.
 								</li>
-								<li>
+								<li id="16">
 									Pacejka, H. B. and Bakker, E. (1992). The magic formula tyre model. Vehicle system dynamics, 21(S1):1–18.
 								</li>
-								<li>
+								<li id="17">
 									Redmon, J., Divvala, S., Girshick, R., and Farhadi, A. (2016). You only look once: Unified, real-time object
 									detection. In 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages
 									779–788.
 								</li>
-								<li>
+								<li id="18">
 									Rosolia, U., Carvalho, A., and Borrelli, F. (2017). Autonomous racing using learning model predictive
 									control. In American Control Conference (ACC), pages 5115–5120. IEEE.
 								</li>
-								<li>
+								<li id="19">
 									Thrun, S., Burgard, W., and Fox, D. (2005). Probabilistic Robotics (Intelligent Robotics and Autonomous
 									Agents). The MIT Press.
 								</li>
-								<li>
+								<li id="20">
 									Xue, Z. and Schwartz, H. (2013). A comparison of several nonlinear filters for mobile robot pose estimation.
 									In 2013 IEEE International Conference on Mechatronics and Automation.
 								</li>
-								<li>
+								<li id="21">
 									Tulsiani, S. and Malik, J. (2015). Viewpoints and keypoints. In 2015 IEEE Conference on Computer Vision
 									and Pattern Recognition (CVPR).
 								</li>
-								<li>
+								<li id="22">
 									Gosala, N. B., B¨uhler, A., Prajapat, M., Ehmke, C., Gupta, M., Sivanesan, R., Gawel, A., Pfeiffer, M.,
 									B¨urki, M., Sa, I., Dub´e, R., and Siegwart, R. (2018). Redundant Perception and State Estimation for
 									Reliable Autonomous Racing. ArXiv e-prints.
 								</li>
-								<li>
+								<li id="23">
 									Coulter, R. C. (1992). Implementation of the pure pursuit path tracking algorithm. Technical report,
 									Carnegie-Mellon UNIV Pittsburgh PA Robotics INST.
 								</li>
-								<li>
+								<li id="24">
 									LaValle, Steven M. (October 1998). "Rapidly-exploring random trees: A new tool for path planning" (PDF). Technical Report. Computer Science Department, Iowa State University (TR 98–11).
 								</li>
-								<li>
+								<li id="25">
 									Howie Choset, James Kuffner. "Robotic Motion Planning: RRT’s". Robotic Motion Planning, 16-735. The Robotics Institute, Carnegie Mellon University.
 								</li>
-								<li>
+								<li id="26">
 									K. Hausman, S. Weiss, R. Brockers, L. Matthies, and G. S. Sukhatme,
 “Self-calibrating multi-sensor fusion with probabilistic measurement
 validation for seamless sensor switching on a uav,” in 2016 IEEE International Conference on Robotics and Automation (ICRA), pp. 4289–
 4296, May 2016.
 								</li>
-								<li>
+								<li id="27">
 									Formula Student Rules 2020 v1.0. https://www.formulastudent.de/fileadmin/user_upload/all/2020/rules/FS-Rules_2020_V1.0.pdf
 								</li>
-								<li>
+								<li id="28">
 									J. Ni and J. Hu, "Path following control for autonomous formula racecar: Autonomous formula student competition," 2017 IEEE Intelligent Vehicles Symposium (IV), Los Angeles, CA, 2017, pp. 1835-1840, doi: 10.1109/IVS.2017.7995972.
 								</li>
-								<li>
+								<li id="29">
 									G. Frison, M. Diehl. HPIPM: a high-performance quadratic programming framework for model predictive control. 2020. arXiv preprint, arXiv:2003.02547
 								</li>
-								<li>
+								<li id="30">
 									G. Frison, D. K. M. Kufoalor, L. Imsland and J. B. Jørgensen, "Efficient implementation of solvers for linear model predictive control on embedded devices," 2014 IEEE Conference on Control Applications (CCA), Juan Les Antibes, 2014, pp. 1954-1959, doi: 10.1109/CCA.2014.6981589.
 								</li>
-								<li>
+								<li id="31">
 									J. D. Hol, T. B. Schon, and F. Gustafsson, “On resampling algorithms
 for particle filters,” in Nonlinear Statistical Signal Processing Workshop, 2006 IEEE, pp. 79–82, IEEE, 2006.
+								</li>
+								<li id="32">
+									SGBM, by Hirschmuller, H. (2008). Stereo processing by semiglobal matching and mutual information. IEEE Transactions on pattern analysis and machine intelligence, 30(2), 328-341.
 								</li>
 							</ol>
 						</div>
