@@ -136,18 +136,18 @@
 							</p>
 							<p>Occlusion of background cones is handled by outlier filtering.</p>
 							<h2>
-								Velocity Estimation and Simultaneous Localization and Mapping
+								Pose/Velocity Estimation and Simultaneous Localization and Mapping
 							</h2>
-							<p>The extended Kalman Filter was chosen as an estimator for mildly non-linear systems with white Gaussian noise. Our main task here is to fuse data from an Inertial Measurement Unit (SBG Ellipse N), 4 wheel encoders, steering angle sensor and a dual GPS system in a moving baseline configuration. EKF is also computationally more efficient than the Unscented Kalman Filter<sup id="20_return"><a href="#20">[20]</a></sup> and allows us to estimate the state at 200 Hz.</p>
+							<p>The extended Kalman Filter was chosen as an estimator for mildly non-linear systems with white Gaussian noise. Our main task here is to fuse data from an Inertial Measurement Unit (SBG Ellipse N), 4 wheel encoders, steering angle sensor and a dual GPS system in a moving baseline configuration. EKF is also computationally more efficient than the Unscented Kalman Filter<sup id="20_return"><a href="#20">[20]</a></sup> and allows us to estimate the state at 200 Hz. Here, the effects of lateral load transfer are ignored and the track is assumed to be flat 2D surface.</p>
 							<p align="center">
-								Velocity Estimation Pipeline
+								State Estimation Pipeline
 							</p>
 							<p align="center">
 								<img width="75%" height="75%" src="images/velocity_estimation.png">
 							</p>
 							<p>We consider that our system model is a constant velocity model (CTRV)<sup id="2_return"><a href="#2">[2]</a></sup>, the jerk is assumed to be zero in this case and acceleration is used as a pseudo input to the system.</p>
 							<p>The wheel encoders along with the steering angle potentiometer are used to estimate the slip ratios of the vehicle.</p>
-							<p>The state vector is taken as</p>
+							<p>The 6-DOF state vector is taken as</p>
 							<p align="center">
 								<img width="25%" height="25%" src="images/state_vector.jpg">
 							</p>
@@ -180,7 +180,7 @@
 								<img width="75%" height="75%" src="images/slam_pipeline.jpg" />
 							</p>		
 							<p>
-								Our SLAM pipeline runs at 15 Hz to accomodate for the perception pipeline operation rate. The pose estimates from the SLAM node are then taken by the velocity estimation node to provide fast pose updates at 200 Hz for the control algorithm. This ensures that the MPC node always recieves the latest pose estimates. 
+								Our SLAM pipeline runs at 15 Hz to accomodate for the perception pipeline operation rate. The pose estimates from the SLAM node are then intergrated by velocity with time by the velocity estimation node to provide fast pose updates at 200 Hz for the control algorithm. This ensures that the MPC node always recieves the latest pose estimates. 
 							</p>						
 							<h2>
 								Path Planning
@@ -234,12 +234,15 @@
 							<p align="center">
 								<img width="50%" height="50%" src="images/tire_model.jpg">
 							</p>
-							<p>Here <i>D, C, B</i> are coefficients obtained from the Pacejka tire model. <i>d</i> is the driving command (acceleration), <i>C<sub>r</sub></i> is the rolling resistance, <i>α<sub>f, r</sub></i> are tire slip angles, and <i>C<sub>d</sub></i> is the drag coefficient. <i>C<sub>m1, m2</sub></i> are experimentally determined constants to calculate the driving force.</p>
+							<p align="center">
+								<img width="20%" height="20%" src="images/tire_model_x.jpg">
+							</p>
+							<p>Here <i>D, C, B</i> are coefficients obtained from the Pacejka tire model. <i>d</i> is the driving command (acceleration), <i>C<sub>r</sub></i> is the rolling resistance, <i>α<sub>f, r</sub></i> are tire slip angles, and <i>C<sub>d</sub></i> is the drag coefficient. <i>m</i> is the mass of the vehicle.</p>
 							<p>
 								<h4 align="center">State Input</h4>
 							</p>
 							<p align="center">
-								<img width="50%" height="50%" src="images/state_input.jpg">
+								<img width="25%" height="25%" src="images/state_input.jpg">
 							</p>
 							<p>
 								<h4>The lateral and cross-track errors are defined as</h4>
