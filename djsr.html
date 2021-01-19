@@ -50,29 +50,29 @@
 							<h2>About Formula Student Driverless</h2>
 							<!-- <span class="image fit"><img src="images/pic04.jpg" alt="" /></span> -->
 							<p> Formula
-								Student Driverless(FSD) is the world's largest autonomous racing competition, held annualy in Hockenheim, Germany, in which multidisciplinary student teams compete
-								with a self-developed driverless racecars every year. 
+								Student Driverless(FSD) is the world's largest autonomous racing competition, held annually in Hockenheim, Germany, in which multidisciplinary student teams compete
+								with self-developed driverless racecars every year. 
 								In this competition, each team has to race their autonomous car across 5 disciplines - Acceleration, Skidpad, Autocross, and Trackdrive. 
 								In the main event, called Trackdrive, a car has to complete 10 laps on an unknown track autonomously as fast as possible against the clock. 
-								The track is defined by a set of traffic cones, blue cones on the left and yellow cones on the right hand side<sup id="27_return"><a href="#27">[27]</a></sup>.</p>
+								The track is defined by a set of traffic cones, blue cones on the left and yellow cones on the right-hand side<sup id="27_return"><a href="#27">[27]</a></sup>.</p>
 								<h4 align="center">Track Layout</h4>
 								<p align="center">
 									<img width="75%" height="75%" src="images/track_layout.jpg">
 								</p>
-								<p>In this blog, I am going to introduce to you the overall implementation of a Formula Student Driverless race-car by DJS Racing, India. The race-car can drive autonomously on unknown tracks and switch to Model Predictive Control after track exploration, mapping and loop-closure detection in the first lap.</p>
+								<p>In this blog, I am going to introduce to you the overall implementation of a Formula Student Driverless race-car by DJS Racing, India. The race-car can drive autonomously on unknown tracks and switch to Model Predictive Control after track exploration, mapping, and loop-closure detection in the first lap.</p>
 							<h2>Software Architecture</h2>
 							<!-- <span class="image fit"><img src="images/pic04.jpg" alt="" /></span> -->
-							<p> We chose the Robot Operating System as our primary framework for software development. In order to run the MPC algorithm at its full potential, the track must be known at least 2s in advanced for a speed of 85 kmph. With the current perception setup, it is not possible to achieve accurate mapping of environment with a 40m (at 85 kmph) of look-ahead. Hence, we need to drive the first lap, exploring the track using a geometric controller such as the Pure Pursuit Controller<sup id="23_return"><a href="#23">[23]</a></sup><sup id="28_return"><a href="#28">[28]</a></sup> at a lower speed. After successful mapping and exploration of the track, the car switches to the more performant Model Predicitve Control(MPC) for the subsequent laps to race as fast as possible. From this we can define two modes of our system operation, SLAM mode and localization mode. To count the number of laps and to detect loop closure, high level mission planning is done using a finite state machine. This state machine guides to system to switch between SLAM and localization mode and signals whether the race has finished. Interfacing between the onboard Jetson AGX Xavier and the STM32 is done using the ros-serial package. The STM32 runs FreeRTOS to achieve real-time control of actuators.</p>
+							<p> We chose the Robot Operating System as our primary framework for software development. In order to run the MPC algorithm at its full potential, the track must be known at least 2s in advance for a speed of 85 kmph. With the current perception setup, it is not possible to achieve accurate mapping of the environment with a 40m (at 85 kmph) of look-ahead. Hence, we need to drive the first lap, exploring the track using a geometric controller such as the Pure Pursuit Controller<sup id="23_return"><a href="#23">[23]</a></sup><sup id="28_return"><a href="#28">[28]</a></sup> at a lower speed. After successful mapping and exploration of the track, the car switches to the more performant Model Predictve Control(MPC) for the subsequent laps to race as fast as possible. From this, we can define two modes of our system operation, SLAM mode, and localization mode. To count the number of laps and to detect loop closure, high-level mission planning is done using a finite state machine. This state machine guides to the system to switch between SLAM and localization mode and signals whether the race has finished. Interfacing between the onboard Jetson AGX Xavier and the STM32 is done using the ros-serial package. The STM32 runs FreeRTOS to achieve real-time control of actuators.</p>
 							<h4 align="center">System Overview</h4>
 							<p align="center">
 								<img width="75%" height="75%" src="images/Autonomous System.png">
 							</p>
-							<h4 align="center">High Level Architecture</h4>
+							<h4 align="center">High-level Architecture</h4>
 							<p align="center">
 								<img width="75%" height="75%" src="images/rosgraph.png">
 							</p>
 							<h2>3D Perception</h2>
-							<p>The goal of the perception system is to detection traffic cones in the vincinity of the car and determine their color and 3D coordinates in real-time. These cone detections will be then fed as landmarks to the SLAM node to build a map of the track. The perception system taken input from multiple sensors - a mono camera, stereo camera and a 3D LiDAR. The Basler Ace 2 industrial camera was chosen for our self-developed mono and stereo camera setups. </p>
+							<p>The goal of the perception system is to detect traffic cones in the vicinity of the car and determine their color and 3D coordinates in real-time. These cone detections will be then fed as landmarks to the SLAM node to build a map of the track. The perception system takes input from multiple sensors - a mono camera, stereo camera, and a 3D LiDAR. The Basler Ace 2 industrial camera was chosen for our self-developed mono and stereo camera setups. </p>
 							<!-- The Ouster OS1-32 LiDAR was chosen as our main LiDAR. -->
 							<p>Multiple sources of visual information are chosen so as to increase the redundancy<sup id="22_return"><a href="#22">[22]</a></sup> in the system and to perceive the environment reliably as only one chance is given for the trackdrive race.</p>
 
@@ -87,8 +87,8 @@
 									Your browser does not support the video tag.
 								</video>
 							</p>
-							<p>The point cloud obtained from the LiDAR is first segmented and the ground and out-of-track planes are removed. Afterwards, Euclidean clustering is run on the point cloud to cluster cone patches. The centroid of these cone patches are used to determine the 3D coordinates for each cone. They are futher projected on to a 2D plane from the LiDAR frame so as to obtain a 32x32 image. A state-of-the-art CNN<sup id="4_return"><a href="#4">[4]</a></sup> is then run on these image patches to estimate the color for each cone.</p>
-							<p>These cluster are also passed through a rule-based outlier filter to remove false cones in the map.</p>
+							<p>The point cloud obtained from the LiDAR is first segmented and the ground and out-of-track planes are removed. Afterwards, Euclidean clustering is run on the point cloud to cluster cone patches. The centroid of these cone patches is used to determine the 3D coordinates for each cone. They are further projected on to a 2D plane from the LiDAR frame so as to obtain a 32x32 image. A state-of-the-art CNN<sup id="4_return"><a href="#4">[4]</a></sup> is then run on these image patches to estimate the color for each cone.</p>
+							<p>These clusters are also passed through a rule-based outlier filter to remove false cones in the map.</p>
 							<h4>CNN Architecture for Color Estimation using LiDAR Intensity Patterns</h4>
 							<p align="center">
 								<img width="75%" height="75%" src="images/lidar_cnn.jpg">
@@ -115,7 +115,7 @@
 								Stereo feature matching is then performed using the Semi-Global Block Matching<sup id="32_return"><a href="#32">[32]</a></sup> (SGBM) algorithm to obtain the disparity map and 3D coordinates of the traffic cones.
 							</p>
 							<p align="center">
-								3D pointcloud obtained after occlusion reduction in the disparity map
+								3D point cloud obtained after occlusion reduction in the disparity map
 							</p>
 							<p align="center">
 								<img width="75%" height="75%" src="images/stereo_depth.jpg">
@@ -138,7 +138,7 @@
 							<h2>
 								Pose/Velocity Estimation and Simultaneous Localization and Mapping
 							</h2>
-							<p>The extended Kalman Filter was chosen as an estimator for mildly non-linear systems with white Gaussian noise. Our main task here is to fuse data from an Inertial Measurement Unit (SBG Ellipse N), 4 wheel encoders, steering angle sensor and a dual GPS system in a moving baseline configuration. EKF is also computationally more efficient than the Unscented Kalman Filter<sup id="20_return"><a href="#20">[20]</a></sup> and allows us to estimate the state at 200 Hz. Here, the effects of lateral load transfer are ignored and the track is assumed to be flat 2D surface.</p>
+							<p>The extended Kalman Filter was chosen as an estimator for mildly non-linear systems with white Gaussian noise. Our main task here is to fuse data from an Inertial Measurement Unit (SBG Ellipse N), 4 wheel encoders, steering angle sensor, and a dual GPS system in a moving baseline configuration. EKF is also computationally more efficient than the Unscented Kalman Filter<sup id="20_return"><a href="#20">[20]</a></sup> and allows us to estimate the state at 200 Hz. Here, the effects of lateral load transfer are ignored and the track is assumed to be a flat 2D surface.</p>
 							<p align="center">
 								State Estimation Pipeline
 							</p>
@@ -151,7 +151,7 @@
 							<p align="center">
 								<img width="25%" height="25%" src="images/state_vector.jpg">
 							</p>
-							<p>Where <code>p, θ, v</code> are the position (along x and y), angular velocity and the linear velocity (along x and y in car frame) of the car respectively.</p>
+							<p>Where <code>p, θ, v</code> are the position (along x and y), angular velocity, and the linear velocity (along x and y in car frame) of the car respectively.</p>
 							<p>The process model is taken as</p>
 							<p align="center">
 								<img width="45%" height="45%" src="images/process_model.jpg">
@@ -161,7 +161,7 @@
 							<p align="center">
 								<img width="45%" height="45%" src="images/sensor_model.jpg">
 							</p>
-							<p>Where <code>θs</code> is the sensor heading in body frame and n{.} are additive Gaussian white noises that corrupt the measurements.</p>
+							<p>Where <code>θs</code> is the sensor heading in the body frame and n{.} are additive Gaussian white noises that corrupt the measurements.</p>
 							<p>Different sensors work at different rates and the accuracy also varies between the sensors. Hence, we use multiple update functions for each sensor and we update our beliefs asynchronously<sup id="26_return"><a href="#26">[26]</a></sup>. Here, the acceleration is taken from the IMU, angular velocity from the Gyroscope, and velocities from GPS and wheel encoders. Sensor drift and failure is detected with the help of Chi-Squared test<sup id="7_return"><a href="#7">[7]</a></sup>.</p>
 							<p align="center">
 								<img src="https://www.gstatic.com/education/formulas2/-1/en/chi_squared_test.svg" />
@@ -173,14 +173,14 @@
 							<p>
 								The landmark-based FastSLAM<sup id="8_return"><a href="#8">[8]</a></sup><sup id="15_return"><a href="#15">[15]</a></sup> algorithm was chosen for its robustness because of multiple-hypothesis and proposal sampling<sup id="3_return"><a href="#3">[3]</a></sup><sup id="31_return"><a href="#31">[31]</a></sup>.
 								FastSLAM is computationally much more efficient with N.log(N) time complexity as compared to EKF SLAM with a quadratic complexity <sup id="19_return"><a href="#19">[19]</a></sup>.
-								FastSLAM is also much more tunable owing to the fact that it uses Rao-Backwellized particle filter to express pose estimates. We can simply tune the number of particles to adjust the runtime performance.
+								FastSLAM is also much more tunable owing to the fact that it uses a Rao-Backwellized particle filter to express pose estimates. We can simply tune the number of particles to adjust the runtime performance.
 								Data association is done by comparing the mahalanobis distance between an observation and each landmark on the map.
 							</p>
 							<p align="center">
 								<img width="75%" height="75%" src="images/slam_pipeline.jpg" />
 							</p>		
 							<p>
-								Our SLAM pipeline runs at 15 Hz to accomodate for the perception pipeline operation rate. The pose estimates from the SLAM node are then intergrated by velocity with time by the velocity estimation node to provide fast pose updates at 200 Hz for the control algorithm. This ensures that the MPC node always recieves the latest pose estimates. 
+								Our SLAM pipeline runs at 15 Hz to accommodate for the perception pipeline operation rate. The pose estimates from the SLAM node are then integrated by the velocity with time by the velocity estimation node to provide fast pose updates at 200 Hz for the control algorithm. This ensures that the MPC node always receives the latest pose estimates. 
 							</p>						
 							<h2>
 								Path Planning
@@ -198,12 +198,12 @@
 							Where,
 							<ul>
 								<li>delta: Angular deviation between two nodes. Avoids sharp turns.</li>
-								<li>theta: Discounted heading. Tree pointing backwards to the car are penalized.</li>
+								<li>theta: Discounted heading. Tree pointing backward to the car are penalized.</li>
 								<li>cte: Distance between the path and track boundary. Penalizes branches too close to the boundaries.</li>
 								<li>cone_count: Count of cones on both sides of the path. Penalizes shorter paths.</li>
 							</ul>
 							<p>The cost is then normalized between 0 and 1 to determine the best path.</p>
-							<p>However, this is not the appropriate approach to path planning in FSD, as we need to have a continous and smooth trajectory in order to ensure that we are driving close to the limits of handling. Hence, we have an additional step of running Delaunay traingulation<sup id="13_return"><a href="#13">[13]</a></sup> on nearby cone positions. The intersection points of the best tree branch and the traingulation segments are then takes as the waypoints for the control algorithm.</p>
+							<p>However, this is not the appropriate approach to path planning in FSD, as we need to have a continous and smooth trajectory in order to ensure that we are driving close to the limits of handling. Hence, we have an additional step of running Delaunay triangulation<sup id="13_return"><a href="#13">[13]</a></sup> on nearby cone positions. The intersection points of the best tree branch and the traingulation segments are then taken as the waypoints for the control algorithm.</p>
 							<p align="center">
 								<video width="75%" height="75%" controls loop>
 									<source src="videos\rrt_delaunay.mp4" type="video/mp4">
@@ -212,8 +212,8 @@
 							</p>
 							<p>The waypoints that are generated are depicted as blue dots along the track center-line.</p>
 							<h2>Model Predictive Control</h2>
-							<p>After finishing the first lap using the PID and Pure Pursuit Controller, loop closure is detected and the SLAM algorithm switches to localization mode. This is all handled by the mission planning node. After track exploration and mapping, we switch to Model Predicitve Control<sup id="18_return"><a href="#18">[18]</a></sup> as our control method to finish the race as fast as possible at the limits of handling in real-time.</p>
-							<p>The goal of the optimization problem is to drive the car along the reference path, following imposed contraints and targeting desired velocity. The state dynamics follows a bicycle model with actuator and drivetrain models along with tire forces.</p>
+							<p>After finishing the first lap using the PID and Pure Pursuit Controller, loop closure is detected and the SLAM algorithm switches to localization mode. This is all handled by the mission planning node. After track exploration and mapping, we switch to Model Predictve Control<sup id="18_return"><a href="#18">[18]</a></sup> as our control method to finish the race as fast as possible at the limits of handling in real-time.</p>
+							<p>The goal of the optimization problem is to drive the car along the reference path, following imposed contraints and targeting the desired velocity. The state dynamics is considered as a bicycle model with actuator and drivetrain models along with tire forces.</p>
 							<p>
 								<h4 align="center">Dynamic Bicycle Model</h4>
 							</p>
@@ -227,7 +227,7 @@
 							<p align="center">
 								<img width="50%" height="50%" src="images/vehicle_dynamics.jpg">
 							</p>
-							<p>Where <i>X, Y</i> is the position and <i></i> is the orientation of the car in the world frame. <i>V<sub>x</sub>, V<sub>y</sub></i> and <i>ω</i> are the linear and angular velocities of the car in the body fram respectively. <i>𝛿</i> is the steering angle, <i>L<sub>f</sub></i> and <i>L<sub>r</sub></i> are the length from the front and rear axles to the center-of-gravity respectively and <i>I<sub>z</sub></i> is the inertia moment.</i></p>
+							<p>Where <i>X, Y</i> is the position and <i></i> is the orientation of the car in the world frame. <i>V<sub>x</sub>, V<sub>y</sub></i>, and <i>ω</i> are the linear and angular velocities of the car in the body frame respectively. <i>𝛿</i> is the steering angle, <i>L<sub>f</sub></i> and <i>L<sub>r</sub></i> are the length from the front and rear axles to the center-of-gravity respectively and <i>I<sub>z</sub></i> is the inertia moment.</i></p>
 							<p>
 								<h4 align="center">Tire Model</h4>
 							</p>
@@ -266,12 +266,12 @@
 									+ Q_a * a^2 + F * (a` - a)^2 +  Q_ddelta * (delta` - delta)^2
 								</code>
 							</p>
-							<p>The objective of this optimization problem is to drive the vehicle as close as possible to the track center line, with heading along the track direction. Rapid changes in the state inputs as well as linear and angular velocities are penalized.</p>
+							<p>The objective of this optimization problem is to drive the vehicle as close as possible to the track center line, with heading along the track direction. Rapid changes in the state inputs, as well as linear and angular velocities, are penalized.</p>
 							<p align="center">
 								<img src="videos\mpc.gif" width="75%" height="75%" alt="this slowpoke moves"/>
 							</p>
 							<p>
-								The optimization is problem is then solved directly using the IPOPT non-linear optimization library<sup id="6_return"><a href="#6">[6]</a></sup> in a receding horizon fashion for over 15 steps for a horizon of 1.5 secs. There is an approximately 100 ms delay between computed command and actuation, hence we choose an actuator vector in the future (about 100 ms in the future) to compensate for mechanical delays.
+								The optimization problem is then solved directly using the IPOPT non-linear optimization library<sup id="6_return"><a href="#6">[6]</a></sup> in a receding horizon fashion for over 15 steps for a horizon of 1.5 secs. There is an approximately 100 ms delay between computed command and actuation, hence we choose an actuator vector in the future (about 100 ms in the future) to compensate for mechanical delays.
 								<br>
 							    However, an improvement is required here as IPOPT is not designed for real-time systems and considerably slows down with an increase in sequence size<sup id="30_return"><a href="#30">[30]</a></sup>. Hence, we need to use a convex optimization library such as HPIPM<sup id="29_return"><a href="#29">[29]</a></sup>. 
 							</p>
@@ -288,7 +288,7 @@
 							<p align="center">
 								<img width="75%" height="75%" src="images/image3.jpg">
 							</p>
-							<p>The FSSIM <sup id="4_return"><a href="#4">[4]</a></sup> simulation framework by AMZ Driverless has been used for the codebase. The FSSIM simulator employs a Gazebo plugin that uses a basic vehicle model which is discretized with Euler Forward discretization to achieve 99% of real world performance.The simulation framework, on every pull request, runs the codebase and important ROS topics are recorded into ROS Bags and uploaded to the server. Each ROS Bag is played on the remote server and the run is recorded using VirtualGL, the videos are then stored in a NoSQL database for backup and querying. The client app can establish remote database connection to visualize the ROS Bags. The server automatically replays the bag file and stores the recorded videos.To ensure software reliability, each pull request is first compiled using GitHub Actions and run on our CI server hosted on AWS. Only after all checks have passed and the simulation runs without any issues, a pull request can be merged.</p>
+							<p>The FSSIM <sup id="4_return"><a href="#4">[4]</a></sup> simulation framework by AMZ Driverless has been used for the codebase. The FSSIM simulator employs a Gazebo plugin that uses a basic vehicle model which is discretized with Euler Forward discretization to achieve 99% of real-world performance. The simulation framework, on every pull request, runs the codebase and important ROS topics are recorded into ROS Bags and uploaded to the server. Each ROS Bag is played on the remote server and the run is recorded using VirtualGL, the videos are then stored in a NoSQL database for backup and querying. The client app can establish a remote database connection to visualize the ROS Bags. The server automatically replays the bag file and stores the recorded videos. To ensure software reliability, each pull request is first compiled using GitHub Actions and run on our CI server hosted on AWS. Only after all checks have passed and the simulation runs without any issues, a pull request can be merged.</p>
 							<h4>References</h4>
 							<ol>
 								<li id="1">Kieran Strobel and Sibo Zhu and Raphael Chang and Skanda Koppula. Accurate, Low-Latency Visual Perception for Autonomous Racing:Challenges, Mechanisms, and Practical Solutions. 2020. arXiv:2007.13971<sup></sup></li>
