@@ -87,7 +87,7 @@
 									Your browser does not support the video tag.
 								</video>
 							</p>
-							<p>The point cloud obtained from the LiDAR is first segmented and the ground and out-of-track planes are removed. Afterward Euclidean clustering is run on the point cloud to cluster cone patches. The centroid of these cone patches are used to determine the 3D coordinates for each cone. They are futher projected on to a 2D plane from the LiDAR frame so as to obtain a 32x32 image. A state-of-the-art CNN<sup id="4_return"><a href="#4">[4]</a></sup> is then run on these image patches to estimate the color for each cone.</p>
+							<p>The point cloud obtained from the LiDAR is first segmented and the ground and out-of-track planes are removed. Afterwards, Euclidean clustering is run on the point cloud to cluster cone patches. The centroid of these cone patches are used to determine the 3D coordinates for each cone. They are futher projected on to a 2D plane from the LiDAR frame so as to obtain a 32x32 image. A state-of-the-art CNN<sup id="4_return"><a href="#4">[4]</a></sup> is then run on these image patches to estimate the color for each cone.</p>
 							<p>These cluster are also passed through a rule-based outlier filter to remove false cones in the map.</p>
 							<h4>CNN Architecture for Color Estimation using LiDAR Intensity Patterns</h4>
 							<p align="center">
