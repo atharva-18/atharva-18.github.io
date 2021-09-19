@@ -2,7 +2,7 @@
 markdown: kramdown
 highlighter: rouge
 paginate: 100 # it will paginate after this number
-language: 'en-uk'
+language: 'en-us'
 words_per_minute: 200
 
 # edit baseurl to simply '/' if using as your personal page (instead of a project page)
@@ -15,11 +15,13 @@ cover: assets/images/bg.svg
 logo: assets/images/blog-icon.png
 logo_dark: /assets/images/favicon.svg
 favicon: /assets/images/favicon.svg
+production_url:  https://atharva-18.github.io/
+source_url:  https://github.com/atharva-18/atharva-18.github.io/
 CNAME: #add cname for website to be created
 
 # Social info
 navigation: True # show the navbar links
-subscribers: True # you need to connect an external service for this to work,
+subscribers: False # you need to connect an external service for this to work,
 # if 'True' the submit button is disabled for now, but you can change that
 # by editing `_includes/subscribe-form.html`
 twitter: AtharvaPusalkar # replace by your username
@@ -71,11 +73,9 @@ safe: False
 lsi: False
 username: atharva-18
 repo: atharva-18.github.io
-branch: master
+branch: new_website
 relative_source: ./atharva-18.github.io
 destination: _site/
-production_url:  https://atharva-18.github.io/
-source_url:  https://github.com/atharva-18/atharva-18.github.io/
 
 exclude:
   - assets/css

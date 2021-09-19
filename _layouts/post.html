@@ -2,7 +2,7 @@
 layout: default
 current: post
 class: post-template
-disqus: false
+disqus: true
 ---
 
 <!-- default -->
@@ -56,7 +56,7 @@ into the {body} of the default.hbs template -->
             {% if site.subscribers %}
                 <section class="subscribe-form">
                     <h3 class="subscribe-form-title">Subscribe to {{ site.title }}</h3>
-                    <p>Get the latest posts delivered right to your inbox</p>
+                    <p>Coming soon!</p>
                     {% include subscribe-form.html placeholder="youremail@example.com" %}
                 </section>
             {% endif %}
@@ -95,9 +95,9 @@ into the {body} of the default.hbs template -->
                     <div id="disqus_thread"></div>
                     <script>
                         var disqus_config = function () {
-                            var this_page_url = '{{ site.url }}{{ page.url }}';
-                            var this_page_identifier = '{{ page.id }}';
-                            var this_page_title = '{{ page.title }}';
+                            this.page.url = '{{ site.url }}{{ page.url }}';
+                            this.page.identifier = '{{ page.id }}';
+                            this.page.title = '{{ page.title }}';
                         };
                         (function() {
                             var d = document, s = d.createElement('script');
