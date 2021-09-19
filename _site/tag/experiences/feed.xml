@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="http://localhost:4000/tag/experiences/feed.xml" rel="self" type="application/atom+xml" />
   <link href="http://localhost:4000/" rel="alternate" type="text/html" />
-  <updated>2021-09-19T19:17:55+05:30</updated>
+  <updated>2021-09-19T19:28:47+05:30</updated>
   <id>http://localhost:4000/tag/experiences/feed.xml</id>
 
   
@@ -184,7 +184,7 @@ Open Source Robotics Foundation) as a student developer. The project was in turn
       
 
       
-        <category term="experiences" />
+        <category term="Experiences" />
       
 
       
@@ -269,7 +269,7 @@ The second episode of our IEEE Expert Lecture series. This one delved a bit into
       
 
       
-        <category term="experiences" />
+        <category term="Experiences" />
       
 
       
@@ -689,9 +689,9 @@ for particle filters,” in Nonlinear Statistical Signal Processing Workshop, 20
       
 
       
-        <category term="projects" />
+        <category term="Projects" />
       
-        <category term="experiences" />
+        <category term="Experiences" />
       
 
       
@@ -734,7 +734,7 @@ for particle filters,” in Nonlinear Statistical Signal Processing Workshop, 20
       
 
       
-        <category term="experiences" />
+        <category term="Experiences" />
       
 
       
