@@ -13,7 +13,7 @@ title: Atharva Pusalkar
 description: Atharva Pusalkar
 cover: assets/images/bg.svg
 logo: assets/images/blog-icon.png
-logo_dark: assets/images/favicon.png
+logo_dark: /assets/images/favicon.svg
 favicon: /assets/images/favicon.svg
 CNAME: #add cname for website to be created
 
