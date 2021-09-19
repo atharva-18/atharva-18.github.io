@@ -11,10 +11,10 @@ baseurl: /
 # Website info
 title: Atharva Pusalkar
 description: Atharva Pusalkar
-cover: assets/images/blog-cover.jpg
+cover: assets/images/bg.svg
 logo: assets/images/blog-icon.png
 logo_dark: assets/images/favicon.png
-favicon: assets/images/favicon.png
+favicon: assets/images/favicon.svg
 CNAME: #add cname for website to be created
 
 # Social info
@@ -24,6 +24,8 @@ subscribers: True # you need to connect an external service for this to work,
 # by editing `_includes/subscribe-form.html`
 twitter: AtharvaPusalkar # replace by your username
 # facebook: ghost # replace by your username
+linkedin: atharva-pusalkar
+github: atharva-18
 
 # Disqus
 disqus: False
@@ -42,7 +44,7 @@ permalink: /:title
 
 # gems and other configs
 plugins_dir: [_plugins]
-plugins: [jekyll-paginate, jekyll-feed]
+plugins: [jekyll-paginate, jekyll-feed, jekyll-redirect-from]
 
 feed:
   path: feed.xml

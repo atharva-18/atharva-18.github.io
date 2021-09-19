@@ -8,10 +8,14 @@ class: page-template
 subclass: 'post page'
 ---
 
-Ghost is professional publishing platform designed for modern journalism. This is a demo site of a basic Ghost install to give you a general sense of what a new Ghost site looks like when set up for the first time.
+I am a final year engineering student at DJ Sanghvi College of Engineering, University of Mumbai. I play with robots and like to build their brains (the software) and nerves (the electricals). In my free time, you will see me play tennis, listening to music or maybe both.
 
-> If you'd like to set up a site like this for yourself, head over to [Ghost.org](https://ghost.org/) and start a free 14 day trial to give Ghost a try!
+> If you would like to contact me for potential project and startup collaborations, please feel free to drop me an email!
 
-If you're a developer: Ghost is a completely open source (MIT) Node.js application built on a JSON API with an Ember.js admin client. It works with MySQL and SQLite, and is publicly available [on Github](https://github.com/TryGhost/ghost).
+You can reach out to me via,
 
-If you need help with using Ghost, you'll find a ton of useful articles on [our knowledgebase](https://help.ghost.org/), as well as extensive [developer documentation](https://docs.ghost.org/).
+Email: [atharvapusalkar18@gmail.com](mailto:atharvapusalkar18@gmail.com)
+
+LinkedIn: [Atharva Pusalkar](https://www.linkedin.com/in/atharva-pusalkar/)
+
+GitHub: [@atharva-18](https://github.com/atharva-18)
