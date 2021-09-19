@@ -3,7 +3,7 @@ layout: page
 current: experience
 title: My Experience
 navigation: true
-logo: 'assets/images/blog-icon.png'
+logo: '/assets/images/blog-icon.png'
 class: page-template
 subclass: 'post page'
 ---
