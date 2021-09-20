@@ -101,7 +101,7 @@ username: atharva-18
 repo: atharva-18.github.io
 branch: new_website
 relative_source: ./atharva-18.github.io
-destination: _site/
+destination: docs/
 production_url:  https://atharva-18.github.io
 source_url:  https://github.com/atharva-18/atharva-18.github.io
 

@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" >
+  <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
+  <link href="http://localhost:4000/tag/experiences/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="http://localhost:4000/" rel="alternate" type="text/html" />
+  <updated>2021-09-20T09:35:36+05:30</updated>
+  <id>http://localhost:4000/tag/experiences/feed.xml</id>
+
+  
+  
+  
+
+  
+    <title type="html">Atharva Pusalkar | </title>
+  
+
+  
+    <subtitle>Atharva Pusalkar</subtitle>
+  
+
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+  
+
+  
+    <entry>
+      <title type="html">Google Summer of Code at Open Robotics</title>
+      <link href="http://localhost:4000/gsoc" rel="alternate" type="text/html" title="Google Summer of Code at Open Robotics" />
+      <published>2021-08-22T15:48:00+05:30</published>
+      <updated>2021-08-22T15:48:00+05:30</updated>
+      <id>http://localhost:4000/gsoc</id>
+      <content type="html" xml:base="http://localhost:4000/gsoc">&lt;p&gt;In the summer of 2021, I had the oppurtunity to work at Open Robotics (née
+Open Source Robotics Foundation) as a student developer. The project was in turn funded by Google through their Summer of Code 2021 program.&lt;/p&gt;
+
+&lt;p&gt;Back in late 2020, I was looking at new open-source projects that I could contribute to, and by good fortune I stumbled upon the Ignition Robotics project. I was already a wee bit familiar with some of the software published by them and by Open Robotics at large - one of them being the Gazebo robotics simulator. I actively started contributing to their project by making small pull requests at first, such as adding an &lt;i&gt;about dialog&lt;/i&gt;, light intensity modification, and more. Three months later, I applied to the Summer of Code 2021 program at Open Robotics, and one fine day, after a video meeting and evaluation, I got the acceptance mail!&lt;/p&gt;
+
+&lt;p&gt;If you want to read the blog post by Open Robotics, visit &lt;a href=&quot;https://www.openrobotics.org/blog/2021/5/25/google-summer-of-code-2021&quot;&gt;https://www.openrobotics.org/blog/2021/5/25/google-summer-of-code-202&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/images/gsoc_open_robotics.png&quot; alt=&quot;&amp;quot;GSoC&amp;quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In the past, developing simulations worlds was a trial and error process, and users often had to provide computed values for robot inertia, joints, and mass properties, and hope that they will work in the simulation directly. If the physical behavior of the robot differed from what the user expected, there was no way to visualize what went wrong in the simulation world.&lt;/p&gt;
+
+&lt;p&gt;Due to the growing user base of the newer simulator, with it finding its applications in the industry and competitions such as the DARPA SubT challenge, it was becoming imperative to add capabilities to visualize values coming from the physics engine of Gazebo. Hence, this project was undertaken to add new features to visualize the robot inertia, mass, joints, and more at runtime.&lt;/p&gt;
+
+&lt;h2 id=&quot;project-breakdown&quot;&gt;Project Breakdown&lt;/h2&gt;
+
+&lt;p&gt;This project involves working on two Ignition libraries - Gazebo and Rendering. The visual classes are first added to the Rendering library which is then consumed by the downstream Gazebo project. A total of 9 pull requests were made during this project:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/ignitionrobotics/ign-gazebo/pulls?q=is%3Apr+author%3A%22atharva-18%22+created%3A%3E2021-05-01+closed%3A%3C2021-10-01++is%3Aclosed+&quot;&gt;Ignition Gazebo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/ignitionrobotics/ign-rendering/pulls?q=is%3Apr+author%3A%22atharva-18%22+created%3A%3E2021-05-01+closed%3A%3C2021-10-01++is%3Aclosed+&quot;&gt;Ignition Rendering&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Since new visuals are first added to the Ignition Rendering library, this project also extends Ignition Rendering to have a visualization component along with sensors and cameras (Please refer to this video &lt;a href=&quot;https://youtu.be/JugZs9rzpKM?t=1227&quot;&gt;Ignition vs Gazebo Classic + Ignition Rendering: Community Meeting&lt;/a&gt; at 20:27 to get an idea about the architecture).&lt;/p&gt;
+
+&lt;p&gt;These visualizations primarily target the Ogre 1.9 and Ogre 2.2 render engines as guided by the Ignition Gazebo architecture. That being said, the joint visualization should work for the NVIDIA OptiX raytracing engine as well. Currently, Ubuntu 18.04 and 20.04 along with Windows 10 and above are supported. Support for macOS is not under development due to additional requirements for the Metal API.&lt;/p&gt;
+
+&lt;h3 id=&quot;visualize-as-wireframe&quot;&gt;Visualize as Wireframe&lt;/h3&gt;
+
+&lt;p&gt;Users often need to debug their 3D meshes, hence we added a wireframe rendering mode to visuals, similar to Gazebo Classic&lt;/p&gt;
+
+&lt;p&gt;Ignition Rendering Pull Request - &lt;a href=&quot;https://github.com/ignitionrobotics/ign-rendering/pull/314&quot;&gt;https://github.com/ignitionrobotics/ign-rendering/pull/314&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Ignition Gazebo Pull Request - &lt;a href=&quot;https://github.com/ignitionrobotics/ign-gazebo/pull/816&quot;&gt;https://github.com/ignitionrobotics/ign-gazebo/pull/816&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/images/wireframe.gif&quot; alt=&quot;Wireframe&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;visualize-as-transparent&quot;&gt;Visualize as Transparent&lt;/h3&gt;
+
+&lt;p&gt;You can now make a robot model or its link transparent in Gazebo, to help you see its other aspects more clearly.&lt;/p&gt;
+
+&lt;p&gt;Ignition Gazebo Pull Request - &lt;a href=&quot;https://github.com/ignitionrobotics/ign-gazebo/pull/878&quot;&gt;https://github.com/ignitionrobotics/ign-gazebo/pull/878&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/images/transparent.gif&quot; alt=&quot;Transparent&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;visualize-inertia&quot;&gt;Visualize Inertia&lt;/h3&gt;
+
+&lt;p&gt;Visualize the inertia of a robot model or link using its physics inertia properties (No more adding values in SDF files blindly).&lt;/p&gt;
+
+&lt;p&gt;Ignition Rendering Pull Request - &lt;a href=&quot;https://github.com/ignitionrobotics/ign-rendering/pull/326&quot;&gt;https://github.com/ignitionrobotics/ign-rendering/pull/326&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Ignition Gazebo Pull Request - &lt;a href=&quot;https://github.com/ignitionrobotics/ign-gazebo/pull/861&quot;&gt;https://github.com/ignitionrobotics/ign-gazebo/pull/861&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Here’s the inertia visualization in different scales and orientations:
+&lt;img src=&quot;assets/images/inertia.png&quot; alt=&quot;Inertia&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;visualize-center-of-mass&quot;&gt;Visualize Center of Mass&lt;/h3&gt;
+
+&lt;p&gt;Visualize the center of mass of a robot model or link, using the same inertia values.&lt;/p&gt;
+
+&lt;p&gt;Ignition Rendering Pull Request - &lt;a href=&quot;https://github.com/ignitionrobotics/ign-rendering/pull/345&quot;&gt;https://github.com/ignitionrobotics/ign-rendering/pull/345&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Ignition Gazebo Pull Request - &lt;a href=&quot;https://github.com/ignitionrobotics/ign-gazebo/pull/903&quot;&gt;https://github.com/ignitionrobotics/ign-gazebo/pull/903&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/images/com.gif&quot; alt=&quot;CoM&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;visualize-joints&quot;&gt;Visualize Joints&lt;/h3&gt;
+
+&lt;p&gt;You can now visualize the joints of a robot while simulating or building it. Joints such as revolute, prismatic, universal, ball, and more are supported.&lt;/p&gt;
+
+&lt;p&gt;This visualization will be extended in the future to planned features such as the model and joint editor.&lt;/p&gt;
+
+&lt;p&gt;Ignition Rendering Pull Request - &lt;a href=&quot;https://github.com/ignitionrobotics/ign-rendering/pull/366&quot;&gt;https://github.com/ignitionrobotics/ign-rendering/pull/366&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Ignition Gazebo Pull Request - &lt;a href=&quot;https://github.com/ignitionrobotics/ign-gazebo/pull/961&quot;&gt;https://github.com/ignitionrobotics/ign-gazebo/pull/961&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/images/joints.gif&quot; alt=&quot;Joints&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Besides the above-mentioned, I have also added features such as the &lt;i&gt;about dialog&lt;/i&gt; and light intensity fields during the pre-GSOC period.&lt;/p&gt;
+
+&lt;p&gt;We hope that this project will provide a better user experience to existing users and bring more people under the Ignition project by reducing the feature gap between the two simulators.&lt;/p&gt;
+
+&lt;p&gt;These new visualizations will be released to the public with Ignition Fortress in September 2021.&lt;/p&gt;
+
+&lt;h2 id=&quot;testing&quot;&gt;Testing&lt;/h2&gt;
+
+&lt;p&gt;You can test the new features by installing Ignition Fortress from Nightly builds and using the demo world provided in this repository.&lt;/p&gt;
+
+&lt;p&gt;After downloading, you can run the simulation by&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ign gazebo -v 4 visualization_demo.sdf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Ignition Gazebo demo using a SubT vehicle:
+&lt;img src=&quot;assets/images/testing.gif&quot; alt=&quot;Testing&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ignition Rendering demo:
+&lt;img src=&quot;assets/images/rendering-demo.png&quot; alt=&quot;Rendering Demo&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A small demo involving the visualization component of Ignition Rendering is now included with the source code starting with the Fortress release.&lt;/p&gt;
+
+&lt;p&gt;As opposed to the Gazebo Classic simulator, the new Ignition libraries offer a decoupled architecture. Each component of Gazebo (For example, rendering, transport and physics) is now a separate library. The advantage is that developers can use the above-mentioned visuals for their own separate projects without having the overhead of unwanted Gazebo code.&lt;/p&gt;
+
+&lt;h2 id=&quot;acknowledgments&quot;&gt;Acknowledgments&lt;/h2&gt;
+
+&lt;p&gt;I thank my mentor, Alejandro Hernández Cordero, for supporting and guiding me during the entire program and before it. Thanks to the whole Open Robotics team for providing me with this opportunity, reviewing my work, and assisting me with the project.&lt;/p&gt;
+
+&lt;!--
+[Meet with Open Robotics development team](assets/images/meet.png)
+--&gt;
+
+&lt;p&gt;The non-programming part was just as much of an experience, if not more. The weekly team meetings were a great way of looking into project management and workflows. It was definitely worth staying up late at 1 AM in the night, working with people based in different timezones. Now, I am looking forward to giving my project presentation at the Ignition Fortress Demos Community Meeting.&lt;/p&gt;
+
+&lt;p&gt;The work has helped me improve my programming skills, and I learned a great deal about 3D rendering and physics simulation.&lt;/p&gt;
+
+&lt;h2 id=&quot;about-me&quot;&gt;About Me&lt;/h2&gt;
+
+&lt;p&gt;I am a final-year undergraduate engineering student at DJ Sanghvi College of Engineering, University of Mumbai pursuing Electronics Engineering.&lt;/p&gt;
+
+&lt;p&gt;I primarily work with autonomous robotics and self-driving software. I have been a part of the Formula Student team of my institute where we are building a self-developed autonomous race car. Through the team, I gained hands-on experience in robot navigation and perception and motivated me to further explore ROS and Gazebo. I have also worked at a startup to develop and deploy autonomous navigation software for use in warehouse environments.&lt;/p&gt;
+
+&lt;p&gt;During my time at Open Robotics, I had the opportunity to directly work on features that were being used by people in the robotics industry and academia.&lt;/p&gt;
+
+&lt;p&gt;Thank you for reading.&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Atharva Pusalkar</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="Experiences" />
+      
+
+      
+        <summary type="html">In the summer of 2021, I had the oppurtunity to work at Open Robotics (née Open Source Robotics Foundation) as a student developer. The project was in turn funded by Google through their Summer of Code 2021 program.</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">IEEE Student Branch, DJSCE</title>
+      <link href="http://localhost:4000/ieee-sb" rel="alternate" type="text/html" title="IEEE Student Branch, DJSCE" />
+      <published>2021-07-05T15:48:00+05:30</published>
+      <updated>2021-07-05T15:48:00+05:30</updated>
+      <id>http://localhost:4000/ieee-sb</id>
+      <content type="html" xml:base="http://localhost:4000/ieee-sb">&lt;p&gt;For two years of my undergrad, I was a member of the IEEE student chapter of my institute, DJ Sanghvi College of Engineering.&lt;/p&gt;
+
+&lt;p&gt;IEEE Brainwaves is the official IEEE student branch of Dwarkadas J. Sanghvi College of Engineering. The student chapter is responsible for coordinating &amp;amp; conducting various workshops and other activities at the institute, which include expert lectures, seminars, workshops, and industry visits, and mentoring sessions by alumni. These all are the initiatives by the department to ensure a holistic learning experience in the 4 years of engineering at DJSCE.&lt;/p&gt;
+
+&lt;p&gt;I joined the team as a technical team member back in 2019 - my sophomore year. I was then promoted as the Chairperson for the following academic year. I look back at the past two years spent at the club fondly. The work and topics ranged from photo editing, electronics, programming, to even the equity markets.&lt;/p&gt;
+
+&lt;p&gt;Here are a few glimpses of our events during the last year.&lt;/p&gt;
+
+&lt;h2 id=&quot;drone-federation-of-india-seminar&quot;&gt;Drone Federation of India Seminar:&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;assets/images/DFI_1.jpg&quot; alt=&quot;DFI&quot; /&gt;
+Workshop organized in collaboration with the Drone Federation of India. It introduced the world of drones including ArduPilot, navigation, and autonomy. The speaker of the event was Mr. Smit Shah who is the Director of the Drone Federation of India. The key takeaway from this seminar was the growing prominence of drone technology and its expansion in the industry. The webinar was followed by a short QnA.&lt;/p&gt;
+
+&lt;h2 id=&quot;ieee-alumni-series-episode-1-can-protocol-and-implementation-of-rtos&quot;&gt;IEEE Alumni Series Episode 1: CAN Protocol and Implementation of RTOS:&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;assets/images/CAN_Protocol_Poster.png&quot; /&gt;
+&lt;img src=&quot;assets/images/CAN_Protocol_1.jpg&quot; /&gt;
+We conducted Episode 1 of IEEE Alumni Series on CAN and RTOS protocols with Samuel Ramrajkar, alumni of DJ Sanghvi College and Rutgers University. He is an embedded software engineer at Aerotek and has worked in companies like Mars international and Siemens. The attendees were introduced to the concepts of real-time computing, automotive-grade electronic standards, and embedded programming fundamentals such as MISRA C.
+Leveraging his experience in the industry for 5+years, he shared some of the key takeaways about the topics and how students can benefit from them.&lt;/p&gt;
+
+&lt;h2 id=&quot;pixelated-photo-editing-workshop&quot;&gt;PIXELATED: Photo Editing Workshop:&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;assets/images/PIXELATED_workshop1_poster.png&quot; alt=&quot;PIXELATED 1 Poster&quot; /&gt;
+&lt;img src=&quot;assets/images/Pixelated1_0.jpg&quot; alt=&quot;PIXELATED 1 Snap&quot; /&gt;
+Workshop organized along with Sanjay Chauhan who is a creative editor and works as a motion graphic designer and graphic designer and is working on new projects of web development. The workshop introduced the basics of Adobe Photoshop such as spot healing, clone stamping, and CAF (Content-Aware Fill). The workshop was divided into four parts to sequentially introduce the features of the application.&lt;/p&gt;
+
+&lt;h2 id=&quot;ieee-alumni-series-episode-2-tableau-for-advanced-analytics--business-intelligence&quot;&gt;IEEE Alumni Series Episode 2: Tableau for Advanced Analytics &amp;amp; Business Intelligence:&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;assets/images/Tableau_poster.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;assets/images/Tableau_1.png&quot; alt=&quot;&quot; /&gt;
+IEEE in association with the IBM Data analytics program organized IEEE Alumni Series Episode 2 on Tableau for Advanced Analytics and Business Intelligence with Mr. Sachin Nagda, Quantitative Finance Analyst- Assistant Vice President at Bank of America. Mr. Sachin is an alumnus of the University of Texas and Dallas and has been working with Bank of America for 4+ years. Attendees were provided with hands-on experience on Tableau to perform data analysis and anomaly detection. It also explained how big organizations such as the Bank of America leverage Tableau to perform their strategic and analytics operations.&lt;/p&gt;
+
+&lt;h2 id=&quot;pixelated-video-editing-workshop&quot;&gt;PIXELATED: Video Editing Workshop:&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;assets/images/PIXELATED_workshop2_poster.PNG&quot; alt=&quot;PIXELATED 2 Poster&quot; /&gt;
+&lt;img src=&quot;assets/images/Pixelated2_0.jpg&quot; alt=&quot;PIXELATED 2 Snap&quot; /&gt;
+IEEE Brainwaves in collaboration with speaker Amey Karhade organized an intercollege video editing workshop with an aim to make students familiar with Adobe After effects. Amey is a creative editor and is currently working at MONK-E as a video editor. He shares his work through his YouTube channel. The workshop introduced the concepts of video editing, swipe effect, door-effect, and clone swipe. The software used for these techniques was Adobe After Effects. A short QnA session was kept at the end.&lt;/p&gt;
+
+&lt;h2 id=&quot;git-up&quot;&gt;Git-Up:&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;assets/images/Gitup_poster.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;assets/images/Gitup1.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;assets/images/Gitup2.png&quot; alt=&quot;&quot; /&gt;
+IEEE Brainwaves in collaboration with speaker Vrushti Modi organized an event - “GIT UP” to emphasize open-source contributions and version control. Vrushti herself being an MLH Fellow and an open-source contributor based in Mumbai, India. It was a hands-on workshop where students learned GIT commands under the guidance of Vrushti. At the end of the session, students deployed a portfolio website on Netlify.&lt;/p&gt;
+
+&lt;h2 id=&quot;ieee-alumni-series---episode-3---how-to-identify-high-growth-low-valuation-companies-in-equity-markets---a-masterclass-on-equity-markets-by-jay-mehta&quot;&gt;IEEE Alumni Series - Episode 3 - How to Identify High Growth Low Valuation Companies in Equity Markets - A Masterclass on Equity Markets by Jay Mehta:&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;assets/images/Equities_poster.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;assets/images/Equities_2.jfif&quot; alt=&quot;&quot; /&gt;
+IEEE in association with IBM Data Analytics Program presents How to Identify High Growth Low Valuation Companies in Equity Markets- A Masterclass on Equity Markets by Jay Mehta. The workshop provided an insight on how to get started with the stock market. The session was completely interactive, and it made sure all the questions were answered thanks to Mr. Jay Mehta and his immense knowledge about stock markets.&lt;/p&gt;
+
+&lt;h2 id=&quot;ieee-expert-lecture-series---episode-1---fortinet-firewalls---engineering-for-an-accelerated-network-security&quot;&gt;IEEE Expert Lecture Series - Episode 1 - Fortinet Firewalls - Engineering for an Accelerated Network Security:&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;assets/images/Firewall_poster.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;assets/images/&quot; alt=&quot;&quot; /&gt;
+The first episode of our newly created Lecture Series – Fortinet Firewalls organized in collaboration with Mr. Rohan Kamat. Rohan Kamat is a Network Security Professional with 12 years of experience working with many Fortune 500 companies. Currently working as a Senior Systems Engineer, Rohan specializes in Network Security and is responsible for architecting robust solutions for customers using Fortinet technology. He gave an insight into network security and access modes, and why firewalls form an essential part of network security. Furthermore, advanced topics such as DDOS attacks were also a part of the discussion.&lt;/p&gt;
+
+&lt;h2 id=&quot;ieee-expert-lecture-series---episode-2--technical-paper-report-writing-and-research-paper-publication&quot;&gt;IEEE Expert Lecture Series - Episode 2 – Technical Paper, Report Writing, and Research Paper Publication:&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;assets/images/techpaper.png&quot; alt=&quot;&quot; /&gt;
+The second episode of our IEEE Expert Lecture series. This one delved a bit into the academic setting, the attendees were introduced to the concept of technical writing and how one can go about writing and publishing a research paper. The speakers for this event were our very own professors – Prof. (Ms.) Darshana M. Sankhe, Prof. (Ms.) Purva Badhe, and Prof. (Mrs.) Mrunal R. Rane. The outcome of this webinar was that the students learned how to write precise and to-the-point technical papers and reports.&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Atharva Pusalkar</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="Experiences" />
+      
+
+      
+        <summary type="html">For two years of my undergrad, I was a member of the IEEE student chapter of my institute, DJ Sanghvi College of Engineering.</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">DJS Racing</title>
+      <link href="http://localhost:4000/djsr" rel="alternate" type="text/html" title="DJS Racing" />
+      <published>2021-07-01T15:48:00+05:30</published>
+      <updated>2021-07-01T15:48:00+05:30</updated>
+      <id>http://localhost:4000/djsr</id>
+      <content type="html" xml:base="http://localhost:4000/djsr">&lt;p&gt;I currently lead the driverless project at DJS Racing, a student team aiming to build a self-driving Formula Student race car.&lt;/p&gt;
+
+&lt;p&gt;Here’s a small video from 2019 about our work prior to building driverless and electric cars:&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/58pZoXDAzec&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Although we’ve been working remotely most of the times for the past one and half years, we’re on our way to finish building our next car by February 2022.&lt;/p&gt;
+
+&lt;div id=&quot;wrapper&quot;&gt;
+
+				&lt;!-- Main --&gt;
+					&lt;section id=&quot;main&quot; class=&quot;wrapper&quot;&gt;
+						&lt;div class=&quot;inner&quot;&gt;
+							&lt;h1 class=&quot;major&quot;&gt;DJS Racing Driverless&lt;/h1&gt;
+							&lt;p align=&quot;center&quot;&gt;
+								&lt;img width=&quot;75%&quot; height=&quot;75%&quot; src=&quot;assets/images/djsre03.jpg&quot; /&gt;
+							&lt;/p&gt;
+							&lt;!-- &lt;span class=&quot;image fit&quot;&gt;&lt;img src=&quot;assets/images/pic04.jpg&quot; alt=&quot;&quot; /&gt;&lt;/span&gt; --&gt;
+							&lt;p&gt;At DJS Racing, the Formula Student Team of Dwarkadas J. Sanghvi College of Engineering, we are building one of the first driverless Formula Student race-car of India. The team will use the software system presented below for the Formula Student Driverless competition (postponed due to the outbreak of COVID-19).&lt;/p&gt;
+							&lt;h2&gt;About Formula Student Driverless&lt;/h2&gt;
+							&lt;!-- &lt;span class=&quot;image fit&quot;&gt;&lt;img src=&quot;assets/images/pic04.jpg&quot; alt=&quot;&quot; /&gt;&lt;/span&gt; --&gt;
+							&lt;p&gt; Formula
+								Student Driverless(FSD) is the world's largest autonomous racing competition, held annually in Hockenheim, Germany, in which multidisciplinary student teams compete
+								with self-developed driverless racecars every year. 
+								In this competition, each team has to race their autonomous car across 5 disciplines - Acceleration, Skidpad, Autocross, and Trackdrive. 
+								In the main event, called Trackdrive, a car has to complete 10 laps on an unknown track autonomously as fast as possible against the clock. 
+								The track is defined by a set of traffic cones, blue cones on the left and yellow cones on the right-hand side&lt;sup id=&quot;27_return&quot;&gt;&lt;a href=&quot;#27&quot;&gt;[27]&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+								&lt;h4 align=&quot;center&quot;&gt;Track Layout&lt;/h4&gt;
+								&lt;p align=&quot;center&quot;&gt;
+									&lt;img width=&quot;75%&quot; height=&quot;75%&quot; src=&quot;assets/images/track_layout.jpg&quot; /&gt;
+								&lt;/p&gt;
+								&lt;p&gt;In this blog, I am going to introduce to you the overall implementation of a Formula Student Driverless race-car by DJS Racing, India. The race-car can drive autonomously on unknown tracks and switch to Model Predictive Control after track exploration, mapping, and loop-closure detection in the first lap.&lt;/p&gt;
+							&lt;h2&gt;Software Architecture&lt;/h2&gt;
+							&lt;!-- &lt;span class=&quot;image fit&quot;&gt;&lt;img src=&quot;assets/images/pic04.jpg&quot; alt=&quot;&quot; /&gt;&lt;/span&gt; --&gt;
+							&lt;p&gt; We chose the Robot Operating System as our primary framework for software development. In order to run the MPC algorithm at its full potential, the track must be known at least 2s in advance for a speed of 85 kmph. With the current perception setup, it is not possible to achieve accurate mapping of the environment with a 40m (at 85 kmph) of look-ahead. Hence, we need to drive the first lap, exploring the track using a geometric controller such as the Pure Pursuit Controller&lt;sup id=&quot;23_return&quot;&gt;&lt;a href=&quot;#23&quot;&gt;[23]&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&quot;28_return&quot;&gt;&lt;a href=&quot;#28&quot;&gt;[28]&lt;/a&gt;&lt;/sup&gt; at a lower speed. After successful mapping and exploration of the track, the car switches to the more performant Model Predictve Control(MPC) for the subsequent laps to race as fast as possible. From this, we can define two modes of our system operation, SLAM mode, and localization mode. To count the number of laps and to detect loop closure, high-level mission planning is done using a finite state machine. This state machine guides to the system to switch between SLAM and localization mode and signals whether the race has finished. Interfacing between the onboard Jetson AGX Xavier and the STM32 is done using the ros-serial package. The STM32 runs FreeRTOS to achieve real-time control of actuators.&lt;/p&gt;
+							&lt;h4 align=&quot;center&quot;&gt;System Overview&lt;/h4&gt;
+							&lt;p align=&quot;center&quot;&gt;
+								&lt;img width=&quot;75%&quot; height=&quot;75%&quot; src=&quot;assets/images/Autonomous System.png&quot; /&gt;
+							&lt;/p&gt;
+							&lt;h4 align=&quot;center&quot;&gt;High-level Architecture&lt;/h4&gt;
+							&lt;p align=&quot;center&quot;&gt;
+								&lt;img width=&quot;75%&quot; height=&quot;75%&quot; src=&quot;assets/images/rosgraph.png&quot; /&gt;
+							&lt;/p&gt;
+							&lt;h2&gt;3D Perception&lt;/h2&gt;
+							&lt;p&gt;The goal of the perception system is to detect traffic cones in the vicinity of the car and determine their color and 3D coordinates in real-time. These cone detections will be then fed as landmarks to the SLAM node to build a map of the track. The perception system takes input from multiple sensors - a mono camera, stereo camera, and a 3D LiDAR. The Basler Ace 2 industrial camera was chosen for our self-developed mono and stereo camera setups. &lt;/p&gt;
+							&lt;!-- The Ouster OS1-32 LiDAR was chosen as our main LiDAR. --&gt;
+							&lt;p&gt;Multiple sources of visual information are chosen so as to increase the redundancy&lt;sup id=&quot;22_return&quot;&gt;&lt;a href=&quot;#22&quot;&gt;[22]&lt;/a&gt;&lt;/sup&gt; in the system and to perceive the environment reliably as only one chance is given for the trackdrive race.&lt;/p&gt;
+
+							&lt;h4&gt;LiDAR 3D Object Dectection&lt;/h4&gt;
+							&lt;!-- Ouster OS-1 --&gt;
+							&lt;p align=&quot;center&quot;&gt;
+								3D Traffic Cone Detection and Color Estimation using LiDAR Data
+							&lt;/p&gt;
+							&lt;p align=&quot;center&quot;&gt;
+								&lt;video width=&quot;50%&quot; height=&quot;50%&quot; controls=&quot;&quot; loop=&quot;&quot;&gt;
+									&lt;source src=&quot;assets/videos/lidar.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+									Your browser does not support the video tag.
+								&lt;/video&gt;
+							&lt;/p&gt;
+							&lt;p&gt;The point cloud obtained from the LiDAR is first segmented and the ground and out-of-track planes are removed. Afterwards, Euclidean clustering is run on the point cloud to cluster cone patches. The centroid of these cone patches is used to determine the 3D coordinates for each cone. They are further projected on to a 2D plane from the LiDAR frame so as to obtain a 32x32 image. A state-of-the-art CNN&lt;sup id=&quot;4_return&quot;&gt;&lt;a href=&quot;#4&quot;&gt;[4]&lt;/a&gt;&lt;/sup&gt; is then run on these image patches to estimate the color for each cone.&lt;/p&gt;
+							&lt;p&gt;These clusters are also passed through a rule-based outlier filter to remove false cones in the map.&lt;/p&gt;
+							&lt;h4&gt;CNN Architecture for Color Estimation using LiDAR Intensity Patterns&lt;/h4&gt;
+							&lt;p align=&quot;center&quot;&gt;
+								&lt;img width=&quot;75%&quot; height=&quot;75%&quot; src=&quot;assets/images/lidar_cnn.jpg&quot; /&gt;
+							&lt;/p&gt;
+							&lt;h4&gt;Stereo 3D Object Dectection&lt;/h4&gt;
+							&lt;p&gt;In order to ensure redundancy in the system, an additional camera-based object detection pipeline is added to the system.&lt;/p&gt;
+							&lt;p&gt;We have chosen an off-the-shelf object detector, YOLOv3&lt;sup id=&quot;17_return&quot;&gt;&lt;a href=&quot;#17&quot;&gt;[17]&lt;/a&gt;&lt;/sup&gt; for object detection for real-time performance.&lt;/p&gt;
+							&lt;p align=&quot;center&quot;&gt;
+								Stereo Object Detection Pipeline
+							&lt;/p&gt;
+							&lt;p align=&quot;center&quot;&gt;
+								&lt;img width=&quot;75%&quot; height=&quot;75%&quot; src=&quot;assets/images/stereo_pipeline.png&quot; /&gt;
+							&lt;/p&gt;
+							&lt;p align=&quot;center&quot;&gt;
+								YOLOv3 running on mock cones
+							&lt;/p&gt;
+							&lt;p align=&quot;center&quot;&gt;
+								&lt;video width=&quot;75%&quot; height=&quot;75%&quot; controls=&quot;&quot; loop=&quot;&quot;&gt;
+									&lt;source src=&quot;assets/videos/stereo.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+									Your browser does not support the video tag.
+								&lt;/video&gt;
+							&lt;/p&gt;
+							&lt;p&gt;
+								Stereo feature matching is then performed using the Semi-Global Block Matching&lt;sup id=&quot;32_return&quot;&gt;&lt;a href=&quot;#32&quot;&gt;[32]&lt;/a&gt;&lt;/sup&gt; (SGBM) algorithm to obtain the disparity map and 3D coordinates of the traffic cones.
+							&lt;/p&gt;
+							&lt;p align=&quot;center&quot;&gt;
+								3D point cloud obtained after occlusion reduction in the disparity map
+							&lt;/p&gt;
+							&lt;p align=&quot;center&quot;&gt;
+								&lt;img width=&quot;75%&quot; height=&quot;75%&quot; src=&quot;assets/images/stereo_depth.jpg&quot; /&gt;
+							&lt;/p&gt;
+							&lt;h4&gt;Monocular 3D Object Detection&lt;/h4&gt;
+							&lt;p&gt;Monocular 3D Object Detection is performed using the Perspective 7-Point transformation with the PnP RANSAC algorithm&lt;sup id=&quot;1_return&quot;&gt;&lt;a href=&quot;#1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;. This is considering the fact that we know the exact physical dimensions of each cone. The keypoints&lt;sup id=&quot;21_return&quot;&gt;&lt;a href=&quot;#21&quot;&gt;[21]&lt;/a&gt;&lt;/sup&gt; are then used to transform 2D image coordinates to 3D world coordinates.
+								Keypoints for each cone image patch are obtained using the RektNet CNN architecture by MIT Driverless (Accurate, Low-Latency Visual Perception for Autonomous Racing:Challenges, Mechanisms, and Practical Solutions. Kieran Strobel et al., 2020).
+							&lt;/p&gt;
+							&lt;p align=&quot;center&quot;&gt;
+								Stereo Object Detection Pipeline
+							&lt;/p&gt;
+							&lt;p align=&quot;center&quot;&gt;
+								&lt;img width=&quot;75%&quot; height=&quot;75%&quot; src=&quot;assets/images/mono_pipeline.png&quot; /&gt;
+							&lt;/p&gt;
+							&lt;p align=&quot;center&quot;&gt;
+								&lt;img width=&quot;35%&quot; height=&quot;35%&quot; src=&quot;assets/images/keypoint_input.png&quot; /&gt;
+								&lt;img width=&quot;35%&quot; height=&quot;35%&quot; src=&quot;assets/images/keypoint_output.png&quot; /&gt;
+							&lt;/p&gt;
+							&lt;p&gt;Occlusion of background cones is handled by outlier filtering.&lt;/p&gt;
+							&lt;h2&gt;
+								Pose/Velocity Estimation and Simultaneous Localization and Mapping
+							&lt;/h2&gt;
+							&lt;p&gt;The extended Kalman Filter was chosen as an estimator for mildly non-linear systems with white Gaussian noise. Our main task here is to fuse data from an Inertial Measurement Unit (SBG Ellipse N), 4 wheel encoders, steering angle sensor, and a dual GPS system in a moving baseline configuration. EKF is also computationally more efficient than the Unscented Kalman Filter&lt;sup id=&quot;20_return&quot;&gt;&lt;a href=&quot;#20&quot;&gt;[20]&lt;/a&gt;&lt;/sup&gt; and allows us to estimate the state at 200 Hz. Here, the effects of lateral load transfer are ignored and the track is assumed to be a flat 2D surface.&lt;/p&gt;
+							&lt;p align=&quot;center&quot;&gt;
+								State Estimation Pipeline
+							&lt;/p&gt;
+							&lt;p align=&quot;center&quot;&gt;
+								&lt;img width=&quot;75%&quot; height=&quot;75%&quot; src=&quot;assets/images/velocity_estimation.png&quot; /&gt;
+							&lt;/p&gt;
+							&lt;p&gt;We consider that our system model is a constant velocity model (CTRV)&lt;sup id=&quot;2_return&quot;&gt;&lt;a href=&quot;#2&quot;&gt;[2]&lt;/a&gt;&lt;/sup&gt;, the jerk is assumed to be zero in this case and acceleration is used as a pseudo input to the system.&lt;/p&gt;
+							&lt;p&gt;The wheel encoders along with the steering angle potentiometer are used to estimate the slip ratios of the vehicle.&lt;/p&gt;
+							&lt;p&gt;The 6-DOF state vector is taken as&lt;/p&gt;
+							&lt;p align=&quot;center&quot;&gt;
+								&lt;img width=&quot;25%&quot; height=&quot;25%&quot; src=&quot;assets/images/state_vector.jpg&quot; /&gt;
+							&lt;/p&gt;
+							&lt;p&gt;Where &lt;code&gt;p, θ, v&lt;/code&gt; are the position (along x and y), angular velocity, and the linear velocity (along x and y in car frame) of the car respectively.&lt;/p&gt;
+							&lt;p&gt;The process model is taken as&lt;/p&gt;
+							&lt;p align=&quot;center&quot;&gt;
+								&lt;img width=&quot;45%&quot; height=&quot;45%&quot; src=&quot;assets/images/process_model.jpg&quot; /&gt;
+							&lt;/p&gt;
+							&lt;p&gt;Where &lt;code&gt;a&lt;/code&gt; is the linear acceleration measured by the IMU and &lt;code&gt;R(θ)&lt;/code&gt; is the rotation matrix between the sensor frame and the vehicle frame.&lt;/p&gt;
+							&lt;p&gt;The sensor model is&lt;/p&gt;
+							&lt;p align=&quot;center&quot;&gt;
+								&lt;img width=&quot;45%&quot; height=&quot;45%&quot; src=&quot;assets/images/sensor_model.jpg&quot; /&gt;
+							&lt;/p&gt;
+							&lt;p&gt;Where &lt;code&gt;θs&lt;/code&gt; is the sensor heading in the body frame and n{.} are additive Gaussian white noises that corrupt the measurements.&lt;/p&gt;
+							&lt;p&gt;Different sensors work at different rates and the accuracy also varies between the sensors. Hence, we use multiple update functions for each sensor and we update our beliefs asynchronously&lt;sup id=&quot;26_return&quot;&gt;&lt;a href=&quot;#26&quot;&gt;[26]&lt;/a&gt;&lt;/sup&gt;. Here, the acceleration is taken from the IMU, angular velocity from the Gyroscope, and velocities from GPS and wheel encoders. Sensor drift and failure is detected with the help of Chi-Squared test&lt;sup id=&quot;7_return&quot;&gt;&lt;a href=&quot;#7&quot;&gt;[7]&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+							&lt;p align=&quot;center&quot;&gt;
+								&lt;img src=&quot;https://www.gstatic.com/education/formulas2/-1/en/chi_squared_test.svg&quot; /&gt;
+							&lt;/p&gt;
+							&lt;p&gt;If the value of Chi falls below a certain threshold, the measurement is ignored.&lt;/p&gt;
+							&lt;p&gt;Design of an Autonomous Racecar: Perception, State Estimation and
+								System Integration (Valls et al., 2018)
+							&lt;/p&gt;
+							&lt;p&gt;
+								The landmark-based FastSLAM&lt;sup id=&quot;8_return&quot;&gt;&lt;a href=&quot;#8&quot;&gt;[8]&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&quot;15_return&quot;&gt;&lt;a href=&quot;#15&quot;&gt;[15]&lt;/a&gt;&lt;/sup&gt; algorithm was chosen for its robustness because of multiple-hypothesis and proposal sampling&lt;sup id=&quot;3_return&quot;&gt;&lt;a href=&quot;#3&quot;&gt;[3]&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&quot;31_return&quot;&gt;&lt;a href=&quot;#31&quot;&gt;[31]&lt;/a&gt;&lt;/sup&gt;.
+								FastSLAM is computationally much more efficient with N.log(N) time complexity as compared to EKF SLAM with a quadratic complexity &lt;sup id=&quot;19_return&quot;&gt;&lt;a href=&quot;#19&quot;&gt;[19]&lt;/a&gt;&lt;/sup&gt;.
+								FastSLAM is also much more tunable owing to the fact that it uses a Rao-Backwellized particle filter to express pose estimates. We can simply tune the number of particles to adjust the runtime performance.
+								Data association is done by comparing the mahalanobis distance between an observation and each landmark on the map.
+							&lt;/p&gt;
+							&lt;p align=&quot;center&quot;&gt;
+								&lt;img width=&quot;75%&quot; height=&quot;75%&quot; src=&quot;assets/images/slam_pipeline.jpg&quot; /&gt;
+							&lt;/p&gt;		
+							&lt;p&gt;
+								Our SLAM pipeline runs at 15 Hz to accommodate for the perception pipeline operation rate. The pose estimates from the SLAM node are then integrated by the velocity with time by the velocity estimation node to provide fast pose updates at 200 Hz for the control algorithm. This ensures that the MPC node always receives the latest pose estimates. 
+							&lt;/p&gt;						
+							&lt;h2&gt;
+								Path Planning
+							&lt;/h2&gt;
+							&lt;p&gt;
+								&lt;h4 align=&quot;center&quot;&gt;
+									RRT + Delaunay Triangulation for Waypoints Generation
+								&lt;/h4&gt;
+							&lt;/p&gt;
+							&lt;p&gt;We chose the Randomly Exploring Random Trees&lt;sup id=&quot;24_return&quot;&gt;&lt;a href=&quot;#24&quot;&gt;[24]&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&quot;25_return&quot;&gt;&lt;a href=&quot;#25&quot;&gt;[25]&lt;/a&gt;&lt;/sup&gt; as our path planning algorithms. Formula Student poses a unique challenge to path planning as there is no definite goal, and we just have to drive straight. Hence, in order to determine the best path, we have proposed a cost function that is assigned to each node. The tree branch with the lowest cost is then chosen as our desired path.&lt;/p&gt;
+							&lt;code&gt;
+								J = Q_delta * delta^2 + Q_theta * theta^2 + Q_cte * cte^2 - Q_cone * cone_count^2
+							&lt;/code&gt;
+							&lt;br /&gt;
+							Where,
+							&lt;ul&gt;
+								&lt;li&gt;delta: Angular deviation between two nodes. Avoids sharp turns.&lt;/li&gt;
+								&lt;li&gt;theta: Discounted heading. Tree pointing backward to the car are penalized.&lt;/li&gt;
+								&lt;li&gt;cte: Distance between the path and track boundary. Penalizes branches too close to the boundaries.&lt;/li&gt;
+								&lt;li&gt;cone_count: Count of cones on both sides of the path. Penalizes shorter paths.&lt;/li&gt;
+							&lt;/ul&gt;
+							&lt;p&gt;The cost is then normalized between 0 and 1 to determine the best path.&lt;/p&gt;
+							&lt;p&gt;However, this is not the appropriate approach to path planning in FSD, as we need to have a continous and smooth trajectory in order to ensure that we are driving close to the limits of handling. Hence, we have an additional step of running Delaunay triangulation&lt;sup id=&quot;13_return&quot;&gt;&lt;a href=&quot;#13&quot;&gt;[13]&lt;/a&gt;&lt;/sup&gt; on nearby cone positions. The intersection points of the best tree branch and the traingulation segments are then taken as the waypoints for the control algorithm.&lt;/p&gt;
+							&lt;p align=&quot;center&quot;&gt;
+								&lt;video width=&quot;75%&quot; height=&quot;75%&quot; controls=&quot;&quot; loop=&quot;&quot;&gt;
+									&lt;source src=&quot;assets/videos/rrt_delaunay.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+									Your browser does not support the video tag.
+								&lt;/video&gt;
+							&lt;/p&gt;
+							&lt;p&gt;The waypoints that are generated are depicted as blue dots along the track center-line.&lt;/p&gt;
+							&lt;h2&gt;Model Predictive Control&lt;/h2&gt;
+							&lt;p&gt;After finishing the first lap using the PID and Pure Pursuit Controller, loop closure is detected and the SLAM algorithm switches to localization mode. This is all handled by the mission planning node. After track exploration and mapping, we switch to Model Predictve Control&lt;sup id=&quot;18_return&quot;&gt;&lt;a href=&quot;#18&quot;&gt;[18]&lt;/a&gt;&lt;/sup&gt; as our control method to finish the race as fast as possible at the limits of handling in real-time.&lt;/p&gt;
+							&lt;p&gt;The goal of the optimization problem is to drive the car along the reference path, following imposed contraints and targeting the desired velocity. The state dynamics is considered as a bicycle model with actuator and drivetrain models along with tire forces.&lt;/p&gt;
+							&lt;p&gt;
+								&lt;h4 align=&quot;center&quot;&gt;Dynamic Bicycle Model&lt;/h4&gt;
+							&lt;/p&gt;
+							&lt;p align=&quot;center&quot;&gt;We consider the dynamic bicycle model for vehicle dynamics&lt;sup id=&quot;9_return&quot;&gt;&lt;a href=&quot;#9&quot;&gt;[9]&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&quot;14_return&quot;&gt;&lt;a href=&quot;#14&quot;&gt;[14]&lt;/a&gt;&lt;/sup&gt; with non-linear magic tire formula models&lt;sup id=&quot;16_return&quot;&gt;&lt;a href=&quot;#16&quot;&gt;[16]&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+							&lt;p align=&quot;center&quot;&gt;
+								&lt;img width=&quot;50%&quot; height=&quot;50%&quot; src=&quot;assets/images/dynamic_model.jpg&quot; /&gt;
+							&lt;/p&gt;
+							&lt;p&gt;
+								&lt;h4 align=&quot;center&quot;&gt;Vehicle Dynamics&lt;/h4&gt;
+							&lt;/p&gt;
+							&lt;p align=&quot;center&quot;&gt;
+								&lt;img width=&quot;50%&quot; height=&quot;50%&quot; src=&quot;assets/images/vehicle_dynamics.jpg&quot; /&gt;
+							&lt;/p&gt;
+							&lt;p&gt;Where &lt;i&gt;X, Y&lt;/i&gt; is the position and &lt;i&gt;&lt;/i&gt; is the orientation of the car in the world frame. &lt;i&gt;V&lt;sub&gt;x&lt;/sub&gt;, V&lt;sub&gt;y&lt;/sub&gt;&lt;/i&gt;, and &lt;i&gt;ω&lt;/i&gt; are the linear and angular velocities of the car in the body frame respectively. &lt;i&gt;𝛿&lt;/i&gt; is the steering angle, &lt;i&gt;L&lt;sub&gt;f&lt;/sub&gt;&lt;/i&gt; and &lt;i&gt;L&lt;sub&gt;r&lt;/sub&gt;&lt;/i&gt; are the length from the front and rear axles to the center-of-gravity respectively and &lt;i&gt;I&lt;sub&gt;z&lt;/sub&gt;&lt;/i&gt; is the inertia moment.&amp;lt;/i&amp;gt;&lt;/p&gt;
+							&lt;p&gt;
+								&lt;h4 align=&quot;center&quot;&gt;Tire Model&lt;/h4&gt;
+							&lt;/p&gt;
+							&lt;p align=&quot;center&quot;&gt;
+								&lt;img width=&quot;50%&quot; height=&quot;50%&quot; src=&quot;assets/images/tire_model.jpg&quot; /&gt;
+							&lt;/p&gt;
+							&lt;p align=&quot;center&quot;&gt;
+								&lt;img width=&quot;20%&quot; height=&quot;20%&quot; src=&quot;assets/images/tire_model_x.jpg&quot; /&gt;
+							&lt;/p&gt;
+							&lt;p&gt;Here &lt;i&gt;D, C, B&lt;/i&gt; are coefficients obtained from the Pacejka tire model. &lt;i&gt;d&lt;/i&gt; is the driving command (acceleration), &lt;i&gt;C&lt;sub&gt;r&lt;/sub&gt;&lt;/i&gt; is the rolling resistance, &lt;i&gt;α&lt;sub&gt;f, r&lt;/sub&gt;&lt;/i&gt; are tire slip angles, and &lt;i&gt;C&lt;sub&gt;d&lt;/sub&gt;&lt;/i&gt; is the drag coefficient. &lt;i&gt;m&lt;/i&gt; is the mass of the vehicle.&lt;/p&gt;
+							&lt;p&gt;
+								&lt;h4 align=&quot;center&quot;&gt;State Input&lt;/h4&gt;
+							&lt;/p&gt;
+							&lt;p align=&quot;center&quot;&gt;
+								&lt;img width=&quot;25%&quot; height=&quot;25%&quot; src=&quot;assets/images/state_input.jpg&quot; /&gt;
+							&lt;/p&gt;
+							&lt;p&gt;
+								&lt;h4&gt;The lateral and cross-track errors are defined as&lt;/h4&gt;
+							&lt;/p&gt;
+							&lt;p&gt;
+								&lt;code&gt;
+									cte` = cte - v * sin(epsi) * dt
+								&lt;/code&gt;
+								&lt;br /&gt;
+								&lt;code&gt;
+									epsi` = epsi +  v / Lf * (-delta) * dt
+								&lt;/code&gt;
+							&lt;/p&gt;
+							&lt;p&gt;
+								&lt;h4&gt;And hence, the cost function is defined as&lt;/h4&gt;
+								&lt;code&gt;
+									J = Q_cte * cte^2 + Q_epsi * epsi^2 + Q_v * (v - vmax)^2 + Q_delta * delta^2
+								&lt;/code&gt;
+								&lt;br /&gt;
+								&lt;code&gt;
+									+ Q_a * a^2 + F * (a` - a)^2 +  Q_ddelta * (delta` - delta)^2
+								&lt;/code&gt;
+							&lt;/p&gt;
+							&lt;p&gt;The objective of this optimization problem is to drive the vehicle as close as possible to the track center line, with heading along the track direction. Rapid changes in the state inputs, as well as linear and angular velocities, are penalized.&lt;/p&gt;
+							&lt;p align=&quot;center&quot;&gt;
+								&lt;img src=&quot;assets/videos/mpc.gif&quot; width=&quot;75%&quot; height=&quot;75%&quot; alt=&quot;this slowpoke moves&quot; /&gt;
+							&lt;/p&gt;
+							&lt;p&gt;
+								The optimization problem is then solved directly using the IPOPT non-linear optimization library&lt;sup id=&quot;6_return&quot;&gt;&lt;a href=&quot;#6&quot;&gt;[6]&lt;/a&gt;&lt;/sup&gt; in a receding horizon fashion for over 15 steps for a horizon of 1.5 secs. There is an approximately 100 ms delay between computed command and actuation, hence we choose an actuator vector in the future (about 100 ms in the future) to compensate for mechanical delays.
+								&lt;br /&gt;
+							    However, an improvement is required here as IPOPT is not designed for real-time systems and considerably slows down with an increase in sequence size&lt;sup id=&quot;30_return&quot;&gt;&lt;a href=&quot;#30&quot;&gt;[30]&lt;/a&gt;&lt;/sup&gt;. Hence, we need to use a convex optimization library such as HPIPM&lt;sup id=&quot;29_return&quot;&gt;&lt;a href=&quot;#29&quot;&gt;[29]&lt;/a&gt;&lt;/sup&gt;. 
+							&lt;/p&gt;
+							&lt;h2&gt;Simulation and CI/CD Infrastructure&lt;/h2&gt;
+							&lt;p&gt;
+								&lt;h4 align=&quot;center&quot;&gt;Simulation Environment Designed with Gazebo&lt;sup id=&quot;12_return&quot;&gt;&lt;a href=&quot;#12&quot;&gt;[12]&lt;/a&gt;&lt;/sup&gt; and Ignition Libraries&lt;/h4&gt;
+							&lt;/p&gt;
+							&lt;p align=&quot;center&quot;&gt;
+								&lt;img width=&quot;75%&quot; height=&quot;75%&quot; src=&quot;assets/images/simulation.jpg&quot; /&gt;
+							&lt;/p&gt;
+							&lt;p&gt;
+								&lt;h4 align=&quot;center&quot;&gt;ROS Bags from GitHub Pull Requests and actual car races can be visualized in the app&lt;/h4&gt;
+							&lt;/p&gt;
+							&lt;p align=&quot;center&quot;&gt;
+								&lt;img width=&quot;75%&quot; height=&quot;75%&quot; src=&quot;assets/images/image3.jpg&quot; /&gt;
+							&lt;/p&gt;
+							&lt;p&gt;The FSSIM &lt;sup id=&quot;4_return&quot;&gt;&lt;a href=&quot;#4&quot;&gt;[4]&lt;/a&gt;&lt;/sup&gt; simulation framework by AMZ Driverless has been used for the codebase. The FSSIM simulator employs a Gazebo plugin that uses a basic vehicle model which is discretized with Euler Forward discretization to achieve 99% of real-world performance. The simulation framework, on every pull request, runs the codebase and important ROS topics are recorded into ROS Bags and uploaded to the server. Each ROS Bag is played on the remote server and the run is recorded using VirtualGL, the videos are then stored in a NoSQL database for backup and querying. The client app can establish a remote database connection to visualize the ROS Bags. The server automatically replays the bag file and stores the recorded videos. To ensure software reliability, each pull request is first compiled using GitHub Actions and run on our CI server hosted on AWS. Only after all checks have passed and the simulation runs without any issues, a pull request can be merged.&lt;/p&gt;
+							&lt;h4&gt;References&lt;/h4&gt;
+							&lt;ol&gt;
+								&lt;li id=&quot;1&quot;&gt;Kieran Strobel and Sibo Zhu and Raphael Chang and Skanda Koppula. Accurate, Low-Latency Visual Perception for Autonomous Racing:Challenges, Mechanisms, and Practical Solutions. 2020. arXiv:2007.13971&lt;sup&gt;&lt;/sup&gt;&lt;/li&gt;
+								&lt;li id=&quot;2&quot;&gt;de la Iglesia Valls, M., Hendrikx, H. F. C., Reijgwart, V. J. F., Meier, F. V., Sa, I., Dub´e, R., Gawel, A.,
+									B¨urki, M., and Siegwart, R. (2018). Design of an autonomous racecar: Perception, state estimation and
+									system integration. 2018 IEEE International Conference on Robotics and Automation (ICRA).&lt;/li&gt;
+								&lt;li id=&quot;3&quot;&gt;Dellaert, F., Fox, D., Burgard, W., and Thrun, S. (1999). Monte carlo localization for mobile robots. In
+									IEEE International Conference on Robotics and Automation (ICRA99).&lt;/li&gt;
+								&lt;li id=&quot;4&quot;&gt;Juraj Kabzan and Miguel de la Iglesia Valls and Victor Reijgwart and Hubertus Franciscus Cornelis Hendrikx and Claas Ehmke and Manish Prajapat and Andreas Bühler and Nikhil Gosala and Mehak Gupta and Ramya Sivanesan and Ankit Dhall and Eugenio Chisari and Napat Karnchanachari and Sonja Brits and Manuel Dangel and Inkyu Sa and Renaud Dubé and Abel Gawel and Mark Pfeiffer and Alexander Liniger and John Lygeros and Roland Siegwart.
+									AMZ Driverless: The Full Autonomous Racing System. 2019. arXiv:1905.05150.
+								&lt;/li&gt;
+								&lt;li id=&quot;5&quot;&gt;Dhall, A., Dai, D., and Van Gool, L. (2019). Real-time 3D Traffic Cone Detection for Autonomous Driving.
+									arXiv e-prints, page arXiv:1902.02394.
+								&lt;/li&gt;
+								&lt;li id=&quot;6&quot;&gt;
+									Wächter, A., Biegler, L. On the implementation of an interior-point filter line-search algorithm for large-scale nonlinear programming. Math. Program. 106, 25–57 (2006). https://doi.org/10.1007/s10107-004-0559-y.
+								&lt;/li&gt;
+								&lt;li id=&quot;7&quot;&gt;
+									B. D. Brumback and M. Srinath, “A chi-square test for fault-detection
+									in kalman filters,” Automatic Control, IEEE Transactions on, vol. 32,
+									pp. 552 – 554, 07 1987.
+								&lt;/li&gt;
+								&lt;li id=&quot;8&quot;&gt;
+									M. Montemerlo, S. Thrun, D. Koller, B. Wegbreit, et al., “Fastslam:
+									A factored solution to the simultaneous localization and mapping
+									problem,” in Aaai/iaai, pp. 593–598, 2002.
+								&lt;/li&gt;
+								&lt;li id=&quot;9&quot;&gt;
+									Kong, Jason, et al. &quot;Kinematic and dynamic vehicle models for
+									autonomous driving control design.&quot; 2015 IEEE Intelligent Vehicles
+									Symposium (IV). IEEE, 2015.
+								&lt;/li&gt;
+								&lt;li id=&quot;10&quot;&gt;
+									Yoon, Jong-Hwa, and Huei Peng. &quot;A cost-effective sideslip
+									estimation method using velocity measurements from two GPS
+									receivers.&quot; IEEE Transactions on Vehicular Technology 63.6
+									(2013): 2589-2599.
+								&lt;/li&gt;
+								&lt;li id=&quot;11&quot;&gt;
+									Klomp, M., Olsson, K., and Sandberg, C. (2014). Non-linear steering control for limit handling conditions
+									using preview path curvature. International Journal of Vehicle Autonomous Systems, 12(3):266–283.
+								&lt;/li&gt;
+								&lt;li id=&quot;12&quot;&gt;
+									Koenig, N. and Howard, A. (2004). Design and use paradigms for gazebo, an open-source multi-robot simulator. In Intelligent Robots and Systems, 2004.(IROS 2004). Proceedings. 2004 IEEE/RSJ International
+									Conference on, volume 3, pages 2149–2154. IEEE.
+								&lt;/li&gt;
+								&lt;li id=&quot;13&quot;&gt;
+									Lee and Schachter (1980). Two algorithms for constructing a delaunay triangulation. International Journal
+									of Computer and Information Sciences.
+								&lt;/li&gt;
+								&lt;li id=&quot;14&quot;&gt;
+									Milliken, W., Milliken, D., and of Automotive Engineers, S. (1995). Race Car Vehicle Dynamics. Premiere
+									Series. SAE International.
+								&lt;/li&gt;
+								&lt;li id=&quot;15&quot;&gt;
+									Montemerlo, M., Thrun, S., Koller, D., and Wegbreit, B. (2003). FastSLAM 2.0 : An Improved Particle
+									Filtering Algorithm for Simultaneous Localization and Mapping that Provably Converges. In Proceedings
+									of the 18th international joint conference on Artificial intelligence, pages 1151–1156.
+								&lt;/li&gt;
+								&lt;li id=&quot;16&quot;&gt;
+									Pacejka, H. B. and Bakker, E. (1992). The magic formula tyre model. Vehicle system dynamics, 21(S1):1–18.
+								&lt;/li&gt;
+								&lt;li id=&quot;17&quot;&gt;
+									Redmon, J., Divvala, S., Girshick, R., and Farhadi, A. (2016). You only look once: Unified, real-time object
+									detection. In 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages
+									779–788.
+								&lt;/li&gt;
+								&lt;li id=&quot;18&quot;&gt;
+									Rosolia, U., Carvalho, A., and Borrelli, F. (2017). Autonomous racing using learning model predictive
+									control. In American Control Conference (ACC), pages 5115–5120. IEEE.
+								&lt;/li&gt;
+								&lt;li id=&quot;19&quot;&gt;
+									Thrun, S., Burgard, W., and Fox, D. (2005). Probabilistic Robotics (Intelligent Robotics and Autonomous
+									Agents). The MIT Press.
+								&lt;/li&gt;
+								&lt;li id=&quot;20&quot;&gt;
+									Xue, Z. and Schwartz, H. (2013). A comparison of several nonlinear filters for mobile robot pose estimation.
+									In 2013 IEEE International Conference on Mechatronics and Automation.
+								&lt;/li&gt;
+								&lt;li id=&quot;21&quot;&gt;
+									Tulsiani, S. and Malik, J. (2015). Viewpoints and keypoints. In 2015 IEEE Conference on Computer Vision
+									and Pattern Recognition (CVPR).
+								&lt;/li&gt;
+								&lt;li id=&quot;22&quot;&gt;
+									Gosala, N. B., B¨uhler, A., Prajapat, M., Ehmke, C., Gupta, M., Sivanesan, R., Gawel, A., Pfeiffer, M.,
+									B¨urki, M., Sa, I., Dub´e, R., and Siegwart, R. (2018). Redundant Perception and State Estimation for
+									Reliable Autonomous Racing. ArXiv e-prints.
+								&lt;/li&gt;
+								&lt;li id=&quot;23&quot;&gt;
+									Coulter, R. C. (1992). Implementation of the pure pursuit path tracking algorithm. Technical report,
+									Carnegie-Mellon UNIV Pittsburgh PA Robotics INST.
+								&lt;/li&gt;
+								&lt;li id=&quot;24&quot;&gt;
+									LaValle, Steven M. (October 1998). &quot;Rapidly-exploring random trees: A new tool for path planning&quot; (PDF). Technical Report. Computer Science Department, Iowa State University (TR 98–11).
+								&lt;/li&gt;
+								&lt;li id=&quot;25&quot;&gt;
+									Howie Choset, James Kuffner. &quot;Robotic Motion Planning: RRT’s&quot;. Robotic Motion Planning, 16-735. The Robotics Institute, Carnegie Mellon University.
+								&lt;/li&gt;
+								&lt;li id=&quot;26&quot;&gt;
+									K. Hausman, S. Weiss, R. Brockers, L. Matthies, and G. S. Sukhatme,
+“Self-calibrating multi-sensor fusion with probabilistic measurement
+validation for seamless sensor switching on a uav,” in 2016 IEEE International Conference on Robotics and Automation (ICRA), pp. 4289–
+4296, May 2016.
+								&lt;/li&gt;
+								&lt;li id=&quot;27&quot;&gt;
+									Formula Student Rules 2020 v1.0. https://www.formulastudent.de/fileadmin/user_upload/all/2020/rules/FS-Rules_2020_V1.0.pdf
+								&lt;/li&gt;
+								&lt;li id=&quot;28&quot;&gt;
+									J. Ni and J. Hu, &quot;Path following control for autonomous formula racecar: Autonomous formula student competition,&quot; 2017 IEEE Intelligent Vehicles Symposium (IV), Los Angeles, CA, 2017, pp. 1835-1840, doi: 10.1109/IVS.2017.7995972.
+								&lt;/li&gt;
+								&lt;li id=&quot;29&quot;&gt;
+									G. Frison, M. Diehl. HPIPM: a high-performance quadratic programming framework for model predictive control. 2020. arXiv preprint, arXiv:2003.02547
+								&lt;/li&gt;
+								&lt;li id=&quot;30&quot;&gt;
+									G. Frison, D. K. M. Kufoalor, L. Imsland and J. B. Jørgensen, &quot;Efficient implementation of solvers for linear model predictive control on embedded devices,&quot; 2014 IEEE Conference on Control Applications (CCA), Juan Les Antibes, 2014, pp. 1954-1959, doi: 10.1109/CCA.2014.6981589.
+								&lt;/li&gt;
+								&lt;li id=&quot;31&quot;&gt;
+									J. D. Hol, T. B. Schon, and F. Gustafsson, “On resampling algorithms
+for particle filters,” in Nonlinear Statistical Signal Processing Workshop, 2006 IEEE, pp. 79–82, IEEE, 2006.
+								&lt;/li&gt;
+								&lt;li id=&quot;32&quot;&gt;
+									SGBM, by Hirschmuller, H. (2008). Stereo processing by semiglobal matching and mutual information. IEEE Transactions on pattern analysis and machine intelligence, 30(2), 328-341.
+								&lt;/li&gt;
+							&lt;/ol&gt;
+						&lt;/div&gt;
+					&lt;/section&gt;
+			&lt;/div&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Atharva Pusalkar</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="Projects" />
+      
+        <category term="Experiences" />
+      
+
+      
+        <summary type="html">I currently lead the driverless project at DJS Racing, a student team aiming to build a self-driving Formula Student race car.</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">Internship at Mowito Robotics</title>
+      <link href="http://localhost:4000/Mowito" rel="alternate" type="text/html" title="Internship at Mowito Robotics" />
+      <published>2021-05-30T15:48:00+05:30</published>
+      <updated>2021-05-30T15:48:00+05:30</updated>
+      <id>http://localhost:4000/Mowito</id>
+      <content type="html" xml:base="http://localhost:4000/Mowito">&lt;p&gt;Mowito is an Indian startup that provides autonomous navigation software solutions for use in warehouses and more. They have also recently expanded into providing physical robots with applications such as grocery delivery.&lt;/p&gt;
+
+&lt;p&gt;My work ranged from autunomous navigation, synthetic lidar data generation, remote troublshooting software to motion primitives generation.&lt;/p&gt;
+
+&lt;video width=&quot;320&quot; height=&quot;240&quot; controls=&quot;&quot;&gt;
+  &lt;source src=&quot;assets/videos/foot_detector.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+  Your browser does not support the video tag.
+&lt;/video&gt;
+
+&lt;p&gt;For the above demo, we used an RP LiDAR, with a resolution of 0.1 degrees at 10 Hz. The lidar map was converted to an image array to detect human foot clusters. After data association with existing foot position priors, the extended kalman filter was updated from the measurements.&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Atharva Pusalkar</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="Experiences" />
+      
+
+      
+        <summary type="html">Mowito is an Indian startup that provides autonomous navigation software solutions for use in warehouses and more. They have also recently expanded into providing physical robots with applications such as grocery delivery.</summary>
+      
+
+      
+      
+    </entry>
+  
+</feed>
