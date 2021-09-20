@@ -15,8 +15,8 @@ cover: assets/images/bg.svg
 logo: assets/images/blog-icon.png
 logo_dark: /assets/images/favicon.svg
 favicon: /assets/images/favicon.svg
-production_url:  https://atharva-18.github.io/
-source_url:  https://github.com/atharva-18/atharva-18.github.io/
+production_url: https://atharva-18.github.io/
+source_url: https://github.com/atharva-18/atharva-18.github.io
 CNAME: #add cname for website to be created
 
 # Social info
@@ -31,10 +31,10 @@ github: atharva-18
 
 # Disqus
 disqus: False
-disqus_shortname: jekyllt # replace with your disqus username
+# disqus_shortname: atharva-18 # replace with your disqus username
 
 # Google Analytics
-# google_analytics: UA-69281367-1 # replace with your GA tracking identifier
+# google_analytics: # replace with your GA tracking identifier
 
 # Permalinks
 permalink: /:title
@@ -102,6 +102,8 @@ repo: atharva-18.github.io
 branch: new_website
 relative_source: ./atharva-18.github.io
 destination: _site/
+production_url:  https://atharva-18.github.io
+source_url:  https://github.com/atharva-18/atharva-18.github.io
 
 exclude:
   - assets/css

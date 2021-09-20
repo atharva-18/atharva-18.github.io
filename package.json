@@ -52,8 +52,5 @@
     },
     "config": {
         "posts_per_page": 25
-    },
-    "dependencies": {
-        "gulp-cli": "^2.3.0"
     }
 }
