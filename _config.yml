@@ -99,9 +99,9 @@ safe: False
 lsi: False
 username: atharva-18
 repo: atharva-18.github.io
-branch: new_website
+branch: master
 relative_source: ./atharva-18.github.io
-destination: docs/
+destination: _site/
 production_url:  https://atharva-18.github.io
 source_url:  https://github.com/atharva-18/atharva-18.github.io
 
