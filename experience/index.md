@@ -29,6 +29,22 @@ subclass: 'post page'
     <p>
             <ul>
                 <li>
+                Spearheading a team of 20 members to develop the software for an autonomous Formula Student racecar.
+                </li>
+                <li>
+                Designed the CAD model of the prototype.
+                </li>
+                <li>
+                Designed a data acquisition system using the CAN protocol for automotive-grade safety.
+                </li>
+                <li>
+                Developed a pipeline for 3D object detection using a LiDAR and mono camera.
+                </li>
+                <li>
+                Assisted in developing a redundant state estimation alogrithm.
+                </li>
+                <li>
+                Integrated 2D landmark SLAM, MPC controller and sampling-based path planning.
                 </li>
             </ul>
     </p>
@@ -52,6 +68,14 @@ subclass: 'post page'
     <p>
             <ul>
                 <li>
+                Worked at Open Robotics to add new features to Ignition Gazebo, funded by Google.
+                </li>
+                <li>
+                Added the capability to visualize joints, inertia, and center of mass of robot models in simulation worlds.
+                </li>
+                Developed transparent and wireframe rendering modes to debug 3D models.
+                <li>
+                Engaged with the entire organization in weekly technical meetings to plan the project work.
                 </li>
             </ul>
     </p>
@@ -75,6 +99,19 @@ subclass: 'post page'
     <p>
             <ul>
                 <li>
+                Worked with the development team to deploy autonomous robot software in warehouse environments.
+                </li>
+                <li>
+                Worked on the startup’s maxL robot navigation stack, for smooth trajectory planning.
+                </li>
+                <li>
+                Created a tool to calibrate wheel encoders for a differential-drive robot.
+                </li>
+                <li>
+                Developed an automated testing system to generate synthetic 2D/3D LiDAR measurements.
+                </li>
+                <li>
+                Added the capability to remotely debug deployed robots using AWS Greengrass and SSH tools.
                 </li>
             </ul>
     </p>
@@ -98,6 +135,13 @@ subclass: 'post page'
     <p>
             <ul>
                 <li>
+                Led a team of 36 members to organize events, webinars, and workshops on the college campus.
+                </li>
+                <li>
+                Implemented Agile project management for smooth operation of the committee.
+                </li>
+                <li>
+                Developed the website of the committee to showcase the blogs, events, and the members of the team.
                 </li>
             </ul>
     </p>
@@ -121,6 +165,8 @@ subclass: 'post page'
     <p>
             <ul>
                 <li>
+                Organized tree plantation and
+blood donation drives.                
                 </li>
             </ul>
     </p>
