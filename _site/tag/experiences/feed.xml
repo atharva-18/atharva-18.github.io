@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="http://localhost:4000/tag/experiences/feed.xml" rel="self" type="application/atom+xml" />
   <link href="http://localhost:4000/" rel="alternate" type="text/html" />
-  <updated>2021-09-21T18:26:22+05:30</updated>
+  <updated>2021-09-22T22:18:27+05:30</updated>
   <id>http://localhost:4000/tag/experiences/feed.xml</id>
 
   
@@ -706,20 +706,39 @@ for particle filters,” in Nonlinear Statistical Signal Processing Workshop, 20
   
     <entry>
       <title type="html">Internship at Mowito Robotics</title>
-      <link href="http://localhost:4000/Mowito" rel="alternate" type="text/html" title="Internship at Mowito Robotics" />
+      <link href="http://localhost:4000/mowito" rel="alternate" type="text/html" title="Internship at Mowito Robotics" />
       <published>2021-05-30T15:48:00+05:30</published>
       <updated>2021-05-30T15:48:00+05:30</updated>
-      <id>http://localhost:4000/Mowito</id>
-      <content type="html" xml:base="http://localhost:4000/Mowito">&lt;p&gt;Mowito is an Indian startup that provides autonomous navigation software solutions for use in warehouses and more. They have also recently expanded into providing physical robots with applications such as grocery delivery.&lt;/p&gt;
+      <id>http://localhost:4000/mowito</id>
+      <content type="html" xml:base="http://localhost:4000/mowito">&lt;p&gt;Mowito is an Indian startup that provides autonomous navigation software solutions for use in warehouses and more. The company has also recently expanded into providing physical robots with applications such as grocery delivery.&lt;/p&gt;
 
-&lt;p&gt;My work ranged from autunomous navigation, synthetic lidar data generation, remote troublshooting software to motion primitives generation.&lt;/p&gt;
+&lt;p&gt;Mowito being a startup provided me a lot of avenues to learn new things. The work ranged from robot navigation, lidar stitching to cloud computing. Often the work involved projects that either the team or nobody in the entire world has experience with. This helped me quickly adapt to situations and learn new things in a short time, often required for an early-stage startup. I had great mentors who bestowed me with the responsibility to directly work on their navigation stack - their core offering that is used in warehouse environments by companies around the world. The stack was being directly deployed on ROS-based robots that were being remotely monitored by us. Under the mentor’s guidance, I was able to learn agile project management, startup accelerators, how to manage people in a company.&lt;/p&gt;
 
-&lt;video width=&quot;320&quot; height=&quot;240&quot; controls=&quot;&quot;&gt;
+&lt;p&gt;In this blog I will be presenting the work done by me during the internship.&lt;/p&gt;
+
+&lt;h2 id=&quot;human-feet-detection&quot;&gt;Human feet detection&lt;/h2&gt;
+
+&lt;p&gt;We ported the ROS leg-detector package to support ROS 2 while making it more reliable and accurate. The package was required by one of our clients to detect workers in their warehouses. The load-carrying robot changes its global trajectory if it encounters a dynamic obstacle.&lt;/p&gt;
+
+&lt;video width=&quot;75%&quot; height=&quot;75%&quot; controls=&quot;&quot;&gt;
   &lt;source src=&quot;assets/videos/foot_detector.mp4&quot; type=&quot;video/mp4&quot; /&gt;
   Your browser does not support the video tag.
 &lt;/video&gt;
 
-&lt;p&gt;For the above demo, we used an RP LiDAR, with a resolution of 0.1 degrees at 10 Hz. The lidar map was converted to an image array to detect human foot clusters. After data association with existing foot position priors, the extended kalman filter was updated from the measurements.&lt;/p&gt;</content>
+&lt;p&gt;&lt;img src=&quot;assets/images/mw_leg_detector.png&quot; alt=&quot;Leg Detector Screenshot&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For the above demo, we used an RPLIDAR, with a resolution of 0.33 degrees at 10 Hz. The lidar map was converted to an image array to detect human foot clusters. After data association with existing foot position priors, the extended kalman filter was updated from the measurements.&lt;/p&gt;
+
+&lt;p&gt;Oh, by the way, the ROS Discourse post was featured in ROS News for the Week of January 10th 2021 - &lt;a href=&quot;https://discourse.ros.org/t/ros-news-for-the-week-of-january-10th-2021/18488&quot;&gt;https://discourse.ros.org/t/ros-news-for-the-week-of-january-10th-2021/18488&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;motion-primitives-generation&quot;&gt;Motion Primitives Generation&lt;/h2&gt;
+
+&lt;p&gt;The maxl controller developed by Mowito uses motion primitives to generate local paths for navigation. The motion primitives are computed using the robot dimensions, path fan angle, expand distance, and more. Here’s a GIF showing possible paths for a robot using motion primitives:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/images/mw_maxl_demo.gif&quot; alt=&quot;MAXL Demo&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A short video showing some of the deployments using Mowito’s navigation stack:&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/X_pU2qYaPRc&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content>
 
       
       
@@ -740,7 +759,7 @@ for particle filters,” in Nonlinear Statistical Signal Processing Workshop, 20
       
 
       
-        <summary type="html">Mowito is an Indian startup that provides autonomous navigation software solutions for use in warehouses and more. They have also recently expanded into providing physical robots with applications such as grocery delivery.</summary>
+        <summary type="html">Mowito is an Indian startup that provides autonomous navigation software solutions for use in warehouses and more. The company has also recently expanded into providing physical robots with applications such as grocery delivery.</summary>
       
 
       
