@@ -278,7 +278,10 @@ into the {body} of the default.hbs template -->
 
 <p>Mowito being a startup provided me a lot of avenues to learn new things. The work ranged from robot navigation, lidar stitching to cloud computing. Often the work involved projects that either the team or nobody in the entire world has experience with. This helped me quickly adapt to situations and learn new things in a short time, often required for an early-stage startup. I had great mentors who bestowed me with the responsibility to directly work on their navigation stack - their core offering that is used in warehouse environments by companies around the world. The stack was being directly deployed on ROS-based robots that were being remotely monitored by us. Under the mentor’s guidance, I was able to learn agile project management, startup accelerators, how to manage people in a company.</p>
 
-<p>In this blog I will be presenting the work done by me during the internship.</p>
+<p>A short video showing some of the deployments using Mowito’s navigation stack:</p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/X_pU2qYaPRc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p>In this blog, I will be presenting the work done by me during the internship.</p>
 
 <h2 id="human-feet-detection">Human feet detection</h2>
 
@@ -301,9 +304,72 @@ into the {body} of the default.hbs template -->
 
 <p><img src="assets/images/mw_maxl_demo.gif" alt="MAXL Demo" /></p>
 
-<p>A short video showing some of the deployments using Mowito’s navigation stack:</p>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/X_pU2qYaPRc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<p>The primitives are generated using a nearest-neighbour query approach using the SciPy’s KDTree module to achieve linear-logarithmic time complexity. The KD tree is used to find nearent data points in n-dimensional NumPy arrays. Further, using basic trigonometry, the paths are generated.
+Link to the tool - <a href="http://ec2-15-207-68-243.ap-south-1.compute.amazonaws.com/">http://ec2-15-207-68-243.ap-south-1.compute.amazonaws.com/</a></p>
 
+<p>Here’s how the primitives look like:
+<img src="assets/images/mw_mprim_plot.png" alt="assets/images/mw_mprim_plot.png" /></p>
+
+<h2 id="improvements-to-maxl-controller">Improvements to MaxL controller</h2>
+
+<p><img src="assets/images/mw_maxl_rosbot.png" alt="assets/images/mw_maxl_rosbot.png" /></p>
+
+<p>I also worked on the core MaxL navigation stack and the controller. My initial work wa related to improving the function stubs to get myself more familiar with the codebase. After that my contributions were to reduce the number of oscillations in the planned path, architecture improvements, automated testing and benchmarking. The controller previously had some code duplication between ROS 1 and 2, I decoupled the core library (the pure pursuit controller and some other stuff) and made it into a single CMake package which is now used by the ROS 1 and 2 packages as a CMake <i>subdirectory</i>. This greatly saved development time, and a developer needed to only make changes to one repository to improve both ROS 1 and 2 implementations.</p>
+
+<p>Some other improvements included grouping similar function parameters into a single struct to reduce the number of parameters being passed into the functions. Some functions previously had as many as 60 parameters for path planning. Consequently, they hover around 12 now (Structs hold the individual values).</p>
+
+<h2 id="sensor-calibration-and-fusion">Sensor calibration and fusion</h2>
+
+<p>I had the opportunity to also work on the client-facing services at Mowito. Some packages developed by me served to calibrate wheel encoders for differential drive robots and fusing pointclouds from multiple lidars.</p>
+
+<ol>
+  <li>
+    <p><b>LiDAR fusion:</b>
+A ROS 2 package for fusing data provided by multiple lidars placed on a robot.</p>
+
+    <p>GitHub repository: <a href="https://github.com/mowito/mw_lidar_fusion">https://github.com/mowito/mw_lidar_fusion</a>.</p>
+
+    <p>The pointclouds are fused using the TF transform between two link frames, and matching ROS messages by the time.</p>
+
+    <p>Here’s a demo showing two fused pointclouds with white points depicting data points that fall within a certain angle after filtering:</p>
+
+    <p><img src="assets/images/mw_lidar_fusion.png" alt="assets/images/mw_lidar_fusion.png" /></p>
+  </li>
+  <li>
+    <p><b>Wheel encoder calibration:</b>
+Our deployments often needed periodic manual maintenance to function well. One recurring problem was of deviation in the pose estimated using wheel odometry. Due to wheel slip and other factors, a bias was introduced in the system that led to the robot going way off track from its goal position. This was a critical issue due to the fact that these robots were handling fragile equipments in the warehouses.</p>
+
+    <p>GitHub repository: <a href="https://github.com/mowito/odometry_calibration">https://github.com/mowito/odometry_calibration</a></p>
+
+    <p>Here are the plots for reference count per second vs wheel encoder feedback value for both left and right wheels:
+<img src="assets/images/mw_calib_left.png" alt="assets/images/mw_calib_left.png" />
+<img src="assets/images/mw_calib_right.png" alt="assets/images/mw_calib_right.png" /></p>
+
+    <p>The wheel encoders didn’t perform well whenever a sudden change in motion was observed. A correction factor is thus introduced while calculating the robot angular velocity or the yaw rate.</p>
+
+    <p>Odometry plot after yaw correction:
+<img src="assets/images/mw_odom_yaw.png" alt="assets/images/mw_odom_yaw.png" /></p>
+  </li>
+</ol>
+
+<h2 id="maxl-vs-nav2-dwb">MaxL vs Nav2 DWB</h2>
+
+<p>If you have read so far, then you might probably wonder - why use a proprietary controller instead of already widely used one such as DWA/DWB offered by ROS Navigation?</p>
+
+<p>Well the answer is that in some cases you might want to leverage the reduced computational cost of running the MaxL controller - it runs without using a costmap! Another benefit is that in most cases, MaxL provides more smooth paths and less recoveries during the robot’s operation.</p>
+
+<p>Here’s a comparison between MaxL and ROS Nav2’s DWB over their execution times:
+<img src="assets/images/mw_maxl_vs_dwb.png" alt="assets/images/mw_maxl_vs_dwb.png" /></p>
+
+<p>In most cases, MaxL is faster than the DWB controller albeit with a higher variance. It is also important to notice that the DWB controller gets much more slower as the costmap resolution increases.</p>
+
+<p>During the internship, I created an automated testing tool to benchmark the two controllers. The CGAL library was used to spawn random objects with a predefined area limit, to stress the two controllers.</p>
+
+<p><img src="assets/images/mw_maxl_ats.png" alt="assets/images/mw_maxl_ats.png" /></p>
+
+<p>The image above is a screenshot of an RViz window depicting a 5 x 5 room with 40% of its area being occupied. The lidar points are generated in a circular fashion with a ray being casted onto the object at each iteration. The intersection point is then computed using CGAL, and added to the lidar pointcloud array. The demo tries to replicate an RPLiDAR with a 0.33 degrees resolution operating at 10 Hz.</p>
+
+<p>Thank you for reading.</p>
 
                 </div>
             </section>

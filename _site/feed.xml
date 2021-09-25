@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-09-22T22:21:02+05:30</updated><id>http://localhost:4000/</id><title type="html">Atharva Pusalkar</title><subtitle>Atharva Pusalkar</subtitle><entry><title type="html">Contributing to Open Robotics</title><link href="http://localhost:4000/osrf" rel="alternate" type="text/html" title="Contributing to Open Robotics" /><published>2021-08-23T15:48:00+05:30</published><updated>2021-08-23T15:48:00+05:30</updated><id>http://localhost:4000/osrf</id><content type="html" xml:base="http://localhost:4000/osrf">&lt;p&gt;In this post I will be presenting my contributions to Open Robotics before joining them as a student developer. I contributed mainly to the Ignition Gazebo and Ignition RViz projects for a few months to get familiar with a large codebase.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-09-25T19:24:08+05:30</updated><id>http://localhost:4000/</id><title type="html">Atharva Pusalkar</title><subtitle>Atharva Pusalkar</subtitle><entry><title type="html">Contributing to Open Robotics</title><link href="http://localhost:4000/osrf" rel="alternate" type="text/html" title="Contributing to Open Robotics" /><published>2021-08-23T15:48:00+05:30</published><updated>2021-08-23T15:48:00+05:30</updated><id>http://localhost:4000/osrf</id><content type="html" xml:base="http://localhost:4000/osrf">&lt;p&gt;In this post I will be presenting my contributions to Open Robotics before joining them as a student developer. I contributed mainly to the Ignition Gazebo and Ignition RViz projects for a few months to get familiar with a large codebase.&lt;/p&gt;
 
 &lt;h2 id=&quot;ignition-gazebo&quot;&gt;Ignition Gazebo&lt;/h2&gt;
 
@@ -317,6 +317,9 @@ The second episode of our IEEE Expert Lecture series. This one delved a bit into
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/58pZoXDAzec&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;Although we’ve been working remotely most of the times for the past one and half years, we’re on our way to finish building our next car by February 2022.&lt;/p&gt;
+
+&lt;p&gt;Here’s our electronics design report, you can read about my work from the “Data Aquisition” section:&lt;/p&gt;
+&lt;iframe src=&quot;https://drive.google.com/file/d/1HlSNjRsue460ksPtxLEC5RipbiUN6Xma/preview&quot; width=&quot;640&quot; height=&quot;480&quot; allow=&quot;autoplay&quot;&gt;&lt;/iframe&gt;
 
 &lt;div id=&quot;wrapper&quot;&gt;
 
@@ -701,7 +704,10 @@ for particle filters,” in Nonlinear Statistical Signal Processing Workshop, 20
 
 &lt;p&gt;Mowito being a startup provided me a lot of avenues to learn new things. The work ranged from robot navigation, lidar stitching to cloud computing. Often the work involved projects that either the team or nobody in the entire world has experience with. This helped me quickly adapt to situations and learn new things in a short time, often required for an early-stage startup. I had great mentors who bestowed me with the responsibility to directly work on their navigation stack - their core offering that is used in warehouse environments by companies around the world. The stack was being directly deployed on ROS-based robots that were being remotely monitored by us. Under the mentor’s guidance, I was able to learn agile project management, startup accelerators, how to manage people in a company.&lt;/p&gt;
 
-&lt;p&gt;In this blog I will be presenting the work done by me during the internship.&lt;/p&gt;
+&lt;p&gt;A short video showing some of the deployments using Mowito’s navigation stack:&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/X_pU2qYaPRc&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;In this blog, I will be presenting the work done by me during the internship.&lt;/p&gt;
 
 &lt;h2 id=&quot;human-feet-detection&quot;&gt;Human feet detection&lt;/h2&gt;
 
@@ -724,5 +730,69 @@ for particle filters,” in Nonlinear Statistical Signal Processing Workshop, 20
 
 &lt;p&gt;&lt;img src=&quot;assets/images/mw_maxl_demo.gif&quot; alt=&quot;MAXL Demo&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;A short video showing some of the deployments using Mowito’s navigation stack:&lt;/p&gt;
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/X_pU2qYaPRc&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content><author><name>Atharva Pusalkar</name></author><category term="Experiences" /><summary type="html">Mowito is an Indian startup that provides autonomous navigation software solutions for use in warehouses and more. The company has also recently expanded into providing physical robots with applications such as grocery delivery.</summary></entry><entry><title type="html">RRT-Classic</title><link href="http://localhost:4000/rrt-cpp" rel="alternate" type="text/html" title="RRT-Classic" /><published>2021-01-05T15:48:00+05:30</published><updated>2021-01-05T15:48:00+05:30</updated><id>http://localhost:4000/rrt-cpp</id><content type="html" xml:base="http://localhost:4000/rrt-cpp">&lt;p&gt;Rapidly exploring rapid trees (RRTs) implementation in C++17.&lt;/p&gt;</content><author><name>Atharva Pusalkar</name></author><category term="Projects" /><summary type="html">Rapidly exploring rapid trees (RRTs) implementation in C++17.</summary></entry></feed>
+&lt;p&gt;The primitives are generated using a nearest-neighbour query approach using the SciPy’s KDTree module to achieve linear-logarithmic time complexity. The KD tree is used to find nearent data points in n-dimensional NumPy arrays. Further, using basic trigonometry, the paths are generated.
+Link to the tool - &lt;a href=&quot;http://ec2-15-207-68-243.ap-south-1.compute.amazonaws.com/&quot;&gt;http://ec2-15-207-68-243.ap-south-1.compute.amazonaws.com/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Here’s how the primitives look like:
+&lt;img src=&quot;assets/images/mw_mprim_plot.png&quot; alt=&quot;assets/images/mw_mprim_plot.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;improvements-to-maxl-controller&quot;&gt;Improvements to MaxL controller&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/images/mw_maxl_rosbot.png&quot; alt=&quot;assets/images/mw_maxl_rosbot.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I also worked on the core MaxL navigation stack and the controller. My initial work wa related to improving the function stubs to get myself more familiar with the codebase. After that my contributions were to reduce the number of oscillations in the planned path, architecture improvements, automated testing and benchmarking. The controller previously had some code duplication between ROS 1 and 2, I decoupled the core library (the pure pursuit controller and some other stuff) and made it into a single CMake package which is now used by the ROS 1 and 2 packages as a CMake &lt;i&gt;subdirectory&lt;/i&gt;. This greatly saved development time, and a developer needed to only make changes to one repository to improve both ROS 1 and 2 implementations.&lt;/p&gt;
+
+&lt;p&gt;Some other improvements included grouping similar function parameters into a single struct to reduce the number of parameters being passed into the functions. Some functions previously had as many as 60 parameters for path planning. Consequently, they hover around 12 now (Structs hold the individual values).&lt;/p&gt;
+
+&lt;h2 id=&quot;sensor-calibration-and-fusion&quot;&gt;Sensor calibration and fusion&lt;/h2&gt;
+
+&lt;p&gt;I had the opportunity to also work on the client-facing services at Mowito. Some packages developed by me served to calibrate wheel encoders for differential drive robots and fusing pointclouds from multiple lidars.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;b&gt;LiDAR fusion:&lt;/b&gt;
+A ROS 2 package for fusing data provided by multiple lidars placed on a robot.&lt;/p&gt;
+
+    &lt;p&gt;GitHub repository: &lt;a href=&quot;https://github.com/mowito/mw_lidar_fusion&quot;&gt;https://github.com/mowito/mw_lidar_fusion&lt;/a&gt;.&lt;/p&gt;
+
+    &lt;p&gt;The pointclouds are fused using the TF transform between two link frames, and matching ROS messages by the time.&lt;/p&gt;
+
+    &lt;p&gt;Here’s a demo showing two fused pointclouds with white points depicting data points that fall within a certain angle after filtering:&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;assets/images/mw_lidar_fusion.png&quot; alt=&quot;assets/images/mw_lidar_fusion.png&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;b&gt;Wheel encoder calibration:&lt;/b&gt;
+Our deployments often needed periodic manual maintenance to function well. One recurring problem was of deviation in the pose estimated using wheel odometry. Due to wheel slip and other factors, a bias was introduced in the system that led to the robot going way off track from its goal position. This was a critical issue due to the fact that these robots were handling fragile equipments in the warehouses.&lt;/p&gt;
+
+    &lt;p&gt;GitHub repository: &lt;a href=&quot;https://github.com/mowito/odometry_calibration&quot;&gt;https://github.com/mowito/odometry_calibration&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;Here are the plots for reference count per second vs wheel encoder feedback value for both left and right wheels:
+&lt;img src=&quot;assets/images/mw_calib_left.png&quot; alt=&quot;assets/images/mw_calib_left.png&quot; /&gt;
+&lt;img src=&quot;assets/images/mw_calib_right.png&quot; alt=&quot;assets/images/mw_calib_right.png&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;The wheel encoders didn’t perform well whenever a sudden change in motion was observed. A correction factor is thus introduced while calculating the robot angular velocity or the yaw rate.&lt;/p&gt;
+
+    &lt;p&gt;Odometry plot after yaw correction:
+&lt;img src=&quot;assets/images/mw_odom_yaw.png&quot; alt=&quot;assets/images/mw_odom_yaw.png&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;maxl-vs-nav2-dwb&quot;&gt;MaxL vs Nav2 DWB&lt;/h2&gt;
+
+&lt;p&gt;If you have read so far, then you might probably wonder - why use a proprietary controller instead of already widely used one such as DWA/DWB offered by ROS Navigation?&lt;/p&gt;
+
+&lt;p&gt;Well the answer is that in some cases you might want to leverage the reduced computational cost of running the MaxL controller - it runs without using a costmap! Another benefit is that in most cases, MaxL provides more smooth paths and less recoveries during the robot’s operation.&lt;/p&gt;
+
+&lt;p&gt;Here’s a comparison between MaxL and ROS Nav2’s DWB over their execution times:
+&lt;img src=&quot;assets/images/mw_maxl_vs_dwb.png&quot; alt=&quot;assets/images/mw_maxl_vs_dwb.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In most cases, MaxL is faster than the DWB controller albeit with a higher variance. It is also important to notice that the DWB controller gets much more slower as the costmap resolution increases.&lt;/p&gt;
+
+&lt;p&gt;During the internship, I created an automated testing tool to benchmark the two controllers. The CGAL library was used to spawn random objects with a predefined area limit, to stress the two controllers.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/images/mw_maxl_ats.png&quot; alt=&quot;assets/images/mw_maxl_ats.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The image above is a screenshot of an RViz window depicting a 5 x 5 room with 40% of its area being occupied. The lidar points are generated in a circular fashion with a ray being casted onto the object at each iteration. The intersection point is then computed using CGAL, and added to the lidar pointcloud array. The demo tries to replicate an RPLiDAR with a 0.33 degrees resolution operating at 10 Hz.&lt;/p&gt;
+
+&lt;p&gt;Thank you for reading.&lt;/p&gt;</content><author><name>Atharva Pusalkar</name></author><category term="Experiences" /><summary type="html">Mowito is an Indian startup that provides autonomous navigation software solutions for use in warehouses and more. The company has also recently expanded into providing physical robots with applications such as grocery delivery.</summary></entry><entry><title type="html">RRT-Classic</title><link href="http://localhost:4000/rrt-cpp" rel="alternate" type="text/html" title="RRT-Classic" /><published>2021-01-05T15:48:00+05:30</published><updated>2021-01-05T15:48:00+05:30</updated><id>http://localhost:4000/rrt-cpp</id><content type="html" xml:base="http://localhost:4000/rrt-cpp">&lt;p&gt;Rapidly exploring rapid trees (RRTs) implementation in C++17.&lt;/p&gt;</content><author><name>Atharva Pusalkar</name></author><category term="Projects" /><summary type="html">Rapidly exploring rapid trees (RRTs) implementation in C++17.</summary></entry></feed>

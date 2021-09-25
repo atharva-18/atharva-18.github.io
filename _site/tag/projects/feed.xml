@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="http://localhost:4000/tag/projects/feed.xml" rel="self" type="application/atom+xml" />
   <link href="http://localhost:4000/" rel="alternate" type="text/html" />
-  <updated>2021-09-22T22:21:02+05:30</updated>
+  <updated>2021-09-25T19:24:08+05:30</updated>
   <id>http://localhost:4000/tag/projects/feed.xml</id>
 
   
@@ -333,6 +333,9 @@
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/58pZoXDAzec&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;Although we’ve been working remotely most of the times for the past one and half years, we’re on our way to finish building our next car by February 2022.&lt;/p&gt;
+
+&lt;p&gt;Here’s our electronics design report, you can read about my work from the “Data Aquisition” section:&lt;/p&gt;
+&lt;iframe src=&quot;https://drive.google.com/file/d/1HlSNjRsue460ksPtxLEC5RipbiUN6Xma/preview&quot; width=&quot;640&quot; height=&quot;480&quot; allow=&quot;autoplay&quot;&gt;&lt;/iframe&gt;
 
 &lt;div id=&quot;wrapper&quot;&gt;
 
