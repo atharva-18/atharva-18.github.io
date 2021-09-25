@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="http://localhost:4000/tag/projects/feed.xml" rel="self" type="application/atom+xml" />
   <link href="http://localhost:4000/" rel="alternate" type="text/html" />
-  <updated>2021-09-25T19:24:08+05:30</updated>
+  <updated>2021-09-25T19:28:11+05:30</updated>
   <id>http://localhost:4000/tag/projects/feed.xml</id>
 
   
@@ -740,6 +740,40 @@ for particle filters,” in Nonlinear Statistical Signal Processing Workshop, 20
 
       
         <summary type="html">I currently lead the driverless project at DJS Racing, a student team aiming to build a self-driving Formula Student race car.</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">Wireless transceiver using LoRa mesh</title>
+      <link href="http://localhost:4000/iiot-device" rel="alternate" type="text/html" title="Wireless transceiver using LoRa mesh" />
+      <published>2021-04-25T15:48:00+05:30</published>
+      <updated>2021-04-25T15:48:00+05:30</updated>
+      <id>http://localhost:4000/iiot-device</id>
+      <content type="html" xml:base="http://localhost:4000/iiot-device">&lt;p&gt;I worked on a wireless transceiver using the LoRa mesh technology for clients in South Asia, Canada, and Switzerland.&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Atharva Pusalkar</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="Projects" />
+      
+
+      
+        <summary type="html">I worked on a wireless transceiver using the LoRa mesh technology for clients in South Asia, Canada, and Switzerland.</summary>
       
 
       
