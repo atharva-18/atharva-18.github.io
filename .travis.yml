@@ -1,0 +1,14 @@
+sudo: false
+language: ruby
+cache: bundler
+rvm:
+- 2.5.1
+install:
+- bundle install
+script: bundle exec rake site:deploy --quiet
+env:
+  global:
+    secure: "EtpgkkhYZs5VYnE9T59EfOfksqQAJjmWED2MfRjDi9szq7lSnIGDh9vT4JhTTOLVML4PxENTZ9+zRFBFjxTeC5Hzh92rH2Fx8zO1x4r7SBRCtAf78wyOU6qaaPilcrVZqQmMoE0SS72J5AsTLaAWag+ZLpYVDCG+5XMkFwdsBIpbC00Mcgfj2iKZ/IfkRU9c2QflGn1a1WNFYyElS5PoLaxyyBttEPYv1HpOceLv4Z4pVBhoEf9U80w/DAhBQ3f++GgVx5LFah+17qCbu2qhwPpNXypD+ZFo+UnnN+NZ/a9/hVSTnu1cx4fzZqWxr5mVCqdVO3iA9p8vfuLkgX8630kO+LAfXkGjceaUHO5ZnLADNZqISHCy0eTihLJdYZnuVJeYDDxFE62aW8PeTn70mDCAiybByyi9yK5THkk2w2IEVF/XGFN5GzN+pBARdyREg+llpX3hyiYF5mkWYC8zcR0taFsWug0rbRZSm/1kf8RqVIjf1VPHithfXavFzJSp5W/k/lxSpd0ZcPVQQSt8obeIyRFj89JSEQmJCWAmLcHzoQqokNsfdPtgI8fAOibOX3dMI238yM85UsNhv0lvXmTiLzxHK5UaBIEof3yV2vhIx2ng7yZwCKYO5fQKBeyPz4+CEyVfrNLC5E/nX2KgtEIYtrTHEyblfCiWIs+WExo="
+branches:
+  only:
+  - master
