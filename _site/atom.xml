@@ -40,7 +40,7 @@
       <item>
         <title>Google Summer of Code at Open Robotics</title>
         
-          <description>&lt;p&gt;In the summer of 2021, I had the oppurtunity to work at Open Robotics (née
+          <description>&lt;p&gt;In the summer of 2021, I had the opportunity to work at Open Robotics (née
 Open Source Robotics Foundation) as a student developer. The project was in turn funded by Google through their Summer of Code 2021 program.&lt;/p&gt;
 
 </description>
@@ -187,6 +187,21 @@ Open Source Robotics Foundation) as a student developer. The project was in turn
         <link>
         http://localhost:4000/rrt-cpp</link>
         <guid isPermaLink="true">http://localhost:4000/rrt-cpp</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>COVID-19 Detection from Chest X-Ray Images</title>
+        
+          <description>&lt;p&gt;A small project that I did back in December of 2020 for COVID-19 detection using chest x-ray images. The model uses a modified ResNet-50 model for detection using RGB signals.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 20 Dec 2020 15:48:00 +0530</pubDate>
+        <link>
+        http://localhost:4000/resnet-chest</link>
+        <guid isPermaLink="true">http://localhost:4000/resnet-chest</guid>
       </item>
       
     
