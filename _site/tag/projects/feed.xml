@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="http://localhost:4000/tag/projects/feed.xml" rel="self" type="application/atom+xml" />
   <link href="http://localhost:4000/" rel="alternate" type="text/html" />
-  <updated>2021-10-11T12:20:50+05:30</updated>
+  <updated>2021-10-21T23:03:27+05:30</updated>
   <id>http://localhost:4000/tag/projects/feed.xml</id>
 
   
@@ -46,8 +46,8 @@
     <entry>
       <title type="html">Medicine Dispensing Robot</title>
       <link href="http://localhost:4000/med-robot" rel="alternate" type="text/html" title="Medicine Dispensing Robot" />
-      <published>2021-09-30T15:48:00+05:30</published>
-      <updated>2021-09-30T15:48:00+05:30</updated>
+      <published>2021-10-10T15:48:00+05:30</published>
+      <updated>2021-10-10T15:48:00+05:30</updated>
       <id>http://localhost:4000/med-robot</id>
       <content type="html" xml:base="http://localhost:4000/med-robot">&lt;p&gt;This is an ongoing project funded by our college for routine medicine delivery for hospital patients. The main goal is to dispense medicines according to the prescription to Alzheimer’s patients during the suggested timings.&lt;/p&gt;
 
@@ -75,6 +75,40 @@
 
       
         <summary type="html">This is an ongoing project funded by our college for routine medicine delivery for hospital patients. The main goal is to dispense medicines according to the prescription to Alzheimer’s patients during the suggested timings.</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">ROS2 2D Landmark SLAM</title>
+      <link href="http://localhost:4000/2d-landmark-slam" rel="alternate" type="text/html" title="ROS2 2D Landmark SLAM" />
+      <published>2021-10-01T15:48:00+05:30</published>
+      <updated>2021-10-01T15:48:00+05:30</updated>
+      <id>http://localhost:4000/2d-landmark-slam</id>
+      <content type="html" xml:base="http://localhost:4000/2d-landmark-slam">&lt;p&gt;A ROS2 package developed by me for 2D SLAM using landmark detections and FastSLAM 2.0.&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Atharva Pusalkar</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="Projects" />
+      
+
+      
+        <summary type="html">A ROS2 package developed by me for 2D SLAM using landmark detections and FastSLAM 2.0.</summary>
       
 
       
