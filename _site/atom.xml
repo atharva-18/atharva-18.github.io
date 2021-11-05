@@ -26,6 +26,7 @@
         <title>ROS2 2D Landmark SLAM</title>
         
           <description>&lt;p&gt;A ROS2 package developed by me for 2D SLAM using landmark detections and FastSLAM 2.0.&lt;/p&gt;
+
 </description>
         
         <pubDate>Fri, 01 Oct 2021 15:48:00 +0530</pubDate>
