@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="http://localhost:4000/tag/projects/feed.xml" rel="self" type="application/atom+xml" />
   <link href="http://localhost:4000/" rel="alternate" type="text/html" />
-  <updated>2021-11-06T11:48:31+05:30</updated>
+  <updated>2021-11-09T22:12:36+05:30</updated>
   <id>http://localhost:4000/tag/projects/feed.xml</id>
 
   
@@ -151,6 +151,21 @@
 
 &lt;p&gt;Pull requests - &lt;a href=&quot;https://github.com/ignitionrobotics/ign-gazebo/pull/632&quot;&gt;https://github.com/ignitionrobotics/ign-gazebo/pull/632&lt;/a&gt; and &lt;a href=&quot;https://github.com/ignitionrobotics/ign-gazebo/pull/639&quot;&gt;https://github.com/ignitionrobotics/ign-gazebo/pull/639&lt;/a&gt;&lt;/p&gt;
 
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if (_sdf-&amp;gt;HasElement(&quot;topic&quot;))
+{
+  topic = transport::TopicUtils::AsValidTopic(
+      _sdf-&amp;gt;Get&amp;lt;std::string&amp;gt;(&quot;topic&quot;));
+
+  if (topic.empty())
+  {
+    ignerr &amp;lt;&amp;lt; &quot;Failed to create topic [&quot; &amp;lt;&amp;lt; _sdf-&amp;gt;Get&amp;lt;std::string&amp;gt;(&quot;topic&quot;)
+           &amp;lt;&amp;lt; &quot;]&quot; &amp;lt;&amp;lt; &quot; for joint [&quot; &amp;lt;&amp;lt; jointName
+           &amp;lt;&amp;lt; &quot;]&quot; &amp;lt;&amp;lt; std::endl;
+    return;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;h2 id=&quot;ignition-rviz&quot;&gt;Ignition RViz&lt;/h2&gt;
 
 &lt;h3 id=&quot;tf-transform-status&quot;&gt;TF transform status&lt;/h3&gt;
@@ -180,7 +195,9 @@
 
 &lt;p&gt;Fixes a bug where RViz won’t show entites in the absence of tf data.&lt;/p&gt;
 
-&lt;p&gt;Pull request - &lt;a href=&quot;https://github.com/ignitionrobotics/ign-rviz/pull/67&quot;&gt;https://github.com/ignitionrobotics/ign-rviz/pull/67&lt;/a&gt;&lt;/p&gt;</content>
+&lt;p&gt;Pull request - &lt;a href=&quot;https://github.com/ignitionrobotics/ign-rviz/pull/67&quot;&gt;https://github.com/ignitionrobotics/ign-rviz/pull/67&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/images/rviz_tf_fix.gif&quot; alt=&quot;assets/images/rviz_tf_fix.gif&quot; /&gt;&lt;/p&gt;</content>
 
       
       
@@ -757,6 +774,8 @@ The device has operational capability at 868 MHz as well as 2.4 GHz in India. Th
       <updated>2021-01-05T15:48:00+05:30</updated>
       <id>http://localhost:4000/rrt-cpp</id>
       <content type="html" xml:base="http://localhost:4000/rrt-cpp">&lt;p&gt;Rapidly exploring rapid trees (RRTs) implementation in C++17.&lt;/p&gt;
+
+&lt;p&gt;GitHub Repository - &lt;a href=&quot;https://github.com/atharva-18/rrt-cpp&quot;&gt;https://github.com/atharva-18/rrt-cpp&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Demo:
 &lt;img src=&quot;assets/images/rrt_cpp_demo.gif&quot; alt=&quot;assets/images/rrt_cpp_demo.gif&quot; /&gt;&lt;/p&gt;</content>

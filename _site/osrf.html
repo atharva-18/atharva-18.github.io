@@ -300,6 +300,21 @@ into the {body} of the default.hbs template -->
 
 <p>Pull requests - <a href="https://github.com/ignitionrobotics/ign-gazebo/pull/632">https://github.com/ignitionrobotics/ign-gazebo/pull/632</a> and <a href="https://github.com/ignitionrobotics/ign-gazebo/pull/639">https://github.com/ignitionrobotics/ign-gazebo/pull/639</a></p>
 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (_sdf-&gt;HasElement("topic"))
+{
+  topic = transport::TopicUtils::AsValidTopic(
+      _sdf-&gt;Get&lt;std::string&gt;("topic"));
+
+  if (topic.empty())
+  {
+    ignerr &lt;&lt; "Failed to create topic [" &lt;&lt; _sdf-&gt;Get&lt;std::string&gt;("topic")
+           &lt;&lt; "]" &lt;&lt; " for joint [" &lt;&lt; jointName
+           &lt;&lt; "]" &lt;&lt; std::endl;
+    return;
+  }
+}
+</code></pre></div></div>
+
 <h2 id="ignition-rviz">Ignition RViz</h2>
 
 <h3 id="tf-transform-status">TF transform status</h3>
@@ -330,6 +345,8 @@ into the {body} of the default.hbs template -->
 <p>Fixes a bug where RViz won’t show entites in the absence of tf data.</p>
 
 <p>Pull request - <a href="https://github.com/ignitionrobotics/ign-rviz/pull/67">https://github.com/ignitionrobotics/ign-rviz/pull/67</a></p>
+
+<p><img src="assets/images/rviz_tf_fix.gif" alt="assets/images/rviz_tf_fix.gif" /></p>
 
                 </div>
             </section>

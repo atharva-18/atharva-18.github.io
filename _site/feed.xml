@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-11-06T11:48:31+05:30</updated><id>http://localhost:4000/</id><title type="html">Atharva Pusalkar</title><subtitle>Atharva Pusalkar</subtitle><entry><title type="html">Medicine Dispensing Robot</title><link href="http://localhost:4000/med-robot" rel="alternate" type="text/html" title="Medicine Dispensing Robot" /><published>2021-10-10T15:48:00+05:30</published><updated>2021-10-10T15:48:00+05:30</updated><id>http://localhost:4000/med-robot</id><content type="html" xml:base="http://localhost:4000/med-robot">&lt;p&gt;This is an ongoing project funded by our college for routine medicine delivery for hospital patients. The main goal is to dispense medicines according to the prescription to Alzheimer’s patients during the suggested timings.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-11-09T22:12:36+05:30</updated><id>http://localhost:4000/</id><title type="html">Atharva Pusalkar</title><subtitle>Atharva Pusalkar</subtitle><entry><title type="html">Medicine Dispensing Robot</title><link href="http://localhost:4000/med-robot" rel="alternate" type="text/html" title="Medicine Dispensing Robot" /><published>2021-10-10T15:48:00+05:30</published><updated>2021-10-10T15:48:00+05:30</updated><id>http://localhost:4000/med-robot</id><content type="html" xml:base="http://localhost:4000/med-robot">&lt;p&gt;This is an ongoing project funded by our college for routine medicine delivery for hospital patients. The main goal is to dispense medicines according to the prescription to Alzheimer’s patients during the suggested timings.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;assets/images/mdr_cad.jpg&quot; alt=&quot;assets/images/mdr_cad.jpg&quot; /&gt;&lt;/p&gt;
 
@@ -32,6 +32,21 @@
 
 &lt;p&gt;Pull requests - &lt;a href=&quot;https://github.com/ignitionrobotics/ign-gazebo/pull/632&quot;&gt;https://github.com/ignitionrobotics/ign-gazebo/pull/632&lt;/a&gt; and &lt;a href=&quot;https://github.com/ignitionrobotics/ign-gazebo/pull/639&quot;&gt;https://github.com/ignitionrobotics/ign-gazebo/pull/639&lt;/a&gt;&lt;/p&gt;
 
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if (_sdf-&amp;gt;HasElement(&quot;topic&quot;))
+{
+  topic = transport::TopicUtils::AsValidTopic(
+      _sdf-&amp;gt;Get&amp;lt;std::string&amp;gt;(&quot;topic&quot;));
+
+  if (topic.empty())
+  {
+    ignerr &amp;lt;&amp;lt; &quot;Failed to create topic [&quot; &amp;lt;&amp;lt; _sdf-&amp;gt;Get&amp;lt;std::string&amp;gt;(&quot;topic&quot;)
+           &amp;lt;&amp;lt; &quot;]&quot; &amp;lt;&amp;lt; &quot; for joint [&quot; &amp;lt;&amp;lt; jointName
+           &amp;lt;&amp;lt; &quot;]&quot; &amp;lt;&amp;lt; std::endl;
+    return;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;h2 id=&quot;ignition-rviz&quot;&gt;Ignition RViz&lt;/h2&gt;
 
 &lt;h3 id=&quot;tf-transform-status&quot;&gt;TF transform status&lt;/h3&gt;
@@ -61,7 +76,9 @@
 
 &lt;p&gt;Fixes a bug where RViz won’t show entites in the absence of tf data.&lt;/p&gt;
 
-&lt;p&gt;Pull request - &lt;a href=&quot;https://github.com/ignitionrobotics/ign-rviz/pull/67&quot;&gt;https://github.com/ignitionrobotics/ign-rviz/pull/67&lt;/a&gt;&lt;/p&gt;</content><author><name>Atharva Pusalkar</name></author><category term="Projects" /><summary type="html">In this post I will be presenting my contributions to Open Robotics before joining them as a student developer. I contributed mainly to the Ignition Gazebo and Ignition RViz projects for a few months to get familiar with a large codebase.</summary></entry><entry><title type="html">Google Summer of Code at Open Robotics</title><link href="http://localhost:4000/gsoc" rel="alternate" type="text/html" title="Google Summer of Code at Open Robotics" /><published>2021-08-22T15:48:00+05:30</published><updated>2021-08-22T15:48:00+05:30</updated><id>http://localhost:4000/gsoc</id><content type="html" xml:base="http://localhost:4000/gsoc">&lt;p&gt;In the summer of 2021, I had the opportunity to work at Open Robotics (née
+&lt;p&gt;Pull request - &lt;a href=&quot;https://github.com/ignitionrobotics/ign-rviz/pull/67&quot;&gt;https://github.com/ignitionrobotics/ign-rviz/pull/67&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/images/rviz_tf_fix.gif&quot; alt=&quot;assets/images/rviz_tf_fix.gif&quot; /&gt;&lt;/p&gt;</content><author><name>Atharva Pusalkar</name></author><category term="Projects" /><summary type="html">In this post I will be presenting my contributions to Open Robotics before joining them as a student developer. I contributed mainly to the Ignition Gazebo and Ignition RViz projects for a few months to get familiar with a large codebase.</summary></entry><entry><title type="html">Google Summer of Code at Open Robotics</title><link href="http://localhost:4000/gsoc" rel="alternate" type="text/html" title="Google Summer of Code at Open Robotics" /><published>2021-08-22T15:48:00+05:30</published><updated>2021-08-22T15:48:00+05:30</updated><id>http://localhost:4000/gsoc</id><content type="html" xml:base="http://localhost:4000/gsoc">&lt;p&gt;In the summer of 2021, I had the opportunity to work at Open Robotics (née
 Open Source Robotics Foundation) as a student developer. The project was in turn funded by Google through their Summer of Code 2021 program.&lt;/p&gt;
 
 &lt;p&gt;Back in late 2020, I was looking at new open-source projects that I could contribute to, and by good fortune I stumbled upon the Ignition Robotics project. I was already a wee bit familiar with some of the software published by them and by Open Robotics at large - one of them being the Gazebo robotics simulator. I actively started contributing to their project by making small pull requests at first, such as adding an &lt;i&gt;about dialog&lt;/i&gt;, light intensity modification, and more. Three months later, I applied to the Summer of Code 2021 program at Open Robotics, and one fine day, after a video meeting and evaluation, I got the acceptance mail!&lt;/p&gt;
