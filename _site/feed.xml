@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-11-09T22:12:36+05:30</updated><id>http://localhost:4000/</id><title type="html">Atharva Pusalkar</title><subtitle>Atharva Pusalkar</subtitle><entry><title type="html">Medicine Dispensing Robot</title><link href="http://localhost:4000/med-robot" rel="alternate" type="text/html" title="Medicine Dispensing Robot" /><published>2021-10-10T15:48:00+05:30</published><updated>2021-10-10T15:48:00+05:30</updated><id>http://localhost:4000/med-robot</id><content type="html" xml:base="http://localhost:4000/med-robot">&lt;p&gt;This is an ongoing project funded by our college for routine medicine delivery for hospital patients. The main goal is to dispense medicines according to the prescription to Alzheimer’s patients during the suggested timings.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-11-23T18:13:15+05:30</updated><id>http://localhost:4000/</id><title type="html">Atharva Pusalkar</title><subtitle>Atharva Pusalkar</subtitle><entry><title type="html">Medicine Dispensing Robot</title><link href="http://localhost:4000/med-robot" rel="alternate" type="text/html" title="Medicine Dispensing Robot" /><published>2021-10-10T15:48:00+05:30</published><updated>2021-10-10T15:48:00+05:30</updated><id>http://localhost:4000/med-robot</id><content type="html" xml:base="http://localhost:4000/med-robot">&lt;p&gt;This is an ongoing project funded by our college for routine medicine delivery for hospital patients. The main goal is to dispense medicines according to the prescription to Alzheimer’s patients during the suggested timings.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;assets/images/mdr_cad.jpg&quot; alt=&quot;assets/images/mdr_cad.jpg&quot; /&gt;&lt;/p&gt;
 
@@ -87,6 +87,9 @@ Open Source Robotics Foundation) as a student developer. The project was in turn
 
 &lt;p&gt;If you want to read the blog post by Open Robotics, visit &lt;a href=&quot;https://www.openrobotics.org/blog/2021/5/25/google-summer-of-code-2021&quot;&gt;https://www.openrobotics.org/blog/2021/5/25/google-summer-of-code-202&lt;/a&gt;&lt;/p&gt;
 
+&lt;p&gt;Watch and hear me talk about the debugging features added to Ignition Gazebo in the Fortress release demo meeting:&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/VwzGJDHkW8A?start=1009&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
 &lt;h2 id=&quot;the-project&quot;&gt;The Project&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&quot;assets/images/gsoc_open_robotics.png&quot; alt=&quot;&amp;quot;GSoC&amp;quot;&quot; /&gt;&lt;/p&gt;
@@ -133,7 +136,11 @@ Open Source Robotics Foundation) as a student developer. The project was in turn
 
 &lt;p&gt;Ignition Gazebo Pull Request - &lt;a href=&quot;https://github.com/ignitionrobotics/ign-gazebo/pull/861&quot;&gt;https://github.com/ignitionrobotics/ign-gazebo/pull/861&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Here’s the inertia visualization in different scales and orientations:
+&lt;p&gt;Ignition Rendering:
+&lt;img src=&quot;assets/images/gsoc_inertia_rendering.png&quot; alt=&quot;Inertia&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ignition Gazebo:
+Here’s the inertia visualization in different scales and orientations:
 &lt;img src=&quot;assets/images/inertia.png&quot; alt=&quot;Inertia&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;visualize-center-of-mass&quot;&gt;Visualize Center of Mass&lt;/h3&gt;
@@ -144,7 +151,11 @@ Open Source Robotics Foundation) as a student developer. The project was in turn
 
 &lt;p&gt;Ignition Gazebo Pull Request - &lt;a href=&quot;https://github.com/ignitionrobotics/ign-gazebo/pull/903&quot;&gt;https://github.com/ignitionrobotics/ign-gazebo/pull/903&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/images/com.gif&quot; alt=&quot;CoM&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Ignition Rendering:
+&lt;img src=&quot;assets/images/gsoc_com_rendering.png&quot; alt=&quot;CoM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ignition Gazebo:
+&lt;img src=&quot;assets/images/com.gif&quot; alt=&quot;CoM&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;visualize-joints&quot;&gt;Visualize Joints&lt;/h3&gt;
 
@@ -156,7 +167,11 @@ Open Source Robotics Foundation) as a student developer. The project was in turn
 
 &lt;p&gt;Ignition Gazebo Pull Request - &lt;a href=&quot;https://github.com/ignitionrobotics/ign-gazebo/pull/961&quot;&gt;https://github.com/ignitionrobotics/ign-gazebo/pull/961&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/images/joints.gif&quot; alt=&quot;Joints&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Ignition Rendering:
+&lt;img src=&quot;assets/images/gsoc_joint_rendering.png&quot; alt=&quot;Joints&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ignition Gazebo:
+&lt;img src=&quot;assets/images/joints.gif&quot; alt=&quot;Joints&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Besides the above-mentioned, I have also added features such as the &lt;i&gt;about dialog&lt;/i&gt; and light intensity fields during the pre-GSOC period.&lt;/p&gt;
 
