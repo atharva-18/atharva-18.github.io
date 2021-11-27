@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="http://localhost:4000/tag/projects/feed.xml" rel="self" type="application/atom+xml" />
   <link href="http://localhost:4000/" rel="alternate" type="text/html" />
-  <updated>2021-11-23T18:48:22+05:30</updated>
+  <updated>2021-11-27T20:07:21+05:30</updated>
   <id>http://localhost:4000/tag/projects/feed.xml</id>
 
   
@@ -56,7 +56,14 @@
 &lt;p&gt;I am currently working as the system integration lead and developing the human voice interface.&lt;/p&gt;
 
 &lt;p&gt;Medicine dispensing mechanism design:
-&lt;img src=&quot;assets/images/mdr_medicine_base.jpg&quot; alt=&quot;Medicine base&quot; /&gt;&lt;/p&gt;</content>
+&lt;img src=&quot;assets/images/mdr_medicine_base.jpg&quot; alt=&quot;Medicine base&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;3D printed mechanism:&lt;/p&gt;
+&lt;video width=&quot;75%&quot; height=&quot;75%&quot; controls=&quot;&quot; loop=&quot;&quot;&gt;
+	&lt;source src=&quot;assets/videos/mdr_dispensing.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;
+&lt;p&gt;Apologies for the shaky video.&lt;/p&gt;</content>
 
       
       
