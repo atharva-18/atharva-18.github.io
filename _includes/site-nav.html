@@ -11,7 +11,15 @@
 	</div>
 	<div class="site-nav-right">
 		<div class="social-links">
-			{% if site.github %}
+			{% if site.google_scholar %}
+			<a
+				class="social-link social-link-fb"
+				href="https://scholar.google.com/citations?user=P6TSvToAAAAJ&hl=en"
+				target="_blank"
+				rel="noopener"
+				>{% include google_scholar.html %}</a
+			>
+			{% endif %}{% if site.github %}
 			<a
 				class="social-link social-link-fb"
 				href="https://github.com/{{ site.github }}"
@@ -19,7 +27,7 @@
 				rel="noopener"
 				>{% include github.html %}</a
 			>
-			{% endif %} {% if site.linkedin %}
+			{% endif %}{% if site.linkedin %}
 			<a
 				class="social-link social-link-fb"
 				href="https://www.linkedin.com/in/atharva-pusalkar/"

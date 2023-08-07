@@ -2,6 +2,8 @@
 layout: page
 current: experience
 title: My Experience
+permalink: experience
+description: Atharva Pusalkar's experience in the field of robotics and software development.
 navigation: true
 logo: 'assets/images/blog-icon.png'
 class: page-template

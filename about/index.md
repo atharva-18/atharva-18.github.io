@@ -1,7 +1,9 @@
 ---
 layout: page
 current: about
-title: About
+title: About Atharva Pusalkar
+permalink: about
+description: Atharva Pusalkar is a graduate student at Carnegie Mellon University. His work primarily lies in the intersection of embodied AI with intelligent interaction (CMU) and computer vision (DJS Racing). He also likes to build software and systems (Open Robotics and Hello Robot) that make robotics and AI research more accessible to people around the world. He plays with robots and likes to build their brains (the software) and nerves (the electricals). In his free time, you will see him play tennis, listening to music or maybe both. 
 navigation: true
 logo: 'assets/images/blog-icon.png'
 class: page-template

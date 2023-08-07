@@ -5,6 +5,7 @@ cover: assets/images/2dlsm_cover.png
 navigation: True
 title: ROS2 2D Landmark SLAM
 date: 2021-10-01 10:18:00
+last_modified_at: 2021-10-01 10:18:00
 tags: [Projects]
 class: post-template
 subclass: 'post'

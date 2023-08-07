@@ -28,6 +28,7 @@ twitter: AtharvaPusalkar # replace by your username
 # facebook: ghost # replace by your username
 linkedin: atharva-pusalkar
 github: atharva-18
+google_scholar: P6TSvToAAAAJ
 
 # Disqus
 disqus: False
@@ -46,7 +47,11 @@ permalink: /:title
 
 # gems and other configs
 plugins_dir: [_plugins]
-plugins: [jekyll-paginate, jekyll-feed, jekyll-scholar, jekyll-redirect-from]
+plugins: [jekyll-paginate, jekyll-feed, jekyll-scholar, jekyll-redirect-from, jekyll-seo-tag, jekyll-sitemap, jekyll-last-modified-at]
+
+# Optional. The default date format, used if none is specified in the tag.
+last-modified-at:
+    date-format: '%d-%b-%y'
 
 feed:
   path: feed.xml
