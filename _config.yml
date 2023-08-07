@@ -15,7 +15,7 @@ cover: assets/images/bg.svg
 logo: assets/images/blog-icon.png
 logo_dark: assets/images/favicon.svg
 favicon: assets/images/favicon.svg
-production_url: https://pusalkar.xyz/
+production_url: https://atharva-18.github.io/
 source_url: https://github.com/atharva-18/atharva-18.github.io
 CNAME: pusalkar.xyz #add cname for website to be created
 
