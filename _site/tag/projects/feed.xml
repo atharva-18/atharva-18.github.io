@@ -2,10 +2,10 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator>
-  <link href="http://localhost:4000/tag/projects/feed.xml" rel="self" type="application/atom+xml" />
-  <link href="http://localhost:4000/" rel="alternate" type="text/html" />
-  <updated>2023-08-06T21:26:22-07:00</updated>
-  <id>http://localhost:4000/tag/projects/feed.xml</id>
+  <link href="/tag/projects/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="/" rel="alternate" type="text/html" />
+  <updated>2023-08-06T21:55:49-07:00</updated>
+  <id>/tag/projects/feed.xml</id>
 
   
   
@@ -45,11 +45,11 @@
   
     <entry>
       <title type="html">Medicine Dispensing Robot</title>
-      <link href="http://localhost:4000/med-robot" rel="alternate" type="text/html" title="Medicine Dispensing Robot" />
+      <link href="/med-robot" rel="alternate" type="text/html" title="Medicine Dispensing Robot" />
       <published>2021-10-10T03:18:00-07:00</published>
       <updated>2021-10-10T03:18:00-07:00</updated>
-      <id>http://localhost:4000/med-robot</id>
-      <content type="html" xml:base="http://localhost:4000/med-robot">&lt;p&gt;This is an ongoing project funded by our college for routine medicine delivery for hospital patients. The main goal is to dispense medicines according to the prescription to Alzheimer’s patients during the suggested timings.&lt;/p&gt;
+      <id>/med-robot</id>
+      <content type="html" xml:base="/med-robot">&lt;p&gt;This is an ongoing project funded by our college for routine medicine delivery for hospital patients. The main goal is to dispense medicines according to the prescription to Alzheimer’s patients during the suggested timings.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;assets/images/mdr_cad.jpg&quot; alt=&quot;assets/images/mdr_cad.jpg&quot; /&gt;&lt;/p&gt;
 
@@ -93,11 +93,11 @@
   
     <entry>
       <title type="html">ROS2 2D Landmark SLAM</title>
-      <link href="http://localhost:4000/2d-landmark-slam" rel="alternate" type="text/html" title="ROS2 2D Landmark SLAM" />
+      <link href="/2d-landmark-slam" rel="alternate" type="text/html" title="ROS2 2D Landmark SLAM" />
       <published>2021-10-01T03:18:00-07:00</published>
       <updated>2021-10-01T03:18:00-07:00</updated>
-      <id>http://localhost:4000/2d-landmark-slam</id>
-      <content type="html" xml:base="http://localhost:4000/2d-landmark-slam">&lt;p&gt;A ROS2 package developed by me for 2D SLAM using landmark detections and FastSLAM 2.0.&lt;/p&gt;
+      <id>/2d-landmark-slam</id>
+      <content type="html" xml:base="/2d-landmark-slam">&lt;p&gt;A ROS2 package developed by me for 2D SLAM using landmark detections and FastSLAM 2.0.&lt;/p&gt;
 
 &lt;p&gt;GitHub Repository - &lt;a href=&quot;https://github.com/atharva-18/landmark-slam-2d.git&quot;&gt;https://github.com/atharva-18/landmark-slam-2d.git&lt;/a&gt;&lt;/p&gt;
 
@@ -131,11 +131,11 @@
   
     <entry>
       <title type="html">Contributing to Open Robotics</title>
-      <link href="http://localhost:4000/osrf" rel="alternate" type="text/html" title="Contributing to Open Robotics" />
+      <link href="/osrf" rel="alternate" type="text/html" title="Contributing to Open Robotics" />
       <published>2021-08-23T03:18:00-07:00</published>
       <updated>2021-08-23T03:18:00-07:00</updated>
-      <id>http://localhost:4000/osrf</id>
-      <content type="html" xml:base="http://localhost:4000/osrf">&lt;p&gt;In this post I will be presenting my contributions to Open Robotics before joining them as a student developer. I contributed mainly to the Ignition Gazebo and Ignition RViz projects for a few months to get familiar with a large codebase.&lt;/p&gt;
+      <id>/osrf</id>
+      <content type="html" xml:base="/osrf">&lt;p&gt;In this post I will be presenting my contributions to Open Robotics before joining them as a student developer. I contributed mainly to the Ignition Gazebo and Ignition RViz projects for a few months to get familiar with a large codebase.&lt;/p&gt;
 
 &lt;h2 id=&quot;ignition-gazebo&quot;&gt;Ignition Gazebo&lt;/h2&gt;
 
@@ -237,11 +237,11 @@
   
     <entry>
       <title type="html">Model Predictive Control Concept</title>
-      <link href="http://localhost:4000/mpcc" rel="alternate" type="text/html" title="Model Predictive Control Concept" />
+      <link href="/mpcc" rel="alternate" type="text/html" title="Model Predictive Control Concept" />
       <published>2021-07-31T03:18:00-07:00</published>
       <updated>2021-07-31T03:18:00-07:00</updated>
-      <id>http://localhost:4000/mpcc</id>
-      <content type="html" xml:base="http://localhost:4000/mpcc">&lt;section id=&quot;main&quot; class=&quot;wrapper&quot;&gt;
+      <id>/mpcc</id>
+      <content type="html" xml:base="/mpcc">&lt;section id=&quot;main&quot; class=&quot;wrapper&quot;&gt;
   &lt;div class=&quot;inner&quot;&gt;
   &lt;h1 class=&quot;major&quot;&gt;A concept for Model Predictive Control in race-cars&lt;/h1&gt;
     &lt;!-- &lt;span class=&quot;image fit&quot;&gt;&lt;img src=&quot;images/pic04.jpg&quot; alt=&quot;&quot; /&gt;&lt;/span&gt; --&gt;
@@ -282,11 +282,11 @@
   
     <entry>
       <title type="html">Data Acquisition - DJS Racing</title>
-      <link href="http://localhost:4000/djsr-daq" rel="alternate" type="text/html" title="Data Acquisition - DJS Racing" />
+      <link href="/djsr-daq" rel="alternate" type="text/html" title="Data Acquisition - DJS Racing" />
       <published>2021-07-31T03:18:00-07:00</published>
       <updated>2021-07-31T03:18:00-07:00</updated>
-      <id>http://localhost:4000/djsr-daq</id>
-      <content type="html" xml:base="http://localhost:4000/djsr-daq">&lt;h1 id=&quot;data-acquisition-for-a-formula-student-car&quot;&gt;Data Acquisition for a Formula Student car.&lt;/h1&gt;
+      <id>/djsr-daq</id>
+      <content type="html" xml:base="/djsr-daq">&lt;h1 id=&quot;data-acquisition-for-a-formula-student-car&quot;&gt;Data Acquisition for a Formula Student car.&lt;/h1&gt;
 &lt;p&gt;In this blog, I will be writing about the data acquisition system that I built with my teammates for the year 2021.&lt;/p&gt;
 
 &lt;h2 id=&quot;hardware&quot;&gt;Hardware&lt;/h2&gt;
@@ -368,11 +368,11 @@
   
     <entry>
       <title type="html">Monocular Depth Estimation</title>
-      <link href="http://localhost:4000/cgan" rel="alternate" type="text/html" title="Monocular Depth Estimation" />
+      <link href="/cgan" rel="alternate" type="text/html" title="Monocular Depth Estimation" />
       <published>2021-07-31T03:18:00-07:00</published>
       <updated>2021-07-31T03:18:00-07:00</updated>
-      <id>http://localhost:4000/cgan</id>
-      <content type="html" xml:base="http://localhost:4000/cgan">&lt;section id=&quot;main&quot; class=&quot;wrapper&quot;&gt;
+      <id>/cgan</id>
+      <content type="html" xml:base="/cgan">&lt;section id=&quot;main&quot; class=&quot;wrapper&quot;&gt;
   &lt;div class=&quot;inner&quot;&gt;
   &lt;h1 class=&quot;major&quot;&gt;Monocular Depth Estimation using CGANs&lt;/h1&gt;
   &lt;!-- &lt;span class=&quot;image fit&quot;&gt;&lt;img src=&quot;images/pic04.jpg&quot; alt=&quot;&quot; /&gt;&lt;/span&gt; --&gt;
@@ -410,11 +410,11 @@
   
     <entry>
       <title type="html">DJS Racing</title>
-      <link href="http://localhost:4000/djsr" rel="alternate" type="text/html" title="DJS Racing" />
+      <link href="/djsr" rel="alternate" type="text/html" title="DJS Racing" />
       <published>2021-07-01T03:18:00-07:00</published>
       <updated>2021-07-01T03:18:00-07:00</updated>
-      <id>http://localhost:4000/djsr</id>
-      <content type="html" xml:base="http://localhost:4000/djsr">&lt;p&gt;I currently lead the driverless project at DJS Racing, a student team aiming to build a self-driving Formula Student race car. In conjuction, I also developed the data acquisition system for our vehicle.&lt;/p&gt;
+      <id>/djsr</id>
+      <content type="html" xml:base="/djsr">&lt;p&gt;I currently lead the driverless project at DJS Racing, a student team aiming to build a self-driving Formula Student race car. In conjuction, I also developed the data acquisition system for our vehicle.&lt;/p&gt;
 
 &lt;p&gt;Here’s a small video from 2019 about our work prior to building electric cars:&lt;/p&gt;
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/58pZoXDAzec&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
@@ -697,11 +697,11 @@ However, an improvement is required here as IPOPT is not designed for real-time 
   
     <entry>
       <title type="html">Wireless Data Transceiver using LoRa mesh</title>
-      <link href="http://localhost:4000/iiot-device" rel="alternate" type="text/html" title="Wireless Data Transceiver using LoRa mesh" />
+      <link href="/iiot-device" rel="alternate" type="text/html" title="Wireless Data Transceiver using LoRa mesh" />
       <published>2021-04-25T03:18:00-07:00</published>
       <updated>2021-04-25T03:18:00-07:00</updated>
-      <id>http://localhost:4000/iiot-device</id>
-      <content type="html" xml:base="http://localhost:4000/iiot-device">&lt;p&gt;I worked on an industrial-grade wireless data transceiver using the LoRa mesh technology for use in ship docking systems.&lt;/p&gt;
+      <id>/iiot-device</id>
+      <content type="html" xml:base="/iiot-device">&lt;p&gt;I worked on an industrial-grade wireless data transceiver using the LoRa mesh technology for use in ship docking systems.&lt;/p&gt;
 
 &lt;h2 id=&quot;description&quot;&gt;Description&lt;/h2&gt;
 &lt;p&gt;The product mainly serves as an data-collection/transmission device using the PIC32 MCU and mesh networking topology. The PIC MCUs are outdated but they have excellent compatibility with the peripherals of our PCB, and hence it was chosen.&lt;/p&gt;
@@ -767,11 +767,11 @@ The device has operational capability at 868 MHz as well as 2.4 GHz in India. Th
   
     <entry>
       <title type="html">RRT-Classic</title>
-      <link href="http://localhost:4000/rrt-cpp" rel="alternate" type="text/html" title="RRT-Classic" />
+      <link href="/rrt-cpp" rel="alternate" type="text/html" title="RRT-Classic" />
       <published>2021-01-05T02:18:00-08:00</published>
       <updated>2021-01-05T02:18:00-08:00</updated>
-      <id>http://localhost:4000/rrt-cpp</id>
-      <content type="html" xml:base="http://localhost:4000/rrt-cpp">&lt;p&gt;Rapidly exploring rapid trees (RRTs) implementation in C++17.&lt;/p&gt;
+      <id>/rrt-cpp</id>
+      <content type="html" xml:base="/rrt-cpp">&lt;p&gt;Rapidly exploring rapid trees (RRTs) implementation in C++17.&lt;/p&gt;
 
 &lt;p&gt;GitHub Repository - &lt;a href=&quot;https://github.com/atharva-18/rrt-cpp&quot;&gt;https://github.com/atharva-18/rrt-cpp&lt;/a&gt;&lt;/p&gt;
 

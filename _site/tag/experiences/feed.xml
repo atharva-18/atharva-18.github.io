@@ -2,10 +2,10 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator>
-  <link href="http://localhost:4000/tag/experiences/feed.xml" rel="self" type="application/atom+xml" />
-  <link href="http://localhost:4000/" rel="alternate" type="text/html" />
-  <updated>2023-08-06T21:26:22-07:00</updated>
-  <id>http://localhost:4000/tag/experiences/feed.xml</id>
+  <link href="/tag/experiences/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="/" rel="alternate" type="text/html" />
+  <updated>2023-08-06T21:55:49-07:00</updated>
+  <id>/tag/experiences/feed.xml</id>
 
   
   
@@ -45,11 +45,11 @@
   
     <entry>
       <title type="html">Google Summer of Code at Open Robotics</title>
-      <link href="http://localhost:4000/gsoc" rel="alternate" type="text/html" title="Google Summer of Code at Open Robotics" />
+      <link href="/gsoc" rel="alternate" type="text/html" title="Google Summer of Code at Open Robotics" />
       <published>2021-08-22T03:18:00-07:00</published>
       <updated>2021-08-22T03:18:00-07:00</updated>
-      <id>http://localhost:4000/gsoc</id>
-      <content type="html" xml:base="http://localhost:4000/gsoc">&lt;p&gt;In the summer of 2021, I had the opportunity to work at Open Robotics (née
+      <id>/gsoc</id>
+      <content type="html" xml:base="/gsoc">&lt;p&gt;In the summer of 2021, I had the opportunity to work at Open Robotics (née
 Open Source Robotics Foundation) as a student developer. The project was in turn funded by Google through their Summer of Code 2021 program.&lt;/p&gt;
 
 &lt;p&gt;Back in late 2020, I was looking at new open-source projects that I could contribute to, and by good fortune I stumbled upon the Ignition Robotics project. I was already a wee bit familiar with some of the software published by them and by Open Robotics at large - one of them being the Gazebo robotics simulator. I actively started contributing to their project by making small pull requests at first, such as adding an &lt;i&gt;about dialog&lt;/i&gt;, light intensity modification, and more. Three months later, I applied to the Summer of Code 2021 program at Open Robotics, and one fine day, after a video meeting and evaluation, I got the acceptance mail!&lt;/p&gt;
@@ -216,11 +216,11 @@ Here’s the inertia visualization in different scales and orientations:
   
     <entry>
       <title type="html">IEEE Student Branch, DJSCE</title>
-      <link href="http://localhost:4000/ieee-sb" rel="alternate" type="text/html" title="IEEE Student Branch, DJSCE" />
+      <link href="/ieee-sb" rel="alternate" type="text/html" title="IEEE Student Branch, DJSCE" />
       <published>2021-07-05T03:18:00-07:00</published>
       <updated>2021-07-05T03:18:00-07:00</updated>
-      <id>http://localhost:4000/ieee-sb</id>
-      <content type="html" xml:base="http://localhost:4000/ieee-sb">&lt;p&gt;For two years of my undergrad, I was a member of the IEEE student chapter of my institute, DJ Sanghvi College of Engineering.&lt;/p&gt;
+      <id>/ieee-sb</id>
+      <content type="html" xml:base="/ieee-sb">&lt;p&gt;For two years of my undergrad, I was a member of the IEEE student chapter of my institute, DJ Sanghvi College of Engineering.&lt;/p&gt;
 
 &lt;p&gt;IEEE Brainwaves is the official IEEE student branch of Dwarkadas J. Sanghvi College of Engineering. The student chapter is responsible for coordinating &amp;amp; conducting various workshops and other activities at the institute, which include expert lectures, seminars, workshops, and industry visits, and mentoring sessions by alumni. These all are the initiatives by the department to ensure a holistic learning experience in the 4 years of engineering at DJSCE.&lt;/p&gt;
 
@@ -302,11 +302,11 @@ The second episode of our IEEE Expert Lecture series. This one delved a bit into
   
     <entry>
       <title type="html">DJS Racing</title>
-      <link href="http://localhost:4000/djsr" rel="alternate" type="text/html" title="DJS Racing" />
+      <link href="/djsr" rel="alternate" type="text/html" title="DJS Racing" />
       <published>2021-07-01T03:18:00-07:00</published>
       <updated>2021-07-01T03:18:00-07:00</updated>
-      <id>http://localhost:4000/djsr</id>
-      <content type="html" xml:base="http://localhost:4000/djsr">&lt;p&gt;I currently lead the driverless project at DJS Racing, a student team aiming to build a self-driving Formula Student race car. In conjuction, I also developed the data acquisition system for our vehicle.&lt;/p&gt;
+      <id>/djsr</id>
+      <content type="html" xml:base="/djsr">&lt;p&gt;I currently lead the driverless project at DJS Racing, a student team aiming to build a self-driving Formula Student race car. In conjuction, I also developed the data acquisition system for our vehicle.&lt;/p&gt;
 
 &lt;p&gt;Here’s a small video from 2019 about our work prior to building electric cars:&lt;/p&gt;
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/58pZoXDAzec&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
@@ -589,11 +589,11 @@ However, an improvement is required here as IPOPT is not designed for real-time 
   
     <entry>
       <title type="html">Internship at Mowito Robotics</title>
-      <link href="http://localhost:4000/mowito" rel="alternate" type="text/html" title="Internship at Mowito Robotics" />
+      <link href="/mowito" rel="alternate" type="text/html" title="Internship at Mowito Robotics" />
       <published>2021-05-30T03:18:00-07:00</published>
       <updated>2021-05-30T03:18:00-07:00</updated>
-      <id>http://localhost:4000/mowito</id>
-      <content type="html" xml:base="http://localhost:4000/mowito">&lt;p&gt;Mowito is an Indian startup that provides autonomous navigation software solutions for use in warehouses and more. The company has also recently expanded into providing physical robots with applications such as grocery delivery.&lt;/p&gt;
+      <id>/mowito</id>
+      <content type="html" xml:base="/mowito">&lt;p&gt;Mowito is an Indian startup that provides autonomous navigation software solutions for use in warehouses and more. The company has also recently expanded into providing physical robots with applications such as grocery delivery.&lt;/p&gt;
 
 &lt;p&gt;Mowito being a startup, provided me a lot of avenues to learn new things. The work ranged from robot navigation, lidar stitching to cloud computing. Often the work involved projects that either the team or nobody in the entire world has experience working. This helped me quickly adapt to situations and learn new things in a short time, often required for an early-stage startup. I had great mentors who bestowed me with the responsibility to directly work on their navigation stack - their core offering that is used in warehouse environments by companies around the world. The stack was being directly deployed on ROS-based robots that were being remotely monitored by us. Under the mentor’s guidance, I was able to learn agile project management, startup accelerators, how to manage people in a company.&lt;/p&gt;
 
@@ -721,11 +721,11 @@ Our deployments often needed periodic manual maintenance to function well. One r
   
     <entry>
       <title type="html">COVID-19 Detection from Chest X-Ray Images</title>
-      <link href="http://localhost:4000/resnet-chest" rel="alternate" type="text/html" title="COVID-19 Detection from Chest X-Ray Images" />
+      <link href="/resnet-chest" rel="alternate" type="text/html" title="COVID-19 Detection from Chest X-Ray Images" />
       <published>2020-12-20T02:18:00-08:00</published>
       <updated>2020-12-20T02:18:00-08:00</updated>
-      <id>http://localhost:4000/resnet-chest</id>
-      <content type="html" xml:base="http://localhost:4000/resnet-chest">&lt;p&gt;A small project that I did back in December of 2020 for COVID-19 detection using chest x-ray images. The model uses a modified ResNet-50 model for detection using RGB signals.&lt;/p&gt;
+      <id>/resnet-chest</id>
+      <content type="html" xml:base="/resnet-chest">&lt;p&gt;A small project that I did back in December of 2020 for COVID-19 detection using chest x-ray images. The model uses a modified ResNet-50 model for detection using RGB signals.&lt;/p&gt;
 
 &lt;p&gt;GradCAM activation map using the ResNet-50 model:
 &lt;img src=&quot;assets/images/cd-blog.png&quot; alt=&quot;GradCAM for activation map visualization&quot; /&gt;&lt;/p&gt;

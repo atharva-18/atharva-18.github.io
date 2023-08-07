@@ -4,7 +4,7 @@
     <title> - Articles</title>
     <description>Atharva Pusalkar</description>
     <link>
-    http://localhost:4000</link>
+    </link>
     
       
       <item>
@@ -16,8 +16,8 @@
         
         <pubDate>Sun, 10 Oct 2021 03:18:00 -0700</pubDate>
         <link>
-        http://localhost:4000/med-robot</link>
-        <guid isPermaLink="true">http://localhost:4000/med-robot</guid>
+        /med-robot</link>
+        <guid isPermaLink="true">/med-robot</guid>
       </item>
       
     
@@ -31,8 +31,8 @@
         
         <pubDate>Fri, 01 Oct 2021 03:18:00 -0700</pubDate>
         <link>
-        http://localhost:4000/2d-landmark-slam</link>
-        <guid isPermaLink="true">http://localhost:4000/2d-landmark-slam</guid>
+        /2d-landmark-slam</link>
+        <guid isPermaLink="true">/2d-landmark-slam</guid>
       </item>
       
     
@@ -46,8 +46,8 @@
         
         <pubDate>Mon, 23 Aug 2021 03:18:00 -0700</pubDate>
         <link>
-        http://localhost:4000/osrf</link>
-        <guid isPermaLink="true">http://localhost:4000/osrf</guid>
+        /osrf</link>
+        <guid isPermaLink="true">/osrf</guid>
       </item>
       
     
@@ -62,8 +62,8 @@ Open Source Robotics Foundation) as a student developer. The project was in turn
         
         <pubDate>Sun, 22 Aug 2021 03:18:00 -0700</pubDate>
         <link>
-        http://localhost:4000/gsoc</link>
-        <guid isPermaLink="true">http://localhost:4000/gsoc</guid>
+        /gsoc</link>
+        <guid isPermaLink="true">/gsoc</guid>
       </item>
       
     
@@ -78,8 +78,8 @@ Open Source Robotics Foundation) as a student developer. The project was in turn
         
         <pubDate>Sat, 31 Jul 2021 03:18:00 -0700</pubDate>
         <link>
-        http://localhost:4000/djsr-daq</link>
-        <guid isPermaLink="true">http://localhost:4000/djsr-daq</guid>
+        /djsr-daq</link>
+        <guid isPermaLink="true">/djsr-daq</guid>
       </item>
       
     
@@ -103,8 +103,8 @@ Open Source Robotics Foundation) as a student developer. The project was in turn
         
         <pubDate>Sat, 31 Jul 2021 03:18:00 -0700</pubDate>
         <link>
-        http://localhost:4000/mpcc</link>
-        <guid isPermaLink="true">http://localhost:4000/mpcc</guid>
+        /mpcc</link>
+        <guid isPermaLink="true">/mpcc</guid>
       </item>
       
     
@@ -125,8 +125,8 @@ Open Source Robotics Foundation) as a student developer. The project was in turn
         
         <pubDate>Sat, 31 Jul 2021 03:18:00 -0700</pubDate>
         <link>
-        http://localhost:4000/cgan</link>
-        <guid isPermaLink="true">http://localhost:4000/cgan</guid>
+        /cgan</link>
+        <guid isPermaLink="true">/cgan</guid>
       </item>
       
     
@@ -140,8 +140,8 @@ Open Source Robotics Foundation) as a student developer. The project was in turn
         
         <pubDate>Mon, 05 Jul 2021 03:18:00 -0700</pubDate>
         <link>
-        http://localhost:4000/ieee-sb</link>
-        <guid isPermaLink="true">http://localhost:4000/ieee-sb</guid>
+        /ieee-sb</link>
+        <guid isPermaLink="true">/ieee-sb</guid>
       </item>
       
     
@@ -155,8 +155,8 @@ Open Source Robotics Foundation) as a student developer. The project was in turn
         
         <pubDate>Thu, 01 Jul 2021 03:18:00 -0700</pubDate>
         <link>
-        http://localhost:4000/djsr</link>
-        <guid isPermaLink="true">http://localhost:4000/djsr</guid>
+        /djsr</link>
+        <guid isPermaLink="true">/djsr</guid>
       </item>
       
     
@@ -170,8 +170,8 @@ Open Source Robotics Foundation) as a student developer. The project was in turn
         
         <pubDate>Sun, 30 May 2021 03:18:00 -0700</pubDate>
         <link>
-        http://localhost:4000/mowito</link>
-        <guid isPermaLink="true">http://localhost:4000/mowito</guid>
+        /mowito</link>
+        <guid isPermaLink="true">/mowito</guid>
       </item>
       
     
@@ -185,8 +185,8 @@ Open Source Robotics Foundation) as a student developer. The project was in turn
         
         <pubDate>Sun, 25 Apr 2021 03:18:00 -0700</pubDate>
         <link>
-        http://localhost:4000/iiot-device</link>
-        <guid isPermaLink="true">http://localhost:4000/iiot-device</guid>
+        /iiot-device</link>
+        <guid isPermaLink="true">/iiot-device</guid>
       </item>
       
     
@@ -200,8 +200,8 @@ Open Source Robotics Foundation) as a student developer. The project was in turn
         
         <pubDate>Tue, 05 Jan 2021 02:18:00 -0800</pubDate>
         <link>
-        http://localhost:4000/rrt-cpp</link>
-        <guid isPermaLink="true">http://localhost:4000/rrt-cpp</guid>
+        /rrt-cpp</link>
+        <guid isPermaLink="true">/rrt-cpp</guid>
       </item>
       
     
@@ -215,8 +215,8 @@ Open Source Robotics Foundation) as a student developer. The project was in turn
         
         <pubDate>Sun, 20 Dec 2020 02:18:00 -0800</pubDate>
         <link>
-        http://localhost:4000/resnet-chest</link>
-        <guid isPermaLink="true">http://localhost:4000/resnet-chest</guid>
+        /resnet-chest</link>
+        <guid isPermaLink="true">/resnet-chest</guid>
       </item>
       
     
