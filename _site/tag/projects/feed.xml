@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator>
   <link href="/tag/projects/feed.xml" rel="self" type="application/atom+xml" />
   <link href="/" rel="alternate" type="text/html" />
-  <updated>2023-08-06T22:45:37-07:00</updated>
+  <updated>2023-08-08T13:17:46-07:00</updated>
   <id>/tag/projects/feed.xml</id>
 
   
@@ -42,6 +42,56 @@
   
   
 
+  
+    <entry>
+      <title type="html">Auxilio Robotics</title>
+      <link href="/auxilio-robotics" rel="alternate" type="text/html" title="Auxilio Robotics" />
+      <published>2023-05-05T03:18:00-07:00</published>
+      <updated>2023-05-05T03:18:00-07:00</updated>
+      <id>/auxilio-robotics</id>
+      <content type="html" xml:base="/auxilio-robotics">&lt;p&gt;At Auxilio Robotics, my MRSD capstone project team, I am working on a low-risk elderly assistance robot called Alfred. Alfred is a mobile robot that can navigate in indoor environments, and can perform tasks such as fetching objects, schedule reminders, engage with people, and more. I am working on the ROS infrastructure of the robot, and developing the human-robot interaction stack.&lt;/p&gt;
+
+&lt;p&gt;We recently made a visit to Vitalia Smart Senior Living at North Olmstead near Cleaveland, Ohio, to test our robot with the elderly. We received a lot of positive feedback, and are now working on improving the robot based on the feedback we received. Our visit was featured in a news article by Carnegie Mellon University School of Computer Science. You can read the article: &lt;a href=&quot;https://www.cs.cmu.edu/news/2023/care-home-robot&quot;&gt;CMU SCS News - CMU Team Explores Future of Caregiving With Assistive Robot&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;We are a team of 5, advised by Prof. Zackory Erickson (CMU Robotics Insitute) and Prof. Yonatan Bisk (CMU Language Technologies Institute). Our team members are:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Abhinav Gupta&lt;/li&gt;
+  &lt;li&gt;Atharva Pusalkar&lt;/li&gt;
+  &lt;li&gt;Praveen Venkatesh&lt;/li&gt;
+  &lt;li&gt;Shaolin Kataria&lt;/li&gt;
+  &lt;li&gt;Shivam Tripathy&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Read our Critical Design Review Report (CDRR):&lt;/p&gt;
+
+&lt;object data=&quot;assets/docs/TeamF_CDRR.pdf&quot; width=&quot;1000&quot; height=&quot;1000&quot; type=&quot;application/pdf&quot;&gt;&lt;/object&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Atharva Pusalkar</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="Projects" />
+      
+
+      
+        <summary type="html">At Auxilio Robotics, my MRSD capstone project team, I am working on a low-risk elderly assistance robot called Alfred. Alfred is a mobile robot that can navigate in indoor environments, and can perform tasks such as fetching objects, schedule reminders, engage with people, and more. I am working on the ROS infrastructure of the robot, and developing the human-robot interaction stack.</summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">Medicine Dispensing Robot</title>

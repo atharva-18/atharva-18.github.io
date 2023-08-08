@@ -13,6 +13,73 @@ subclass: 'post page'
 ## Experience
 
 1. <p style="margin-top: 20px">
+    <a href="https://hello-robot.com" target="_blank">
+        <strong>
+            Hello Robot Inc
+        </strong>
+    </a>
+         | 
+        <font size="3">
+            Robotics Engineer Intern
+        </font>
+    </p>
+    <p>
+        <font size="3">
+            (May j 2023 - Present)
+        </font>
+    </p>
+    <p>
+            <ul>
+                <li>
+                Building mobile robots that help make embodied Al and robotic assistance more accessible to people.
+                </li>
+                <li>
+                Serving demands of Al research groups at Meta Al, Allen Institute (AI2), Apple, CMU, MIT, and more, by delivering quality software components.
+                </li>
+                <li>
+                Developing the ROS 2 infrastructure of our flagship product - Stretch 2.
+                </li>
+            </ul>
+    </p>
+2. <p style="margin-top: 20px">
+    <a href="https://rchi-lab.github.io" target="_blank">
+        <strong>
+            Robotic Caregiving and Human-interaction Lab
+        </strong>
+    </a>
+         | 
+        <font size="3">
+            Research Assistant
+        </font>
+    </p>
+    <p>
+        <font size="3">
+            (October 2022 - Present)
+        </font>
+    </p>
+    <p>
+            <ul>
+                <li>
+                Working on autonomous bedding manipulation using graph-based dynamics modeling and mobile manipulator robots.
+                </li>
+                <li>
+                Advised by Prof. Zackory Erickson.
+                </li>
+                <li>
+                Working on a project funded by the National Science Foundation (NSF).
+                </li>
+                <li>
+                Published research
+                    <ol>
+                        <li>
+                        Puthuveetil, Kavya, et al. "Robust Body Exposure (RoBE): A Graph-based Dynamics Modeling Approach to Manipulating Blankets over People." arXiv preprint arXiv:2304.04822 (2023). Accepted at IEEE Robotics and Automation Letters (RA-L), 2023. Project Page: [https://rchi-lab.github.io/robust-body-exposure/](https://rchi-lab.github.io/robust-body-exposure/)
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+    </p>
+
+3. <p style="margin-top: 20px">
     <a href="https://djs-racing.com/" target="_blank">
         <strong>
             DJS Racing
@@ -51,7 +118,7 @@ subclass: 'post page'
             </ul>
     </p>
 
-2. <p style="margin-top: 20px">
+4. <p style="margin-top: 20px">
     <a href="https://openrobotics.org/" target="_blank">
         <strong>
             Open Robotics
@@ -82,7 +149,7 @@ subclass: 'post page'
             </ul>
     </p>
 
-3. <p style="margin-top: 20px">
+5. <p style="margin-top: 20px">
     <a href="https://mowito.in/" target="_blank">
         <strong>
         Mowito
@@ -118,7 +185,7 @@ subclass: 'post page'
             </ul>
     </p>
 
-4. <p style="margin-top: 20px">
+6. <p style="margin-top: 20px">
     <a href="https://ieeedjsce.com/" target="_blank">
         <strong>
             IEEE Student Branch - DJSCE
@@ -148,7 +215,7 @@ subclass: 'post page'
             </ul>
     </p>
 
-5. <p style="margin-top: 20px">
+7. <p style="margin-top: 20px">
     <a href="https://djsce.ac.in/nss/" target="_blank">
         <strong>
             National Service Scheme

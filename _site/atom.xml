@@ -8,6 +8,21 @@
     
       
       <item>
+        <title>Auxilio Robotics</title>
+        
+          <description>&lt;p&gt;At Auxilio Robotics, my MRSD capstone project team, I am working on a low-risk elderly assistance robot called Alfred. Alfred is a mobile robot that can navigate in indoor environments, and can perform tasks such as fetching objects, schedule reminders, engage with people, and more. I am working on the ROS infrastructure of the robot, and developing the human-robot interaction stack.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 05 May 2023 03:18:00 -0700</pubDate>
+        <link>
+        /auxilio-robotics</link>
+        <guid isPermaLink="true">/auxilio-robotics</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>Medicine Dispensing Robot</title>
         
           <description>&lt;p&gt;This is an ongoing project funded by our college for routine medicine delivery for hospital patients. The main goal is to dispense medicines according to the prescription to Alzheimer’s patients during the suggested timings.&lt;/p&gt;
