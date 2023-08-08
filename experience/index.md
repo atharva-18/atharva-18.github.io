@@ -25,7 +25,7 @@ subclass: 'post page'
     </p>
     <p>
         <font size="3">
-            (May j 2023 - Present)
+            (May 2023 - Present)
         </font>
     </p>
     <p>
