@@ -12,7 +12,7 @@ subclass: 'post page'
 <br/>
 ## About me
 
-I am graduate student in The Robotics Insitute at Carnegie Mellon University (2024). My work primarily lies in the intersection of embodied AI with intelligent interaction (CMU) and computer vision (DJS Racing). I also like to build software and systems (Open Robotics and Hello Robot) that make robotics and AI research more accessible to people around the world. I play with robots and like to build their brains (the software) and nerves (the electricals). In my free time, you will see me play tennis, listening to music or maybe both.
+I am graduate student in The Robotics Institute at Carnegie Mellon University (2024). My work primarily lies in the intersection of embodied AI with intelligent interaction (CMU) and computer vision (DJS Racing). I also like to build software and systems (Open Robotics and Hello Robot) that make robotics and AI research more accessible to people around the world. I play with robots and like to build their brains (the software) and nerves (the electricals). In my free time, you will see me play tennis, listening to music or maybe both.
 
 <img src="/assets/images/atharva_pusalkar.jpeg" style="width: 50%;" />
 
@@ -25,7 +25,7 @@ I also sketch and play the guitar as my hobbies.
 #### You can reach out to me via,
 Email: [atharvapusalkar18@gmail.com](mailto:atharvapusalkar18@gmail.com)
 
-Academic email: [apusalka [at] andrew [dot] cmu [dot] edu](mailto:atharvapusalkar18@gmail.com)
+Academic email: apusalka [at] andrew [dot] cmu [dot] edu
 
 #### Profiles
 Google Scholar: [Atharva Pusalkar](https://scholar.google.com/citations?user=P6TSvToAAAAJ)

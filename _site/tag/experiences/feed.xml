@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator>
   <link href="/tag/experiences/feed.xml" rel="self" type="application/atom+xml" />
   <link href="/" rel="alternate" type="text/html" />
-  <updated>2023-08-08T14:32:55-07:00</updated>
+  <updated>2023-12-14T08:32:01+05:30</updated>
   <id>/tag/experiences/feed.xml</id>
 
   
@@ -46,8 +46,8 @@
     <entry>
       <title type="html">Google Summer of Code at Open Robotics</title>
       <link href="/gsoc" rel="alternate" type="text/html" title="Google Summer of Code at Open Robotics" />
-      <published>2021-08-22T03:18:00-07:00</published>
-      <updated>2021-08-22T03:18:00-07:00</updated>
+      <published>2021-08-22T15:48:00+05:30</published>
+      <updated>2021-08-22T15:48:00+05:30</updated>
       <id>/gsoc</id>
       <content type="html" xml:base="/gsoc">&lt;p&gt;In the summer of 2021, I had the opportunity to work at Open Robotics (née
 Open Source Robotics Foundation) as a student developer. The project was in turn funded by Google through their Summer of Code 2021 program.&lt;/p&gt;
@@ -217,8 +217,8 @@ Here’s the inertia visualization in different scales and orientations:
     <entry>
       <title type="html">IEEE Student Branch, DJSCE</title>
       <link href="/ieee-sb" rel="alternate" type="text/html" title="IEEE Student Branch, DJSCE" />
-      <published>2021-07-05T03:18:00-07:00</published>
-      <updated>2021-07-05T03:18:00-07:00</updated>
+      <published>2021-07-05T15:48:00+05:30</published>
+      <updated>2021-07-05T15:48:00+05:30</updated>
       <id>/ieee-sb</id>
       <content type="html" xml:base="/ieee-sb">&lt;p&gt;For two years of my undergrad, I was a member of the IEEE student chapter of my institute, DJ Sanghvi College of Engineering.&lt;/p&gt;
 
@@ -303,8 +303,8 @@ The second episode of our IEEE Expert Lecture series. This one delved a bit into
     <entry>
       <title type="html">DJS Racing</title>
       <link href="/djsr" rel="alternate" type="text/html" title="DJS Racing" />
-      <published>2021-07-01T03:18:00-07:00</published>
-      <updated>2021-07-01T03:18:00-07:00</updated>
+      <published>2021-07-01T15:48:00+05:30</published>
+      <updated>2021-07-01T15:48:00+05:30</updated>
       <id>/djsr</id>
       <content type="html" xml:base="/djsr">&lt;p&gt;I currently lead the driverless project at DJS Racing, a student team aiming to build a self-driving Formula Student race car. In conjuction, I also developed the data acquisition system for our vehicle.&lt;/p&gt;
 
@@ -590,8 +590,8 @@ However, an improvement is required here as IPOPT is not designed for real-time 
     <entry>
       <title type="html">Internship at Mowito Robotics</title>
       <link href="/mowito" rel="alternate" type="text/html" title="Internship at Mowito Robotics" />
-      <published>2021-05-30T03:18:00-07:00</published>
-      <updated>2021-05-30T03:18:00-07:00</updated>
+      <published>2021-05-30T15:48:00+05:30</published>
+      <updated>2021-05-30T15:48:00+05:30</updated>
       <id>/mowito</id>
       <content type="html" xml:base="/mowito">&lt;p&gt;Mowito is an Indian startup that provides autonomous navigation software solutions for use in warehouses and more. The company has also recently expanded into providing physical robots with applications such as grocery delivery.&lt;/p&gt;
 
@@ -722,8 +722,8 @@ Our deployments often needed periodic manual maintenance to function well. One r
     <entry>
       <title type="html">COVID-19 Detection from Chest X-Ray Images</title>
       <link href="/resnet-chest" rel="alternate" type="text/html" title="COVID-19 Detection from Chest X-Ray Images" />
-      <published>2020-12-20T02:18:00-08:00</published>
-      <updated>2020-12-20T02:18:00-08:00</updated>
+      <published>2020-12-20T15:48:00+05:30</published>
+      <updated>2020-12-20T15:48:00+05:30</updated>
       <id>/resnet-chest</id>
       <content type="html" xml:base="/resnet-chest">&lt;p&gt;A small project that I did back in December of 2020 for COVID-19 detection using chest x-ray images. The model uses a modified ResNet-50 model for detection using RGB signals.&lt;/p&gt;
 

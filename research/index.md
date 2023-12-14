@@ -13,9 +13,9 @@ subclass: 'post page'
 ## Research
 
 My research interests cover topics such as computer vision, robot learning, and human-robot interaction. The end goal is to learn how to _raise_ a robot.
-I am currently working on language-conditioned 3D detection for novel objects in indoor environments, guided by affordances.
+I am currently working on language-conditioned long-horizon task planning for mobile manipulator robots using large-language models.
 
-1. Puthuveetil, Kavya, et al. "Robust Body Exposure (RoBE): A Graph-based Dynamics Modeling Approach to Manipulating Blankets over People." arXiv preprint arXiv:2304.04822 (2023). Accepted at IEEE Robotics and Automation Letters (RA-L), 2023.
+1. Puthuveetil, Kavya, et al. "Robust Body Exposure (RoBE): A Graph-based Dynamics Modeling Approach to Manipulating Blankets over People." arXiv preprint 2304.04822 (2023). Accepted at IEEE Robotics and Automation Letters (RA-L) 2023 and ICRA 2024.
 2. Karamchandani, Sunil, et al. "Autonomous parking system perception and control simulations on ros-gazebo." Proceedings of International Conference on Wireless Communication: ICWiCom 2021. Singapore: Springer Nature Singapore, 2022.
 
 <img src="/assets/images/robot_replacing_human_meme.jpeg" alt="Robot replacing human meme" width="40%"/>
